@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BATMAN - Contact</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="icon" href="./res/batmanlogo.png">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<header class="container">
+			<div id="logo">
+				<p style="float: left;"><img src="./res/batmanlogo.png" alt="BATMAN" height="80"></p>
+				<p><h1>BATMAN</h1></p>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="search.html">Search</a></li>
+					<li><a href="help.html">Help</a></li>
+					<li><a class="selected" href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+		</header>
+		<div class="container">
+			<div id="content">
+				<article id="main-col">
+					<h2>Staff</h2>
+					<ul id="staff">
+						<li>
+							<h3>Jonathan Feenstra</h3>
+							<p>Project leader, webdesigner &amp programmer </p>
+							<p>&#x2709 <a href="mailto:JCD.Feenstra@student.han.nl?subject=BATMAN">JCD.Feenstra@student.han.nl</a></p>
+						</li>
+						<li>
+							<h3>Fini De Gruyter, MSc</h3>
+							<p>Insert function here</p>
+							<p>&#x2709 <a href="mailto:FE.DeGruyter@student.han.nl?subject=BATMAN">FE.DeGruyter@student.han.nl</a></p>
+						</li>
+						<li>
+							<h3>Bruce Wayne</h3>
+							<p>CEO</p>
+							<p>&#x2709 <a href="mailto:B.Wayne@student.han.nl?subject=BATMAN">B.Wayne@student.han.nl</a></p>
+						</li>
+					</ul>
+				</article>
+				<aside id="sidebar">
+					<h2>Location</h2>
+					<p><script src='https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCnNRRcAar6Nd4a_TrOC9IikmAn-tya2R8'></script><div style='overflow:hidden;height:300px;width:400px;'><div id='gmap_canvas' style='height:300px;width:400px;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(51.8267192,5.863048899999967),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.8267192,5.863048899999967)});infowindow = new google.maps.InfoWindow({content:'<strong>The Batcave&#8482;</strong><br>Laan van Scheut 2, Nijmegen, Nederland<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script></p>
+				</aside>
+			</div>
+			<div id="footer">
+				Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a> & <a href="https://www.dccomics.com/">DC Comics</a>
+			</div>
+		</div>
+	</body>
+</html>
