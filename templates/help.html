@@ -2,14 +2,7 @@
 {% set active_page = 'help' %}
 {% block title %}BATMAN - Help{% endblock %}
 
-{% block body %}
-		<div class="container">
-			<div id="content">
-				<h2>This page is empty...</h2>
-				<img src="{{ url_for('static', filename='img/batmanhelp.gif')}}" alt="Waiting for Batman...">
-			</div>
-			<div id="footer">
-				Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, Thijs Weenink, Bart Droge, Lotte Houwen & <a href="https://www.dccomics.com/">DC Comics</a>
-			</div>
-		</div>
+{% block content %}
+	<h2>This page is empty...</h2>
+	<img src="{{ url_for('static', filename='img/batmanhelp.gif')}}" alt="Waiting for Batman...">
 {% endblock %}

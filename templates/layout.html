@@ -24,6 +24,14 @@
   			</ul>
   		</div>
   	</header>
-    {% block body %}{% endblock %}
+    <div class="container">
+      {% block container %}{% endblock %}
+      <div id="content">
+        {% block content %}{% endblock %}
+      </div>
+      <div id="footer">
+        Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, Fini De Gruyter & <a href="https://www.dccomics.com/">DC Comics</a>
+      </div>
+    </div>
   </body>
 </html>

@@ -29,6 +29,25 @@ ul {
 	padding: 0;
 }
 
+/* Showcase */
+#showcase {
+	min-height: 400px;
+	background: url(../img/showcase.jpg) no-repeat 0 -650px;
+	text-align: center;
+	color: white;
+	overflow: hidden;
+}
+
+#showcase h1 {
+	margin-top: 150px;
+	font-size: 40px;
+	margin-bottom: 10px;
+}
+
+#showcase p {
+	font-size: 24px;
+}
+
 /* Content */
 #content {
 	background-color: white;
