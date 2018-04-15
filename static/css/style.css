@@ -1,12 +1,11 @@
 body {
-	cursor: url('default.cur'), auto;
+	cursor: url(../cursor/default.cur), auto;
 	font: 15px/1.5 Helvetica, Arial, Times New Roman, Sans-serif;
 	margin: 0;
 	padding: 0;
-	background: url('background.jpg') no-repeat center center fixed;
-    background-size: 100% 100%;
+	background: url(../img/background.jpg) no-repeat center center fixed;
+  background-size: 100% 100%;
 }
-
 header {
 	background-color: #222;
 	width: 100%;
@@ -22,7 +21,7 @@ header {
 }
 
 a {
-	cursor: url(pointer.cur), auto;
+	cursor: url(../cursor/pointer.cur), auto;
 }
 
 ul {
@@ -82,7 +81,7 @@ ul {
 	font-weight: bold;
 }
 
-#nav .selected {
+#nav .active {
 	color: yellow;
 	font-weight: bold;
 }
@@ -131,11 +130,11 @@ ul#staff li {
 		text-align: center;
 		width: 100%;
 	}
-	
+
 	header {
 		margin-bottom: 20px;
 		padding-bottom: 10px;
 	}
-	
-	
+
+
 }

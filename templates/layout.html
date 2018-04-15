@@ -1,0 +1,29 @@
+{% set active_page = active_page|default('home') -%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/batmanlogo.png')}}">
+    <meta name="viewport" content="width=device-width">
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header class="container">
+  		<div id="logo">
+  			<p style="float: left;"><img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80"></p>
+  			<p><h1>BATMAN</h1></p>
+  		</div>
+  		<div id="nav">
+  			<ul>
+  				<li><a {% if active_page == 'home' %}class="active"{% endif %} href="/">Home</a></li>
+  				<li><a {% if active_page == 'about' %}class="active"{% endif %} href="/about">About</a></li>
+  				<li><a {% if active_page == 'search' %}class="active"{% endif %} href="/search">Search</a></li>
+  				<li><a {% if active_page == 'help' %}class="active"{% endif %} href="/help">Help</a></li>
+  				<li><a {% if active_page == 'contact' %}class="active"{% endif %} href="/contact">Contact</a></li>
+  			</ul>
+  		</div>
+  	</header>
+    {% block body %}{% endblock %}
+  </body>
+</html>

@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>BATMAN - Contact</title>
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
-		<link rel="icon" href="./res/batmanlogo.png">
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-	</head>
-	<body>
-		<header class="container">
-			<div id="logo">
-				<p style="float: left;"><img src="./res/batmanlogo.png" alt="BATMAN" height="80"></p>
-				<p><h1>BATMAN</h1></p>
-			</div>
-			<div id="nav">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="search.html">Search</a></li>
-					<li><a href="help.html">Help</a></li>
-					<li><a class="selected" href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-		</header>
+{% extends 'layout.html' %}
+{% set active_page = 'contact' %}
+{% block title %}BATMAN - Contact{% endblock %}
+
+{% block body %}
 		<div class="container">
 			<div id="content">
 				<article id="main-col">
@@ -59,5 +39,4 @@
 				Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, Thijs Weenink, Bart Droge, Lotte Houwen & <a href="https://www.dccomics.com/">DC Comics</a>
 			</div>
 		</div>
-	</body>
-</html>
+{% endblock %}
