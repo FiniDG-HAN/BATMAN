@@ -13,7 +13,7 @@ header {
 	width: 100%;
 	min-height: 80px;
 	padding-top: 10px;
-	border-bottom: orange 3px solid;
+	border-bottom: orange solid 3px;
 }
 
 .container {
@@ -35,7 +35,13 @@ header {
 }
 
 a {
+	color: #034f84;
+	text-decoration: none;
 	cursor: url(../cursor/pointer.cur), auto;
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 ul {
@@ -50,6 +56,7 @@ ul {
 	text-align: center;
 	color: white;
 	overflow: hidden;
+	border-bottom: orange solid 3px;
 }
 
 #showcase h1 {
@@ -90,6 +97,14 @@ ul {
 	color: yellow;
 }
 
+#logo a {
+	color: yellow;
+}
+
+#logo a:hover {
+	text-decoration: none;
+}
+
 /* Nav */
 #nav {
 	float: right;
@@ -119,6 +134,44 @@ ul {
 	font-weight: bold;
 }
 
+/* Form */
+form {
+	max-width: 100%;
+}
+
+form input, textarea {
+	border: #CCC solid 2px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+form textarea {
+	height: 10em;
+}
+
+form input:focus, textarea:focus {
+	outline: none;
+	border: orange solid 2px;
+}
+
+form input[type=submit] {
+	background: #222;
+	color: white;
+	font-size: 18px;
+	padding: 10px;
+	text-transform: uppercase;
+	width: 33%;
+	float: right;
+}
+
+form label {
+	display: block;
+}
+
+form label span {
+	display: block;
+}
+
 /* Sidebar */
 aside#sidebar {
 	float: right;
@@ -145,9 +198,14 @@ ul#staff h3, p {
 	margin: 2px;
 }
 
-ul#staff h3 a {
+a.linkedin  {
 	text-decoration: none;
 	color: #0077B5;
+}
+
+a.github {
+	text-decoration: none;
+	color: #222;
 }
 
 /* Footer */

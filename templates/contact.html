@@ -1,21 +1,37 @@
 {% extends 'layout.html' %}
 {% set active_page = 'contact' %}
-{% block title %}BATMAN - Contact{% endblock %}
+{% block title %}BATMAN&#8482; - Contact{% endblock %}
 
 {% block content %}
 	<div>
 		<p>Please make sure to consult the <a href="/help">help page</a> before contacting the staff.</p>
-		<h2>Staff</h2>
+		<h2>BATMAN&#8482; Staff</h2>
 	</div>
 	<article id="main-col">
 		<ul id="staff">
 			<li>
-				<h3>Jonathan Feenstra <a href="https://www.linkedin.com/in/jonathanfeenstra"><i class="fab fa-linkedin" aria-hidden="true"></a></i></h3>
+				<h3>
+					Jonathan Feenstra
+					<a class="linkedin" href="https://www.linkedin.com/in/jonathanfeenstra">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a class="github" href="https://github.com/JonathanFeenstra">
+						<i class="fab fa-github-square" aria-hidden="true"></i>
+					</a>
+				</h3>
 				<p>Project leader, webdesigner &amp programmer</p>
 				<p>&#x2709; <a href="mailto:JCD.Feenstra@student.han.nl?subject=BATMAN">JCD.Feenstra@student.han.nl</a></p>
 			</li>
 			<li>
-				<h3>Fini De Gruyter, MSc <a href="https://www.linkedin.com/in/finigruyter"><i class="fab fa-linkedin" aria-hidden="true"></a></i></h3>
+				<h3>
+					Fini De Gruyter, MSc
+					<a class="linkedin" href="https://www.linkedin.com/in/finigruyter">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a class="github" href="https://github.com/FiniDG-HAN">
+						<i class="fab fa-github-square" aria-hidden="true"></i>
+					</a>
+				</h3>
 				<p>Programmer</p>
 				<p>&#x2709; <a href="mailto:FE.DeGruyter@student.han.nl?subject=BATMAN">FE.DeGruyter@student.han.nl</a></p>
 			</li>
@@ -30,6 +46,16 @@
 				<p>&#x2709; <a href="mailto:...@student.han.nl?subject=BATMAN">...@student.han.nl</a></p>
 			</li>
 		</ul>
+		<h2>Send a message</h2>
+		<form action="https://formspree.io/JCD.Feenstra@student.han.nl" method="POST">
+			<label><span>Name</span>
+				<input type="text" name="name"></label>
+			<label><span>Email</span>
+				<input type="email" name="_replyto"></label>
+			<label><span>Message</span>
+				<textarea name="message"></textarea></label>
+			<input type="submit" value="Send">
+		</form>
 	</article>
 	<aside id="sidebar">
 		<div class="box">
