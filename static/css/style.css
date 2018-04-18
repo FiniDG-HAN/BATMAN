@@ -136,7 +136,7 @@ ul {
 
 /* Form */
 form {
-	max-width: 100%;
+	overflow: hidden;
 }
 
 form input, textarea {
@@ -155,21 +155,17 @@ form input:focus, textarea:focus {
 }
 
 form input[type=submit] {
-	background: #222;
+	background: #222 url('../img/batmanlogo.png') no-repeat 3%;
+	background-size: 50px;
 	color: white;
 	font-size: 18px;
 	padding: 10px;
 	text-transform: uppercase;
-	width: 33%;
-	float: right;
+	margin-bottom: 2px;
 }
 
-form label {
-	display: block;
-}
-
-form label span {
-	display: block;
+form .wrapper {
+	display: flex;
 }
 
 /* Sidebar */

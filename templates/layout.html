@@ -9,6 +9,7 @@
     <link rel="icon" href="{{ url_for('static', filename='img/batmanlogo.png')}}">
     <meta name="viewport" content="width=device-width">
     <title>{% block title %}{% endblock %}</title>
+    {% if active_page == 'contact' %}<script src='https://www.google.com/recaptcha/api.js'></script>{% endif %}
   </head>
   <body>
     <header class="container">
@@ -32,7 +33,7 @@
         {% block content %}{% endblock %}
       </div>
       <div id="footer">
-        Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, Fini De Gruyter, Alex Janse, Thijs Weenink & <a href="https://www.dccomics.com/">DC Comics</a>
+        Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, &nbsp;Fini De Gruyter, &nbsp;Alex Janse, Thijs Weenink &amp; <a href="https://www.dccomics.com/">DC Comics</a>
       </div>
     </div>
   </body>
