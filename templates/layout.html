@@ -1,4 +1,4 @@
-{% set active_page = active_page|default('home') -%}
+{% set active_page = active_page|default('none') %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,7 +13,7 @@
   <body>
     <header class="container">
   		<div id="logo">
-  			<p style="float: left;"><a href="/"><img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80"></a></p>
+  			<p style="float: left;"><a href="/pacman"><img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80"></a></p>
   			<p><h1><a href="/">BATMAN</a></h1></p>
   		</div>
   		<div id="nav">
@@ -32,7 +32,7 @@
         {% block content %}{% endblock %}
       </div>
       <div id="footer">
-        Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, Fini De Gruyter & <a href="https://www.dccomics.com/">DC Comics</a>
+        Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, Fini De Gruyter, Alex Janse, Thijs Weenink & <a href="https://www.dccomics.com/">DC Comics</a>
       </div>
     </div>
   </body>

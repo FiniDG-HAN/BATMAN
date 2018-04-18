@@ -22,5 +22,9 @@ def help():
 def contact():
     return render_template('contact.html')
 
+@app.route('/pacman')
+def pacman():
+    return render_template('pacman.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

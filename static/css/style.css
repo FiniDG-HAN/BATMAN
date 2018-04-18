@@ -208,6 +208,13 @@ a.github {
 	color: #222;
 }
 
+/* Pacman */
+#pacman {
+  max-height:450px;
+  max-width:342px;
+  margin:20px auto;
+}
+
 /* Footer */
 #footer {
 	background-color: #222;
