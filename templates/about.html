@@ -3,6 +3,19 @@
 {% block title %}BATMAN&#8482; - About{% endblock %}
 
 {% block content %}
-	<h2>This page is empty...</h2>
-	<img src="{{ url_for('static', filename='img/sadbatman.gif')}}" alt="Batman is sad.">
+	<h1>About us</h1>
+	<article class="main-col">
+		<p>We are a group of second year Bioinformatics students at the <a href="https://www.han.nl/">HAN University of Applied Sciences</a> working on a project with the aim of investigating the health benefits of yam and bitter gourd compounds.</p>
+		<h2>The project</h2>
+		<p>Yam (<i>Dioscorea</i>) and bitter gourd (<i>Momordica charantia</i>) are claimed to have a positive effect on sugar levels, skin, night vision, the immune system, menopause and so on. In order to find out if these claims are true, scientific research is necessary. Therefore, it is important to first consider whether a link can be found between the characteristics of the plant and the possible consequences for the health of the consumer in the existing literature.</p>
+		<p>To manually read all the articles that are online and to find all of the connections by yourself would be very time-consuming. That is why we came up with the plan to develop an application that will visualize the links from the articles after an automated text mining process.</p>
+		<h2>To be continued...</h2>
+		<img src="{{ url_for('static', filename='img/sadbatman.gif')}}" alt="Batman is sad.">
+	</article>
+	<aside class="sidebar">
+		<div class="dark">
+			<h2>The HAN University of Applied Sciences</h2>
+			<img src="{{ url_for('static', filename='img/han-university.jpg')}}" alt="HAN University of Applied Sciences" style="width: 100%;">
+		</div>
+	</aside>
 {% endblock %}

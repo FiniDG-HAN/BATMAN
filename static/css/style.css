@@ -22,7 +22,7 @@ header {
 	overflow: hidden;
 }
 
-.box {
+.dark {
 	padding: 15px;
 	color: white;
 	background-color: #222;
@@ -30,7 +30,7 @@ header {
 	margin: 0;
 }
 
-.box p {
+.dark p {
 	margin-top: 15px;
 }
 
@@ -67,6 +67,24 @@ ul {
 
 #showcase p {
 	font-size: 28px;
+}
+
+/* Boxes */
+#boxes {
+	margin-top: 20px;
+	text-align: center;
+	background-color: white;
+}
+
+#boxes .box {
+	float: left;
+	text-align: center;
+	width: 30%;
+	padding: 1.5%;
+}
+
+#boxes .box img {
+	width: 140px;
 }
 
 /* Content */
@@ -169,14 +187,14 @@ form .wrapper {
 }
 
 /* Sidebar */
-aside#sidebar {
+aside.sidebar {
 	float: right;
 	width: 40%;
 	margin-top: 0;
 }
 
 /* Main column */
-article#main-col {
+article.main-col {
 	float: left;
 	width: 50%;
 }
@@ -228,7 +246,7 @@ a.github {
 
 /* Media queries */
 @media(max-width: 1400px) {
-	#logo, #nav, #nav li, article#main-col, aside#sidebar {
+	#logo, #nav, #nav li, article#main-col, aside#sidebar, #boxes .box {
 		float: none;
 		text-align: center;
 		width: 100%;

@@ -1,0 +1,10479 @@
+[
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "anthocyanin",
+    "pmid":"pm1231"
+
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "Anthocyanins"
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": "Arabidopsis thaliana"
+  },
+  {
+    "source": "pap1",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "Anthocyanins"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": "Arabidopsis thaliana"
+  },
+  {
+    "source": "pap1-D",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "ROS",
+    "type": "blue",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "ROS",
+    "type": "red",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "ROS",
+    "type": "blue",
+    "target": "oxygen"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Anthocyanins"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Arabidopsis thaliana"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "Anthocyanins"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": "Arabidopsis thaliana"
+  },
+  {
+    "source": "ROS-generating",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": "Anthocyanins"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "Arabidopsis thaliana",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "cyanidin",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "oxygen",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "Anthocyanins",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "Anthocyanin",
+    "type": "green",
+    "target": " high light"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "phenol"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "sugar"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "fructose"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "glucose"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "TPC",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "phenol"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "sugar"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "fructose"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "glucose"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "TAC",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "blue",
+    "target": "osmotic"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "red",
+    "target": "cultivar"
+  },
+  {
+    "source": "phenol",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "phenol",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "sugar",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "sugar",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "fructose",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "fructose",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "glucose",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "glucose",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "osmotic",
+    "type": "blue",
+    "target": "cultivar"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "phenylpropanoids"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "beet"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "WRKY",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "phenylpropanoids"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "beet"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "McClintock",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "phenylpropanoids"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "beet"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "MYB-bHLH-WD",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "phenylpropanoids"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "beet"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "phenylpropanoids"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "beet"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "beet",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "beet",
+    "type": "green",
+    "target": "phenylpropanoids"
+  },
+  {
+    "source": "beet",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "beet",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "beet",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "beet",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "flavonoids",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "flavonoids",
+    "type": "red",
+    "target": "oxidative"
+  },
+  {
+    "source": "phenylpropanoids",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "phenylpropanoids",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Flavonoids",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "Flavonoids",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "flavonoid",
+    "type": "green",
+    "target": "ultraviolet"
+  },
+  {
+    "source": "flavonoid",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "purple",
+    "target": "soybean"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "purple",
+    "target": "Soybean"
+  },
+  {
+    "source": "malonyl-CoA",
+    "type": "purple",
+    "target": "Glycine max"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "BAHD",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmIMaT3-overexpression",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "4-O-acetyltransferase",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmIMaT3",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmIMaT1",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmIF7MaT",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmIMaT1-overexpression",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmMT7",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "GmIMaTs",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "malonyl-CoA"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "soybean"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "Soybean"
+  },
+  {
+    "source": "7-O-glucosides",
+    "type": "green",
+    "target": "Glycine max"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "soybean",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "Soybean",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "anthocyanin O"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "isoflavonoids"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "genistein"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "hydroxycinnamoyl"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "deacetylvindoline"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "isoflavone"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "isoflavone glucoside"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "glycitin"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "benzylalcohol O"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "N"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "isoflavones"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "malonylgenistin"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "Isoflavone Glucosides"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "malonyldaidzin"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "isoflavone 7-O-glucosides"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "O"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "daidzein"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "genistin"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "daidzin"
+  },
+  {
+    "source": "Glycine max",
+    "type": "green",
+    "target": "Isoflavone"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "TAG"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "GSH"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "DPPH"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "polyphenols"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "MDA"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "mice"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "in vivo"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "GSH"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "DPPH"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "MDA"
+  },
+  {
+    "source": "TAG",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "mice"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "TAG",
+    "type": "purple",
+    "target": "in vivo"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "HCD",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "LDL",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "5-fold",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "SOD",
+    "type": "blue",
+    "target": "MDA"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "SOD",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "CAT",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "FRAP",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "GSH",
+    "type": "purple",
+    "target": "DPPH"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "GSH",
+    "type": "purple",
+    "target": "MDA"
+  },
+  {
+    "source": "GSH",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "GSH",
+    "type": "purple",
+    "target": "mice"
+  },
+  {
+    "source": "GSH",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "GSH",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "GSH",
+    "type": "purple",
+    "target": "in vivo"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "HDL",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "mM",
+    "type": "blue",
+    "target": "flavonoids"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "mM",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "DPPH",
+    "type": "purple",
+    "target": "MDA"
+  },
+  {
+    "source": "DPPH",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "DPPH",
+    "type": "purple",
+    "target": "mice"
+  },
+  {
+    "source": "DPPH",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "DPPH",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "DPPH",
+    "type": "purple",
+    "target": "in vivo"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "TAG"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "GSH"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "DPPH"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "mice"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "3-fold",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "MDA",
+    "type": "blue",
+    "target": "MDA"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "MDA",
+    "type": "purple",
+    "target": "mice"
+  },
+  {
+    "source": "MDA",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "MDA",
+    "type": "red",
+    "target": "oxidative"
+  },
+  {
+    "source": "MDA",
+    "type": "purple",
+    "target": "in vivo"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "triacylglycerol"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "nonflavonoids"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "phenols"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "alcohol"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "polyphenol"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "malondialdehyde"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "gallic acid"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "Trolox"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "mice",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "mice",
+    "type": "gray",
+    "target": "in vivo"
+  },
+  {
+    "source": "triacylglycerol",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "triacylglycerol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "triacylglycerol",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "red",
+    "target": "drought"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "red",
+    "target": "oxidative"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "glutathione",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "glutathione",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "glutathione",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "nonflavonoids",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "nonflavonoids",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "nonflavonoids",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "phenols",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "phenols",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "phenols",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "superoxide",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "superoxide",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "superoxide",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "alcohol",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "alcohol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "alcohol",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "polyphenol",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "polyphenol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "polyphenol",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "malondialdehyde",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "malondialdehyde",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "malondialdehyde",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "gallic acid",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "gallic acid",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "gallic acid",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "Trolox",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Trolox",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Trolox",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "cholesterol",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "cholesterol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "cholesterol",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "flavonoids",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "flavonoids",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "polyphenols",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "polyphenols",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "polyphenols",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "Polyphenols",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Polyphenols",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "Polyphenols",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "drought",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "oxidative",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "COX2",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "AST",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "iNOS",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "30min",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "NF-kB",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "SOD",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "caspase-3",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "ALT",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "Bcl-XL",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "Bax",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "MDA"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "TNF-aR1",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "MDA",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "MDA",
+    "type": "blue",
+    "target": "rats"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "gentamicin"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "Gentamicin"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "Anthocyanin"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "gentamicin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Gentamicin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Anthocyanin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "Triticum turgidum var"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "Wheat"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "bread wheat"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "wheat"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "SNP",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "Triticum turgidum var"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "Wheat"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "bread wheat"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "wheat"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "QTLs",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "Triticum turgidum var",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Triticum turgidum var",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "Triticum turgidum var",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Triticum turgidum var",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "Triticum turgidum var",
+    "type": "gray",
+    "target": "cultivar"
+  },
+  {
+    "source": "Wheat",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Wheat",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "Wheat",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Wheat",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "Wheat",
+    "type": "gray",
+    "target": "cultivar"
+  },
+  {
+    "source": "bread wheat",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "bread wheat",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "bread wheat",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "bread wheat",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "bread wheat",
+    "type": "gray",
+    "target": "cultivar"
+  },
+  {
+    "source": "wheat",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "wheat",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "wheat",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "wheat",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "wheat",
+    "type": "gray",
+    "target": "cultivar"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "red",
+    "target": "drought"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": "high temperature"
+  },
+  {
+    "source": "drought",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "high temperature",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "microRNA156",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "microRNA156",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "microRNA156",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "microRNA156",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "microRNA156",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "microRNA156",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "miRNA156",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "miRNA156",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "miRNA156",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "miRNA156",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "miRNA156",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "miRNA156",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "ABA",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "ABA",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "ABA",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "ABA",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "ABA",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "ABA",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "RCARs",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "RCARs",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "RCARs",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "RCARs",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "RCARs",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "RCARs",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "PYR",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "PYR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "PYR",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "PYR",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "PYR",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "PYR",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "RER",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "RER",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "RER",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "RER",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "RER",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "RER",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MAIN",
+    "type": "purple",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "pyrabactin"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "abscisic acid"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "ABA"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "pyrabactin",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "abscisic acid",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "berberine"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "resveratrol"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "B[a]P"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "Polyphenol"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "benzo[a]pyrene"
+  },
+  {
+    "source": "TNF-a",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "berberine"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "resveratrol"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "B[a]P"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "Polyphenol"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "benzo[a]pyrene"
+  },
+  {
+    "source": "Nrf2",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "berberine"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "resveratrol"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "B[a]P"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "Polyphenol"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "benzo[a]pyrene"
+  },
+  {
+    "source": "UCP2",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "superoxide"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "berberine"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "resveratrol"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Polyphenols"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "B[a]P"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Polyphenol"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "benzo[a]pyrene"
+  },
+  {
+    "source": "ROS",
+    "type": "red",
+    "target": "oxidative"
+  },
+  {
+    "source": "berberine",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "resveratrol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "B[a]P",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Polyphenol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "benzo[a]pyrene",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "CHI",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "PHGPx",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "GST",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "TPL",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "FLS",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "qPCR",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "CHS",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "MGL",
+    "type": "green",
+    "target": "Camellia sinensis"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "hydroperoxide glutathione"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "chalcone"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "theanine"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "catechins"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "glutamine"
+  },
+  {
+    "source": "Camellia sinensis",
+    "type": "green",
+    "target": "glutathione S"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "brain-derived neurotrophic factor",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "K252a",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "purple",
+    "target": "CORT"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "purple",
+    "target": "rats"
+  },
+  {
+    "source": "quercetin-3-O-b-d-galactosidepyranose",
+    "type": "purple",
+    "target": "osmotic"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "TrkB",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "CORT",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "CORT",
+    "type": "purple",
+    "target": "rats"
+  },
+  {
+    "source": "CORT",
+    "type": "purple",
+    "target": "osmotic"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "BDNF",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "CMS",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "quercetin-3-O-b-d-galactosidepyranose"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "CORT"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "rats"
+  },
+  {
+    "source": "FST",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "flavanones"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "corticosterone"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "flavanols"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "sucrose"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "Hyperoside"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "flavonoid"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "hyperoside"
+  },
+  {
+    "source": "rats",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "flavanones",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "corticosterone",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "flavanols",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "sucrose",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "Hyperoside",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "flavonoid",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "hyperoside",
+    "type": "green",
+    "target": "osmotic"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "Zea mays L"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "maize"
+  },
+  {
+    "source": "RNA",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "Zea mays L"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "maize"
+  },
+  {
+    "source": "1-N-naphthylphthalamic",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "Zea mays L"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "maize"
+  },
+  {
+    "source": "RSA",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "Zea mays L"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "maize"
+  },
+  {
+    "source": "indole-3-acetic",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "Zea mays L"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "maize"
+  },
+  {
+    "source": "LRs",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "Zea mays L"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "maize"
+  },
+  {
+    "source": "ZmPP2AA1",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "Zea mays L",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "P"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "indole-3-acetic acid"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "Phosphate"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "phosphate"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "1-N-naphthylphthalamic acid"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "Pi"
+  },
+  {
+    "source": "maize",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "P",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "indole-3-acetic acid",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Phosphate",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "phosphate",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "1-N-naphthylphthalamic acid",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Pi",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "delphinidin",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "delphinidin",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "cyanidin",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "cyanidin",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "pelargonidin",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "pelargonidin",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "acyl",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "acyl",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "methyl",
+    "type": "green",
+    "target": "house plant"
+  },
+  {
+    "source": "methyl",
+    "type": "green",
+    "target": "cultivar"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "NaCl",
+    "type": "blue",
+    "target": "flavonoids"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "NaCl",
+    "type": "blue",
+    "target": "NaCl"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "B. napus"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "B. napus L"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "NaCl",
+    "type": "red",
+    "target": "salinity"
+  },
+  {
+    "source": "NaCl",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "NaCl",
+    "type": "red",
+    "target": "oxidative"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "B. napus"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "B. napus L"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "B. napus"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "B. napus L"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "AtDFR",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "B. napus"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "B. napus L"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "salinity"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "1,1-diphenyl-2-picryl-hydrazyl",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "B. napus"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "B. napus L"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "AtDFR-OX",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "B. napus"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "B. napus L"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "salinity"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "drought"
+  },
+  {
+    "source": "3,3-diaminobenzidine",
+    "type": "purple",
+    "target": "oxidative"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "B. napus"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "B. napus L"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "DFR",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "B. napus"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "B. napus L"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "dihydroflavonol-4-reductase",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "3,3-diaminobenzidine"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "1,1-diphenyl-2-picryl-hydrazyl"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "Brassica napus"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "B. napus"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "B. napus L"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "Brassica napus L"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "KEY",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Brassica napus",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "B. napus",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "B. napus L",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "oxygen"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "Flavonoids"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "mannitol"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "dihydroflavonol"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "chlorophyll"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "Brassica napus L",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "oxygen",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "oxygen",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "oxygen",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Flavonoids",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "Flavonoids",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "mannitol",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "mannitol",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "mannitol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "dihydroflavonol",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "dihydroflavonol",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "dihydroflavonol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "flavonoids",
+    "type": "blue",
+    "target": "salinity"
+  },
+  {
+    "source": "chlorophyll",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "chlorophyll",
+    "type": "green",
+    "target": "drought"
+  },
+  {
+    "source": "chlorophyll",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "SUMO",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MdMYB1",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MYB",
+    "type": "purple",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MdSIZ1",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MdMYB1-interacting",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MBW",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MYB-bHLH-WD40",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "Malus domestica"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "apple"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "yeast"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "apples"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "CoIP",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "Malus domestica",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Malus domestica",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "Malus domestica",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "Malus domestica",
+    "type": "gray",
+    "target": "in vitro"
+  },
+  {
+    "source": "Malus domestica",
+    "type": "gray",
+    "target": "in vivo"
+  },
+  {
+    "source": "apple",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "apple",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "apple",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "apple",
+    "type": "gray",
+    "target": "in vitro"
+  },
+  {
+    "source": "apple",
+    "type": "gray",
+    "target": "in vivo"
+  },
+  {
+    "source": "yeast",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "yeast",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "yeast",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "yeast",
+    "type": "gray",
+    "target": "in vitro"
+  },
+  {
+    "source": "yeast",
+    "type": "gray",
+    "target": "in vivo"
+  },
+  {
+    "source": "apples",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "apples",
+    "type": "green",
+    "target": "phosphorus"
+  },
+  {
+    "source": "apples",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "apples",
+    "type": "gray",
+    "target": "in vitro"
+  },
+  {
+    "source": "apples",
+    "type": "gray",
+    "target": "in vivo"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "anthocyanin",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "phosphorus",
+    "type": "green",
+    "target": "low temperature"
+  },
+  {
+    "source": "phosphorus",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "phosphorus",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "low temperature",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "low temperature",
+    "type": "green",
+    "target": "in vivo"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "MYB",
+    "type": "purple",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "human"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "Fragaria vesca"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "human"
+  },
+  {
+    "source": "cyanidin-3-glucoside",
+    "type": "purple",
+    "target": "Fragaria vesca"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "cyanidin-3-glucoside"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "human"
+  },
+  {
+    "source": "RT-qPCR",
+    "type": "green",
+    "target": "Fragaria vesca"
+  },
+  {
+    "source": "human",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "human",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "human",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "human",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "human",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "human",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "Fragaria vesca",
+    "type": "green",
+    "target": "anthocyanin"
+  },
+  {
+    "source": "Fragaria vesca",
+    "type": "green",
+    "target": "flavonol"
+  },
+  {
+    "source": "Fragaria vesca",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "Fragaria vesca",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Fragaria vesca",
+    "type": "green",
+    "target": "flavonols"
+  },
+  {
+    "source": "Fragaria vesca",
+    "type": "green",
+    "target": "polyphenols"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "TT2-type",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "TT2",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "MtLAR",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "R2R3-type",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "MtANR",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "MtDFR",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "AtTT2",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "GhMYBs",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "MYB",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "tt2",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "PAs",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "PAs",
+    "type": "purple",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "PAs",
+    "type": "purple",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "PAs",
+    "type": "purple",
+    "target": "cotton"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "MAIN",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "PAs"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "Gossypium hirsutum"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "Medicago truncatula"
+  },
+  {
+    "source": "GUS",
+    "type": "green",
+    "target": "cotton"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "Gossypium hirsutum",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "Medicago truncatula",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "cholesterol"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "anthocyanidin"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "Proanthocyanidins"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "leucoanthocyanidin"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "tannins"
+  },
+  {
+    "source": "cotton",
+    "type": "green",
+    "target": "proanthocyanidin"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "luteolin"
+  },
+  {
+    "source": "NaCl",
+    "type": "blue",
+    "target": "luteolin-7-O-glucoside"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "caffeic"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "chlorogenic acid"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "ferulic acid"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "quercitrin"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "kaempferol"
+  },
+  {
+    "source": "NaCl",
+    "type": "blue",
+    "target": "quercetin-3-O-glucoside"
+  },
+  {
+    "source": "NaCl",
+    "type": "blue",
+    "target": "quercetin-3-O-glucuronide"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "phenolic acids"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "quercetin"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "Phenolics"
+  },
+  {
+    "source": "NaCl",
+    "type": "green",
+    "target": "rutin"
+  },
+  {
+    "source": "NaCl",
+    "type": "blue",
+    "target": "CO2"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "luteolin"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "luteolin-7-O-glucoside"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "caffeic"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "chlorogenic acid"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "ferulic acid"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "quercitrin"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "kaempferol"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "blue",
+    "target": "quercetin-3-O-glucoside"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "blue",
+    "target": "quercetin-3-O-glucuronide"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "phenolic acids"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "quercetin"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "Phenolics"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "green",
+    "target": "rutin"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "blue",
+    "target": "CO2"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "blue",
+    "target": "salinity"
+  },
+  {
+    "source": "luteolin-7-O-glucoside",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "luteolin"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "luteolin-7-O-glucoside"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "caffeic"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "chlorogenic acid"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "ferulic acid"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "quercitrin"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "kaempferol"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "quercetin-3-O-glucoside"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "quercetin-3-O-glucuronide"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "phenolic acids"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "quercetin"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "Phenolics"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "rutin"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "NaCl"
+  },
+  {
+    "source": "mM",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "luteolin"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "caffeic"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "chlorogenic acid"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "ferulic acid"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "quercitrin"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "kaempferol"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "quercetin-3-O-glucoside"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "blue",
+    "target": "quercetin-3-O-glucuronide"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "phenolic acids"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "quercetin"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "Phenolics"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "green",
+    "target": "rutin"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "blue",
+    "target": "CO2"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "blue",
+    "target": "salinity"
+  },
+  {
+    "source": "quercetin-3-O-glucoside",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "luteolin"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "caffeic"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "chlorogenic acid"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "ferulic acid"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "quercitrin"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "kaempferol"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "quercetin-3-O-glucuronide"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "phenolic acids"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "quercetin"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "Phenolics"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "green",
+    "target": "rutin"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "blue",
+    "target": "CO2"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "blue",
+    "target": "salinity"
+  },
+  {
+    "source": "quercetin-3-O-glucuronide",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "luteolin"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "caffeic"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "phenolics"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "chlorogenic acid"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "ferulic acid"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "quercitrin"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "kaempferol"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "phenolic acids"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "quercetin"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "cyanidin"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "Phenolics"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "flavonoids"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "rutin"
+  },
+  {
+    "source": "CO2",
+    "type": "green",
+    "target": "CO2"
+  },
+  {
+    "source": "CO2",
+    "type": "blue",
+    "target": "salinity"
+  },
+  {
+    "source": "CO2",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "luteolin",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "luteolin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "caffeic",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "caffeic",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "phenolics",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "phenolics",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "chlorogenic acid",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "chlorogenic acid",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "ferulic acid",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "ferulic acid",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "quercitrin",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "quercitrin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "kaempferol",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "kaempferol",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "phenolic acids",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "phenolic acids",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "quercetin",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "quercetin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "cyanidin",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "cyanidin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "Phenolics",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "Phenolics",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "rutin",
+    "type": "green",
+    "target": "salinity"
+  },
+  {
+    "source": "rutin",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "acrylamide"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "kaempferol rhamnosylhexoside"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "quercetin hexoside"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "cyanidin-3-O-rutinoside"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "quercetin-3-O-rutinoside"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "phenolic"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "flavonoid glycosides"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "cyanidin-3-O-glucoside"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "quercetin rhamnosylhexoside hexoside"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MBE",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "acrylamide"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "kaempferol rhamnosylhexoside"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "quercetin hexoside"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "cyanidin-3-O-rutinoside"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "blue",
+    "target": "quercetin-3-O-rutinoside"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "phenolic"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "flavonoid glycosides"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "blue",
+    "target": "cyanidin-3-O-glucoside"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "green",
+    "target": "quercetin rhamnosylhexoside hexoside"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "cyanidin-3-O-rutinoside",
+    "type": "blue",
+    "target": "in vitro"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "acrylamide"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "kaempferol rhamnosylhexoside"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "quercetin hexoside"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "quercetin-3-O-rutinoside"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "phenolic"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "flavonoid glycosides"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "blue",
+    "target": "cyanidin-3-O-glucoside"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "green",
+    "target": "quercetin rhamnosylhexoside hexoside"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "quercetin-3-O-rutinoside",
+    "type": "blue",
+    "target": "in vitro"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "acrylamide"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "kaempferol rhamnosylhexoside"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "quercetin hexoside"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "phenolic"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "flavonoid glycosides"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "cyanidin-3-O-glucoside"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "green",
+    "target": "quercetin rhamnosylhexoside hexoside"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "blue",
+    "target": "oxidative"
+  },
+  {
+    "source": "cyanidin-3-O-glucoside",
+    "type": "blue",
+    "target": "in vitro"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "acrylamide"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "kaempferol rhamnosylhexoside"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "quercetin hexoside"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "cyanidin-3-O-rutinoside"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "quercetin-3-O-rutinoside"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "phenolic"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "flavonoid glycosides"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "cyanidin-3-O-glucoside"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "quercetin rhamnosylhexoside hexoside"
+  },
+  {
+    "source": "ROS",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "anthocyanins"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "acrylamide"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "kaempferol rhamnosylhexoside"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "quercetin hexoside"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "glutathione"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "cyanidin-3-O-rutinoside"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "quercetin-3-O-rutinoside"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "phenolic"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "flavonoid glycosides"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "cyanidin-3-O-glucoside"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "quercetin rhamnosylhexoside hexoside"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "MBD",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "anthocyanins",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "acrylamide",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "acrylamide",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "kaempferol rhamnosylhexoside",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "kaempferol rhamnosylhexoside",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "quercetin hexoside",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "quercetin hexoside",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "glutathione",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "phenolic",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "phenolic",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "flavonoid glycosides",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "flavonoid glycosides",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "quercetin rhamnosylhexoside hexoside",
+    "type": "green",
+    "target": "oxidative"
+  },
+  {
+    "source": "quercetin rhamnosylhexoside hexoside",
+    "type": "green",
+    "target": "in vitro"
+  },
+  {
+    "source": "oxidative",
+    "type": "green",
+    "target": "in vitro"
+  }
+]

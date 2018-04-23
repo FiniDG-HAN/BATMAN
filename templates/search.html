@@ -3,6 +3,7 @@
 {% block title %}BATMAN&#8482; - Search{% endblock %}
 
 {% block content %}
-	<h2>This page is empty...</h2>
-	<img src="{{ url_for('static', filename='img/sadbatman.gif')}}" alt="Batman is sad.">
+	<h2>Graph</h2>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="{{ url_for('static', filename='js/graph.js') }}"></script>
 {% endblock %}
