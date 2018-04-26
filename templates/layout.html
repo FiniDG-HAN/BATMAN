@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+     integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
     <link rel="icon" href="{{ url_for('static', filename='img/batmanlogo.png')}}">
     <meta name="viewport" content="width=device-width">
@@ -12,28 +13,40 @@
     {% if active_page == 'contact' %}<script src='https://www.google.com/recaptcha/api.js'></script>{% endif %}
   </head>
   <body>
-    <header class="container">
-  		<div id="logo">
-  			<p style="float: left;"><a href="{{ url_for('pacman') }}"><img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80"></a></p>
-  			<p><h1><a href="{{ url_for('index') }}" >BATMAN</a></h1></p>
-  		</div>
-  		<div id="nav">
-  			<ul>
-  				<li><a {% if active_page == 'home' %}class="active"{% endif %} href="{{ url_for('index') }}">Home</a></li>
-  				<li><a {% if active_page == 'about' %}class="active"{% endif %} href="{{ url_for('about') }}">About</a></li>
-  				<li><a {% if active_page == 'search' %}class="active"{% endif %} href="{{ url_for('search') }}">Search</a></li>
-  				<li><a {% if active_page == 'help' %}class="active"{% endif %} href="{{ url_for('help') }}">Help</a></li>
-  				<li><a {% if active_page == 'contact' %}class="active"{% endif %} href="{{ url_for('contact') }}">Contact</a></li>
-  			</ul>
-  		</div>
+    <!-- Header bar -->
+    <header>
+      <!-- Branding -->
+      <div id="logo">
+        <a style="float:left;" href="{{ url_for('pacman') }}">
+          <img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80">
+        </a>
+        <p><h1><a href="{{ url_for('index') }}" >BATMAN</a></h1></p>
+      </div>
+      <div class="container">
+        <!-- Navigation -->
+    		<div id="nav">
+    			<ul>
+    				<li><a {% if active_page == 'home' %}class="active"{% endif %} href="{{ url_for('index') }}">Home</a></li>
+    				<li><a {% if active_page == 'about' %}class="active"{% endif %} href="{{ url_for('about') }}">About</a></li>
+    				<li><a {% if active_page == 'search' %}class="active"{% endif %} href="{{ url_for('search') }}">Search</a></li>
+    				<li><a {% if active_page == 'help' %}class="active"{% endif %} href="{{ url_for('help') }}">Help</a></li>
+    				<li><a {% if active_page == 'contact' %}class="active"{% endif %} href="{{ url_for('contact') }}">Contact</a></li>
+    			</ul>
+    		</div>
+      </div>
   	</header>
+    <!-- Main section -->
     <div class="container">
-      {% block container %}{% endblock %}
       <div id="content">
         {% block content %}{% endblock %}
       </div>
+      <!-- Footer -->
       <div id="footer">
-        Copyright &copy; 2017-2018 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Jonathan Feenstra</a>, &nbsp;Fini De Gruyter, &nbsp;Alex Janse, Thijs Weenink &amp; <a href="https://www.dccomics.com/">DC Comics</a>
+        Copyright &copy; 2017-2018
+        <a href="{{ url_for('contact') }}">
+          Jonathan Feenstra, Fini De Gruyter, &nbsp;Alex Janse, Thijs Weenink
+        </a>
+        &amp; <a href="https://www.dccomics.com/">DC Comics</a>
       </div>
     </div>
   </body>

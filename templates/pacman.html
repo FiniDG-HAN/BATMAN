@@ -2,18 +2,20 @@
 {% block title %}BATMAN&#8482; - The Game{% endblock %}
 
 {% block content %}
-  <div id="pacman"></div>
-  <script src="{{ url_for('static', filename='js/pacman.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/modernizr-1.5.min.js') }}"></script>
-  <script>
-    var el = document.getElementById("pacman");
+<!-- Pacman game -->
+<div id="pacman"></div>
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='js/pacman.js') }}"></script>
+<script src="{{ url_for('static', filename='js/modernizr-1.5.min.js') }}"></script>
+<script>
+  var el = document.getElementById("pacman");
 
-    if (Modernizr.canvas && Modernizr.localstorage &&
-        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
-      window.setTimeout(function () { PACMAN.init(el, "../static/"); }, 0);
-    } else {
-      el.innerHTML = "Browser unsupported.<br /><small>" +
-        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
-    }
-  </script>
+  if (Modernizr.canvas && Modernizr.localstorage &&
+      Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+    window.setTimeout(function () { PACMAN.init(el, "../static/"); }, 0);
+  } else {
+    el.innerHTML = "Browser unsupported.<br /><small>" +
+      "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+  }
+</script>
 {% endblock %}

@@ -2,18 +2,23 @@
 {% set active_page = 'home' %}
 {% block title %}BATMAN&#8482; - Biomedical Article Text Mining ApplicatioN{% endblock %}
 
-{% block container %}
+{% block content %}
+<!-- Welcome image -->
 <section id="showcase">
 	<h1>Welcome to BATMAN&#8482;<br>Biomedical Article Text Mining ApplicatioN</h2>
 	<p>Investigating the health benefits of bitter gourd and yam compounds</p>
+	<form action="{{ url_for('search') }}">
+    <input type="submit" value="Graph">
+	</form>
 </section>
-{% endblock %}
-{% block content %}
+<!-- Info boxes -->
 <section id="boxes">
 	<div class="box">
 		<a href="https://www.ncbi.nlm.nih.gov/pubmed"><img src="{{ url_for('static', filename='img/pubmed-logo.png')}}" alt="PubMed"></a>
 		<h3>PubMed Articles</h3>
-		<p>Our data comes from very reliable <a href="https://www.ncbi.nlm.nih.gov/pubmed">PubMed</a> articles written by experienced certified scientists.</p>
+		<p>Our data comes from very reliable
+			<a href="https://www.ncbi.nlm.nih.gov/pubmed">PubMed</a>
+			 articles written by experienced certified scientists.</p>
 	</div>
 	<div class="box">
 		<img src="{{ url_for('static', filename='img/text-mining.png')}}" alt="Text Mining">
@@ -23,7 +28,10 @@
 	<div class="box">
 		<a href="https://github.com/d3/d3-force"><img src="{{ url_for('static', filename='img/force-layout.png')}}" alt="D3 Force"></a>
 		<h3>JavaScript D3 Force</h3>
-		<p>The graphic representation of the data in a <a href="{{ url_for('search') }}">dynamic graph</a> is achieved using the modern <a href="https://github.com/d3/d3-force">JavaScript D3 Force</a> technology.</p>
+		<p>The graphic representation of the data in a
+			<a href="{{ url_for('search') }}">dynamic graph</a>
+			 is achieved using the modern
+			<a href="https://github.com/d3/d3-force">JavaScript D3 Force</a> technology.</p>
 	</div>
 </section>
 {% endblock %}

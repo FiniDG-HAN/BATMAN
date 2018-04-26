@@ -9,11 +9,15 @@ body {
 }
 
 header {
-	background-color: #222;
-	width: 100%;
+	background-color: #202020;
+	position: fixed;
+	top: 0;
+	min-width: 100%;
 	min-height: 80px;
 	padding-top: 10px;
-	border-bottom: orange solid 3px;
+	border-bottom: orange solid 2px;
+	overflow: hidden;
+	z-index: 1;
 }
 
 .container {
@@ -25,8 +29,8 @@ header {
 .dark {
 	padding: 15px;
 	color: white;
-	background-color: #222;
-	border: orange solid 3px;
+	background-color: #202020;
+	border: orange solid 2px;
 	margin: 0;
 }
 
@@ -51,12 +55,13 @@ ul {
 
 /* Showcase */
 #showcase {
+	margin: -20px;
 	min-height: 400px;
 	background: url(../img/showcase.jpg) no-repeat 0 -650px;
 	text-align: center;
 	color: white;
 	overflow: hidden;
-	border-bottom: orange solid 3px;
+	border-bottom: orange solid 2px;
 }
 
 #showcase h1 {
@@ -67,6 +72,20 @@ ul {
 
 #showcase p {
 	font-size: 28px;
+}
+
+#showcase form input[type=submit] {
+	margin-top: 10px;
+	background-color: orange;
+	color: white;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding: 10px 50px;
+	border: none;
+}
+
+#showcase form input[type=submit]:hover {
+	background-color: darkorange;
 }
 
 /* Boxes */
@@ -89,6 +108,7 @@ ul {
 
 /* Content */
 #content {
+	margin-top: 90px;
 	background-color: white;
 	padding: 20px;
 	overflow: hidden;
@@ -96,14 +116,11 @@ ul {
 
 /* Logo */
 #logo {
+	position: absolute;
 	margin-left: 10px;
 	float: left;
 	width: 50%;
 	text-align: center;
-}
-
-#logo p {
-	margin: 0;
 }
 
 #logo h1 {
@@ -112,11 +129,11 @@ ul {
 	font-weight: bold;
 	font-size: 40px;
 	text-shadow: -1px 0 orange, 0 1px orange, 1px 0 black, 0 -1px black;
-	color: yellow;
+	color: #FFF200;
 }
 
 #logo a {
-	color: yellow;
+	color: #FFF200;
 }
 
 #logo a:hover {
@@ -126,7 +143,9 @@ ul {
 /* Nav */
 #nav {
 	float: right;
-	margin: 20px 0 0 10px;
+	font-weight: bold;
+	margin: 20px 0;
+	padding-bottom: 20px;
 }
 
 #nav li {
@@ -144,45 +163,45 @@ ul {
 
 #nav li a:hover {
 	color: orange;
-	font-weight: bold;
 }
 
 #nav .active {
-	color: yellow;
-	font-weight: bold;
+	color: #FFF200;
 }
 
-/* Form */
-form {
+/* Message form */
+form#message {
 	overflow: hidden;
 }
 
-form input, textarea {
+form#message input, textarea {
 	border: #CCC solid 2px;
 	width: 100%;
 	box-sizing: border-box;
 }
 
-form textarea {
+form#message textarea {
 	height: 10em;
+	resize: none;
 }
 
-form input:focus, textarea:focus {
+form#message input:focus, textarea:focus {
 	outline: none;
 	border: orange solid 2px;
 }
 
-form input[type=submit] {
-	background: #222 url('../img/batmanlogo.png') no-repeat 3%;
+form#message input[type=submit] {
+	background: #202020 url('../img/batmanlogo.png') no-repeat 3%;
 	background-size: 50px;
 	color: white;
 	font-size: 18px;
 	padding: 10px;
 	text-transform: uppercase;
 	margin-bottom: 2px;
+	border: none;
 }
 
-form .wrapper {
+form#message .wrapper {
 	display: flex;
 }
 
@@ -219,7 +238,7 @@ a.linkedin  {
 
 a.github {
 	text-decoration: none;
-	color: #222;
+	color: #202020;
 }
 
 /* Pacman */
@@ -231,11 +250,11 @@ a.github {
 
 /* Footer */
 #footer {
-	background-color: #222;
+	background-color: #202020;
 	color: white;
 	padding: 20px;
 	text-align: right;
-	border-top: orange 3px solid;
+	border-top: orange 2px solid;
 	clear: both;
 }
 
@@ -245,17 +264,51 @@ a.github {
 }
 
 /* Media queries */
-@media(max-width: 1400px) {
-	#logo, #nav, #nav li, article#main-col, aside#sidebar, #boxes .box {
+@media(max-width: 1200px) {
+	#logo, #nav, #nav li,
+	article.main-col,
+	aside.sidebar,
+	form,	h1, h2, h3,
+	#boxes .box {
+		position: static;
 		float: none;
 		text-align: center;
 		width: 100%;
 	}
 
 	header {
-		margin-bottom: 20px;
-		padding-bottom: 10px;
+		position: static;
 	}
 
+	#showcase h1 {
+		margin-top: 100px;
+		font-size: 26px;
+	}
 
+	#showcase p {
+		font-size: 22px;
+	}
+
+	#content {
+		margin-top: 0;
+	}
+
+}
+
+@media(max-width: 800px) {
+	#logo {
+		display: none;
+	}
+
+	#showcase {
+		display: none;
+	}
+
+	form#message .wrapper {
+		display: inline;
+	}
+
+	#footer {
+		font-size: 12px;
+	}
 }
