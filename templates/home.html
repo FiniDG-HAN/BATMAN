@@ -1,16 +1,45 @@
 {% extends 'layout.html' %}
 {% set active_page = 'home' %}
-{% block title %}BATMAN&#8482; - Biomedical Article Text Mining ApplicatioN{% endblock %}
+{% block title %}BATMAN - Biomedical Article Text Mining ApplicatioN{% endblock %}
 
 {% block content %}
-<!-- Welcome image -->
-<section id="showcase">
-	<h1>Welcome to BATMAN&#8482;<br>Biomedical Article Text Mining ApplicatioN</h2>
-	<p>Investigating the health benefits of bitter gourd and yam compounds</p>
-	<form action="{{ url_for('search') }}">
-    <input type="submit" value="Graph">
-	</form>
-</section>
+<!-- Slider -->
+<div class="slider-wrapper">
+	<div class="slider">
+		<ul class="slides">
+			<li>
+				<img src="{{ url_for('static', filename='img/batman.gif') }}">
+				<div class="caption">
+					<h1>Welcome to BATMAN<br>Biomedical Article Text Mining ApplicatioN</h1>
+					<p>Investigating the health benefits of bitter gourd and yam compounds</p>
+					<form action="{{ url_for('search') }}">
+				    <input type="submit" value="Graph">
+					</form>
+				</div>
+			</li>
+			<li>
+				<img src="{{ url_for('static', filename='img/c-elegans.jpg') }}">
+				<div class="caption left-align">
+					<h1>Feeding yam and bitter gourd to <i>C. elegans</i></h1>
+					<p>The health effects of yam and bitter gourd are currently being researched on <i>Caenorhabditis elegans</i></p>
+					<form action="{{ url_for('about') }}">
+						<input type="submit" value="Learn more">
+					</form>
+				</div>
+			</li>
+			<li>
+				<img src="{{ url_for('static', filename='img/showcase.jpg') }}">
+				<div class="caption right-align">
+					<h1>Text mining results for the investigation</h1>
+					<p>The results are based on the co-occurence of keywords in PubMed articles</p>
+					<form action="{{ url_for('search') }}">
+				    <input type="submit" value="Results">
+					</form>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 <!-- Info boxes -->
 <section id="boxes">
 	<div class="box">
@@ -28,10 +57,16 @@
 	<div class="box">
 		<a href="https://github.com/d3/d3-force"><img src="{{ url_for('static', filename='img/force-layout.png')}}" alt="D3 Force"></a>
 		<h3>JavaScript D3 Force</h3>
-		<p>The graphic representation of the data in a
-			<a href="{{ url_for('search') }}">dynamic graph</a>
+		<p>The visual representation of the data in an
+			<a href="{{ url_for('search') }}">interactive graph</a>
 			 is achieved using the modern
 			<a href="https://github.com/d3/d3-force">JavaScript D3 Force</a> technology.</p>
 	</div>
 </section>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript">
+	M.Slider.init(document.querySelector('.slider'));
+</script>
 {% endblock %}

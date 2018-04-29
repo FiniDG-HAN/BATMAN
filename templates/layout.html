@@ -8,9 +8,8 @@
      integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
     <link rel="icon" href="{{ url_for('static', filename='img/batmanlogo.png')}}">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    {% if active_page == 'contact' %}<script src='https://www.google.com/recaptcha/api.js'></script>{% endif %}
   </head>
   <body>
     <!-- Header bar -->
@@ -35,7 +34,7 @@
     		</div>
       </div>
   	</header>
-    <!-- Main section -->
+    <!-- Main content -->
     <div class="container">
       <div id="content">
         {% block content %}{% endblock %}
@@ -49,5 +48,6 @@
         &amp; <a href="https://www.dccomics.com/">DC Comics</a>
       </div>
     </div>
+    {% block scripts %}{% endblock %}
   </body>
 </html>

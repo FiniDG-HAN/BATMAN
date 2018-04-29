@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 {% set active_page = 'contact' %}
-{% block title %}BATMAN&#8482; - Contact{% endblock %}
+{% block title %}BATMAN - Contact{% endblock %}
 
 {% block content %}
 <!-- Top -->
 <div>
 	<p><b>Important:</b> Please make sure to consult the <a href="{{ url_for('help') }}">help page</a> before contacting the staff.</p>
-	<h2>BATMAN&#8482; Staff</h2>
+	<h2>BATMAN Staff</h2>
 </div>
 <!-- Left column -->
 <article class="main-col">
@@ -88,11 +88,15 @@
 			<div style='overflow:hidden;color:black;'>
 				<div id='gmap_canvas' style='height:300px;width:100%;'></div>
 			</div>
-			<script type='text/javascript'>
-				function init_map(){var myOptions = {zoom:6,center:new google.maps.LatLng(51.8267192,5.863048899999967),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.8267192,5.863048899999967)});infowindow = new google.maps.InfoWindow({content:'<strong>The Batcave&#8482;</strong><br>Laan van Scheut 2, Nijmegen, Nederland<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
-			</script>
 		<p> Opening hours: Monday to Friday 8:45 AM - 10:00 PM.</p>
 		<p>&#9743; 024-353-1650</p>
 	</div>
 </aside>
+{% endblock %}
+{% block scripts %}
+<!-- JavaScript -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type='text/javascript'>
+	function init_map(){var myOptions = {zoom:6,center:new google.maps.LatLng(51.8267192,5.863048899999967),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.8267192,5.863048899999967)});infowindow = new google.maps.InfoWindow({content:'<strong>The Batcave</strong><br>Laan van Scheut 2, Nijmegen, Nederland<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
+</script>
 {% endblock %}

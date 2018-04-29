@@ -1,9 +1,11 @@
 {% extends 'layout.html' %}
-{% block title %}BATMAN&#8482; - The Game{% endblock %}
+{% block title %}BATMAN - The Game{% endblock %}
 
 {% block content %}
 <!-- Pacman game -->
 <div id="pacman"></div>
+{% endblock %}
+{% block scripts %}
 <!-- JavaScript -->
 <script src="{{ url_for('static', filename='js/pacman.js') }}"></script>
 <script src="{{ url_for('static', filename='js/modernizr-1.5.min.js') }}"></script>
