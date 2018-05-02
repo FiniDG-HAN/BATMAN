@@ -16,14 +16,16 @@
     <header>
       <!-- Branding -->
       <div id="logo">
-        <a style="float:left;" href="{{ url_for('pacman') }}">
+        <a href="{{ url_for('pacman') }}">
           <img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80">
         </a>
-        <p><h1><a href="{{ url_for('index') }}" >BATMAN</a></h1></p>
+      </div>
+      <div id="branding">
+        <h1><a href="{{ url_for('index') }}" >BATMAN</a></h1>
       </div>
       <div class="container">
         <!-- Navigation -->
-    		<div id="nav">
+    		<div class="nav">
     			<ul>
     				<li><a {% if active_page == 'home' %}class="active"{% endif %} href="{{ url_for('index') }}">Home</a></li>
     				<li><a {% if active_page == 'about' %}class="active"{% endif %} href="{{ url_for('about') }}">About</a></li>
@@ -31,7 +33,17 @@
     				<li><a {% if active_page == 'help' %}class="active"{% endif %} href="{{ url_for('help') }}">Help</a></li>
     				<li><a {% if active_page == 'contact' %}class="active"{% endif %} href="{{ url_for('contact') }}">Contact</a></li>
     			</ul>
-    		</div>
+        </div>
+      </div>
+      <div class="nav">
+        <ul id="session">
+          {% if session.logged_in %}
+          <li><a {% if active_page == 'logout' %}class="active"{% endif %} href="{{ url_for('logout') }}">Logout</a></li>
+          {% else %}
+          <li><a {% if active_page == 'login' %}class="active"{% endif %} href="{{ url_for('login') }}">Login</a></li>
+          <li><a {% if active_page == 'register' %}class="active"{% endif %} href="{{ url_for('register') }}">Register</a></li>
+          {% endif %}
+        </ul>
       </div>
   	</header>
     <!-- Main content -->

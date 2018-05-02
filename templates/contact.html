@@ -68,10 +68,10 @@
 	<!-- Message form -->
 	<h2>Send us a message</h2>
 		<form id="message" action="https://formspree.io/JCD.Feenstra@student.han.nl" method="POST">
-			<label><span>Name</span><input type="text" name="name" placeholder="John Doe"></label>
-			<label><span>Email</span><input type="email" name="_replyto" placeholder="&#x2709; john.doe@example.org"></label>
+			<label><span>Name</span><input type="text" name="name" placeholder="John Doe" value="{% if session.logged_in %}session.name{% endif %}"></label>
+			<label><span>Email</span><input type="email" name="_replyto" placeholder="&#x2709; john.doe@example.org" value="{% if session.logged_in %}session.email{% endif %}"></label>
 			<label><span>Message</span>
-				<textarea name="message" placeholder="Dear BATMAN staff,&#13;&#10;&#13;&#10;...&#13;&#10;&#13;&#10;Sincerely,&#13;&#10;&#13;&#10;John Doe"></textarea>
+				<textarea name="message" placeholder="Dear BATMAN staff,&#13;&#10;&#13;&#10;...&#13;&#10;&#13;&#10;Sincerely,&#13;&#10;&#13;&#10;{% if session.logged_in %}session.name{% else %}John Doe{% endif %}"></textarea>
 			</label>
 			<div class="wrapper">
 				<div class="g-recaptcha" data-sitekey="6LcpFFQUAAAAAEL30BerQwoYrOEmxH9k4gud1GQH"></div>
@@ -81,20 +81,22 @@
 </article>
 <!-- Right column -->
 <aside class="sidebar">
-	<div class="dark">
+	<div class="widget">
 		<!-- Google Maps -->
-		<h2>Location</h2>
-			<script src='https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCnNRRcAar6Nd4a_TrOC9IikmAn-tya2R8'></script>
-			<div style='overflow:hidden;color:black;'>
-				<div id='gmap_canvas' style='height:300px;width:100%;'></div>
+		<h1><i class="fas fa-map-marker-alt"></i> &nbsp;Location</h2>
+			<div class="widget-content">
+				<div style='overflow:hidden;color:black;'>
+					<div id='gmap_canvas' style='height:300px;width:100%;'></div>
+				</div>
+			<p> Opening hours: Monday to Friday 8:45 AM - 10:00 PM.</p>
+			<p>&#9742; &nbsp;024-353-1650</p>
 			</div>
-		<p> Opening hours: Monday to Friday 8:45 AM - 10:00 PM.</p>
-		<p>&#9743; 024-353-1650</p>
 	</div>
 </aside>
 {% endblock %}
 {% block scripts %}
 <!-- JavaScript -->
+<script src='https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCnNRRcAar6Nd4a_TrOC9IikmAn-tya2R8'></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script type='text/javascript'>
 	function init_map(){var myOptions = {zoom:6,center:new google.maps.LatLng(51.8267192,5.863048899999967),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.8267192,5.863048899999967)});infowindow = new google.maps.InfoWindow({content:'<strong>The Batcave</strong><br>Laan van Scheut 2, Nijmegen, Nederland<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);
