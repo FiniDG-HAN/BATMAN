@@ -10,7 +10,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-__version__ = '0.2'
+__version__ = '0.3'
 
 
 from functools import wraps
@@ -52,10 +52,10 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/search')
-def search():
-    """Render the 'search.html' template."""
-    return render_template('search.html')
+@app.route('/network')
+def network():
+    """Render the 'network.html' template."""
+    return render_template('network.html')
 
 
 @app.route('/help')

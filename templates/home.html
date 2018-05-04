@@ -12,8 +12,8 @@
 				<div class="caption center-align">
 					<h1>Welcome to BATMAN<br>Biomedical Article Text Mining ApplicatioN</h1>
 					<p>Investigating the health benefits of bitter gourd and yam compounds</p>
-					<form action="{{ url_for('search') }}">
-				    <input type="submit" value="Graph">
+					<form action="{{ url_for('network') }}">
+				    <input type="submit" value="Results">
 					</form>
 				</div>
 			</li>
@@ -32,8 +32,8 @@
 				<div class="caption center-align">
 					<h1>Text mining results for the investigation</h1>
 					<p>The results are based on the co-occurence of keywords in PubMed articles</p>
-					<form action="{{ url_for('search') }}">
-				    <input type="submit" value="Results">
+					<form action="{{ url_for('about') }}">
+				    <input type="submit" value="Learn more">
 					</form>
 				</div>
 			</li>
@@ -68,7 +68,7 @@
 		<a href="https://github.com/d3/d3-force"><img src="{{ url_for('static', filename='img/force-layout.png')}}" alt="D3 Force"></a>
 		<h3>JavaScript D3 Force</h3>
 		<p>The visual representation of the data in an
-			<a href="{{ url_for('search') }}">interactive graph</a>
+			<a href="{{ url_for('network') }}">interactive network</a>
 			 is achieved using the modern
 			<a href="https://github.com/d3/d3-force">JavaScript D3 Force</a> technology.</p>
 	</div>
@@ -80,12 +80,22 @@
 		<div class="widget-content">
 			<ul class="news">
 				<li>
-					<h3>Release notes version 0.2<span class="info">by Jonathan Feenstra, 02-05-2018</span></h3>
+					<h3>Changelog version 0.3<span class="info">by Jonathan Feenstra, 04-05-2018</span></h3>
+					<p>
+						<ul>
+							<li>Completed <a href="{{ url_for('about') }}">About page</a></li>
+							<li>Added network graph with drag and zoom options</li>
+							<li>Added Search option</li>
+						</ul>
+					</p>
+				</li>
+				<li>
+					<h3>Changelog version 0.2<span class="info">by Jonathan Feenstra, 02-05-2018</span></h3>
 					<p>
 						<ul>
 							<li>Added slider image</li>
 							<li>Added PubMed chart</li>
-							<li>Added login and register pages</li>
+							<li>Added <a href="{{ url_for('login') }}">login</a> and <a href="{{ url_for('register') }}">register</a> pages</li>
 							<li>Added news widget</li>
 							<li>Changed box shadows</li>
 						</ul>
@@ -93,10 +103,6 @@
 				</li>
 				<li>
 					<h3>Lorem ipsum<span class="info">by Marcus Tullius Cicero, 45 BC</span></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</li>
-				<li>
-					<h3>More lorem ipsum<span class="info">by Marcus Tullius Cicero, 45 BC</span></h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</li>
 			</ul>
@@ -107,15 +113,16 @@
 		<canvas id="chart"></canvas>
 	</div>
 </section>
+<div class="clear"></div>
 {% endblock %}
 {% block scripts %}
 <!-- CDN's -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
 <!-- Slider -->
 <script type="text/javascript">
 	M.Slider.init(document.querySelector('.slider'));
 </script>
 <!-- Chart -->
-<script src="{{ url_for('static', filename='js/pubmed-chart.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/pubmed-chart.js') }}"></script>
 {% endblock %}

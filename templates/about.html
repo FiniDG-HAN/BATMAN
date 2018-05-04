@@ -6,18 +6,32 @@
 <h1>About us</h1>
 <!-- Left column -->
 <article class="main-col">
-	<p>We are a group of second year Bioinformatics students at the <a href="https://www.han.nl/">HAN University of Applied Sciences</a> working on a project with the aim of investigating the health benefits of yam and bitter gourd compounds.</p>
+	<p>We are a group of <a href="{{ url_for('contact') }}">four second year Bioinformatics students</a> at the <a href="https://www.han.nl/">HAN University of Applied Sciences</a>, working on a project with the aim of investigating the health benefits of yam and bitter gourd compounds.</p>
 	<h2>The project</h2>
-	<p>Yam (<i>Dioscorea</i>) and bitter gourd (<i>Momordica charantia</i>) are claimed to have a positive effect on sugar levels, skin, night vision, the immune system, menopause and so on. In order to find out if these claims are true, scientific research is necessary. Therefore, it is important to first consider whether a link can be found between the characteristics of the plant and the possible consequences for the health of the consumer in the existing literature.</p>
-	<p>To manually read all the articles that are online and to find all of the connections by yourself would be very time-consuming. That is why we came up with the plan to develop an application that will visualize the links from the articles after an automated text mining process.</p>
-	<h2>To be continued...</h2>
-	<img src="{{ url_for('static', filename='img/sadbatman.gif')}}" alt="Batman is sad.">
+	<p>Yam (<i>Dioscorea</i>) and bitter gourd (<i>Momordica charantia</i>) are claimed to have positive effects on i.a. sugar levels, skin, night vision, the immune system and menopause. In order to find out if these claims are true, scientific research is necessary. Therefore, it is important to first consider whether a link can be found between the characteristics of the plant and the possible consequences for the health of the consumer in the existing literature.</p>
+	<br>
+	<p>To manually read all the online articles and to find all of the connections by yourself would be a very repetetive and time-consuming task. Hence, we came up with the plan to develop an application that will visualize the links between the compounds and health effects from the articles after an automated text mining process. That is how this web application came into being.</p>
+	<br>
+	<p>In addition to the literature research via text mining, the health effects of yam and bitter gourd compounds are currently being researched on <i>Caenorhabditis elegans</i>, a nematode which is extensively used as a model organism. By feeding the worms with yam and bitter gourd and observing their response, we can learn more about the health effects of these vegetables.</p>
 </article>
 <!-- Right column -->
 <aside class="sidebar">
-	<div class="dark">
-		<h2>The HAN University of Applied Sciences</h2>
-		<img src="{{ url_for('static', filename='img/han-university.jpg')}}" alt="HAN University of Applied Sciences" style="width: 100%;">
+	<div class="widget">
+		<h1><i class="fas fa-graduation-cap"></i> &nbsp;The HAN University of Applied Sciences</h1>
+		<div class="widget-content">
+			<img class="imagebox" src="{{ url_for('static', filename='img/han-university.jpg')}}" alt="HAN University of Applied Sciences" style="width:100%;">
+		</div>
 	</div>
 </aside>
+<div class="clear"></div>
+{% endblock %}
+{% block scripts %}
+<!-- CDN -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<!-- Init imagebox -->
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function() {
+		var instances = M.Materialbox.init(document.querySelector('.imagebox'));
+	});
+</script>
 {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% set active_page = 'network' %}
+{% block title %}BATMAN - Network{% endblock %}
+
+{% block content %}
+<h2>Network</h2>
+<article class="main-col">
+  <svg id="network"></svg>
+  <input id="release" type="submit" value="Release all nodes">
+</article>
+<aside class="sidebar">
+  <div class="widget">
+    <h1><i class="fas fa-search"></i> &nbsp;Search</h1>
+    <div id="search-widget">
+      <label>Search: </label>
+      <input id="search" type="text" onkeydown="javascript: if (event.keyCode==13) search();" placeholder="Bitter gourd, diabetes, etc...">
+    </div>
+  </div>
+</aside>
+<div class="clear"></div>
+{% endblock %}
+{% block scripts %}
+<!-- CDN's -->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='js/network.js') }}"></script>
+{% endblock %}

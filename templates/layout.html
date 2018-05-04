@@ -29,7 +29,7 @@
     			<ul>
     				<li><a {% if active_page == 'home' %}class="active"{% endif %} href="{{ url_for('index') }}">Home</a></li>
     				<li><a {% if active_page == 'about' %}class="active"{% endif %} href="{{ url_for('about') }}">About</a></li>
-    				<li><a {% if active_page == 'search' %}class="active"{% endif %} href="{{ url_for('search') }}">Search</a></li>
+    				<li><a {% if active_page == 'network' %}class="active"{% endif %} href="{{ url_for('network') }}">Network</a></li>
     				<li><a {% if active_page == 'help' %}class="active"{% endif %} href="{{ url_for('help') }}">Help</a></li>
     				<li><a {% if active_page == 'contact' %}class="active"{% endif %} href="{{ url_for('contact') }}">Contact</a></li>
     			</ul>
@@ -54,10 +54,8 @@
       <!-- Footer -->
       <div id="footer">
         Copyright &copy; 2017-2018
-        <a href="{{ url_for('contact') }}">
-          Jonathan Feenstra, Fini De Gruyter, &nbsp;Alex Janse, Thijs Weenink
-        </a>
-        &amp; <a href="https://www.dccomics.com/">DC Comics</a>
+        <a href="{{ url_for('contact') }}">Jonathan Feenstra, Fini De Gruyter, &nbsp;Alex Janse &amp; Thijs Weenink</a><br>
+        <small>Disclaimer: All product and company names and logos are trademarks™ or registered® trademarks of their respective holders. Use of them does not imply affiliation, association, authorization, endorsement by, or any official connection with them.</small>
       </div>
     </div>
     {% block scripts %}{% endblock %}
