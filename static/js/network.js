@@ -21,7 +21,7 @@ d3.json("../static/json/network.json", function(error, graph) {
     .data(graph.links)
     .enter().append("line")
     .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
-    .style("stroke", function(d) { return "rgba(60,100,200,0.2)"; });
+    .style("stroke", function(d) { return "rgba(40,60,170,0.15)"; });
 
  var node = g.append("g")
     .selectAll("circle")
@@ -45,10 +45,6 @@ d3.json("../static/json/network.json", function(error, graph) {
 			.on("end", dragended);
 
   draghandler(node);
-
-  var zoomhandler = d3.zoom()
-      .on("zoom", zoomed);
-
   zoomhandler(svg);
 
   // Labels
@@ -82,7 +78,7 @@ d3.json("../static/json/network.json", function(error, graph) {
     var nodeIds = graph.nodes.map(function(node) {
       return node["id"];
     });
-    $( "#search" ).autocomplete({
+    $("#search").autocomplete({
       source: nodeIds,
       autoFocus: true,
       classes: {"ui-autocomplete": "autocomplete"}
@@ -90,6 +86,9 @@ d3.json("../static/json/network.json", function(error, graph) {
   } );
 
 });
+
+var zoomhandler = d3.zoom()
+    .on("zoom", zoomed);
 
 function dragstarted(d) {
    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
@@ -117,24 +116,32 @@ function zoomed() {
 }
 
 function search() {
-  var query = document.getElementById('search').value;
-  var node = svg.selectAll("circle");
-  if (query == "none") {
-    console.log("none");
-  } else {
-    var otherNodes = node.filter(function(d, i) {
-        return d.id != query;
-    });
-    otherNodes.style("opacity", "0");
+  var query = document.getElementById("search").value;
+      node = svg.selectAll("circle");
+      foundNode = false;
+      otherNodes = node.filter(function(d, i) {
+        if (d.id == query) {
+          foundNode = d;
+          }
+          return d.id != query;
+      });
+  if (foundNode) {
+    document.getElementById("alert").style["display"] = "none";
+    otherNodes.style("opacity", "0.05");
     var link = svg.selectAll(".link");
-    link.style("opacity", "0");
+    link.style("opacity", "0.05");
     var label = svg.selectAll("text");
         otherLabels = label.filter(function(){
           return this.innerHTML != query;
         });
+    zoomhandler.translateTo(svg, foundNode.x, foundNode.y);
+    zoomhandler.scaleTo(svg, 2);
     otherLabels.style("opacity", "0");
     d3.selectAll("circle, .link, text").transition()
       .duration(3000)
       .style("opacity", 1);
+  } else {
+    document.getElementById("alert").style["display"] = "block";
   }
+
 }

@@ -19,12 +19,27 @@ or run this project on a server.
 
 ### Prerequisites
 
-* [Flask](http://flask.pocoo.org/) - v1.0 was used for this project.
+* [Flask](http://flask.pocoo.org/) - v1.0
+* [Flask-MySQLdb](https://flask-mysqldb.readthedocs.io/en/latest/) - v0.2.0
+* [PassLib](https://passlib.readthedocs.io/en/stable/) - v1.7.1
+* [WTForms](https://wtforms.readthedocs.io/en/stable/) - v2.1
 
 Install using [pip](https://pip.pypa.io/en/stable/quickstart/):
 
 ```
 pip install flask
+```
+
+```
+pip install flask-mysqldb
+```
+
+```
+pip install passlib
+```
+
+```
+pip install WTForms
 ```
 
 ## Built with
