@@ -11,10 +11,16 @@
 <aside class="sidebar">
   <div class="widget">
     <h1><i class="fas fa-search"></i> &nbsp;Search</h1>
-    <div id="search-widget">
+    <div id="search-widget" class="widget-content">
       <label>Search: </label>
       <input id="search" type="text" onkeydown="javascript: if (event.keyCode==13) search();" placeholder="Bitter gourd, diabetes, etc...">
       <p id="alert">Keyword not found.</p>
+      <div id="advanced">
+        <h1 id="clickable" onclick="toggleAdvanced();">+ More options</h1>
+        <div id="collapsible">
+          <select id="options" onchange="updateSearch();"></select>
+        </div>
+      </div>
       <input type="submit" value="Search" onclick="search();">
     </div>
   </div>
