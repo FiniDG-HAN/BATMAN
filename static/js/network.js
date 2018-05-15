@@ -16,7 +16,8 @@ var svg = d3.select("#network"),
 // Start simulation
 var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
-    .force("charge", d3.forceManyBody())
+    .force("charge", d3.forceManyBody()
+                       .strength(-150))
     .force("collide", d3.forceCollide(6))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -31,7 +32,7 @@ d3.json("../static/json/network.json", function(error, graph) {
        .data(graph.links)
        .enter().append("line")
        .attr("stroke-width", function(d) { return Math.sqrt(d.value); })
-       .style("stroke", function(d) { return "rgba(40,60,170,0.15)"; });
+       .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; });
 
    // Select nodes
    var node = g.append("g")
@@ -92,6 +93,9 @@ d3.json("../static/json/network.json", function(error, graph) {
   $( function() {
     $("#search").autocomplete({
       source: nodeIds,
+      messages: {
+        noResults: ""
+      },
       autoFocus: true,
       classes: {"ui-autocomplete": "autocomplete"}
     });
@@ -144,26 +148,38 @@ function zoomed() {
 // Expand or collapse advanced options
 function toggleAdvanced() {
   var collapsible = document.getElementById("collapsible");
-      clickable = document.getElementById("clickable");
+      toggleAdv = document.getElementById("toggle-advanced");
   if (collapsible.style["display"] == "block") {
-    clickable.innerHTML = "+ More options";
+    toggleAdv.innerHTML = "+ More options";
     collapsible.style["display"] = "none";
   } else {
-    clickable.innerHTML = "- Hide options";
+    toggleAdv.innerHTML = "- Hide options";
     collapsible.style["display"] = "block";
   }
 }
 
+// Add a keyword filter
+function addKeywordFilter() {
+    var div = document.getElementById("keyword-filter");
+        filterId = "kw-filter"
+                 + (parseInt(div.getElementsByTagName("input").length) + 1);
+    div.innerHTML += "<label id=\"" + filterId
+       + "\"><span onclick=\"javascript:document.getElementById(\'"
+       + filterId + "\').outerHTML = \'\'\";>- Remove</span>"
+       + "<input type=\"text\" placeholder=\"Bitter gourd, diabetes, etc...\">"
+       + "</label>";
+}
+
 // Search function
 function search() {
-  var query = document.getElementById("search").value;
+  var query = document.getElementById("search").value.toUpperCase();
       node = svg.selectAll("circle");
       foundNode = false;
       otherNodes = node.filter(function(d, i) {
-        if (d.id == query) {
+        if (d.id.toUpperCase() == query) {
           foundNode = d;
           }
-          return d.id != query;
+          return d.id.toUpperCase() != query;
       });
   if (foundNode) {
     document.getElementById("alert").style["display"] = "none";
@@ -171,15 +187,20 @@ function search() {
     var link = svg.selectAll(".link")
         .style("opacity", "0.1");
     var label = svg.selectAll("text");
-    otherLabels = label.filter(function() { return this.innerHTML != query;});
+    otherLabels = label.filter(function() { return this.innerHTML.toUpperCase() != query;});
     zoomhandler.translateTo(svg, foundNode.x, foundNode.y);
     zoomhandler.scaleTo(svg.transition(), 2);
     otherLabels.style("opacity", "0");
     d3.selectAll("circle, .link, text").transition()
       .duration(2000)
       .style("opacity", 1);
+    document.getElementById("info-content").innerHTML = "<p><b>" + foundNode.id
+                                           + " (hitcount)"
+                                           + "</b></p><p>Also known as:</p>"
+                                           + "<p>Related articles:</p>";
   } else {
     document.getElementById("alert").style["display"] = "block";
+    document.getElementById("info-content").innerHTML = "<img src=\"../static/img/sadbatman.gif\">";
   }
 }
 

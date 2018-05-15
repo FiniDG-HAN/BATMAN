@@ -12,16 +12,29 @@
   <div class="widget">
     <h1><i class="fas fa-search"></i> &nbsp;Search</h1>
     <div id="search-widget" class="widget-content">
-      <label>Search: </label>
-      <input id="search" type="text" onkeydown="javascript: if (event.keyCode==13) search();" placeholder="Bitter gourd, diabetes, etc...">
+      <label>Search:
+        <input id="search" type="text" onkeydown="javascript: if (event.keyCode==13) search();" placeholder="Bitter gourd, diabetes, etc...">
+      </label>
       <p id="alert">Keyword not found.</p>
       <div id="advanced">
-        <h1 id="clickable" onclick="toggleAdvanced();">+ More options</h1>
+        <h1 id="toggle-advanced" onclick="toggleAdvanced();">+ More options</h1>
         <div id="collapsible">
           <select id="options" onchange="updateSearch();"></select>
+          <label>Minimum relation score:<input type="range"></label>
+          <label>Minimum hitcount:<input type="range"></label>
+          <h1 onclick="addKeywordFilter();">+ Filter by keywords</h1>
+          <div id="keyword-filter">
+          </div>
         </div>
       </div>
       <input type="submit" value="Search" onclick="search();">
+    </div>
+  </div>
+  <div class="widget" style="margin-top: 10px;">
+    <h1><i class="fas fa-info-circle"></i> &nbsp;Info</h1>
+    <div id="info-content" class="widget-content">
+      <p><b>Welcome to the BATMAN Network!</b></p>
+      <p>Sroll to zoom in and out, drag the left mousebutton to navigate the graph...</p>
     </div>
   </div>
 </aside>
