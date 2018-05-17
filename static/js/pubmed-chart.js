@@ -45,6 +45,8 @@ var chart = new Chart(ctx, {
           color: '#999'
         }
       }]
-    }
+    },
+    responsive: true,
+    maintainAspectRatio: false
   }
 });

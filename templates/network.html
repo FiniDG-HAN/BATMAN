@@ -20,11 +20,12 @@
         <h1 id="toggle-advanced" onclick="toggleAdvanced();">+ More options</h1>
         <div id="collapsible">
           <select id="options" onchange="updateSearch();"></select>
-          <label>Minimum relation score:<input type="range"></label>
-          <label>Minimum hitcount:<input type="range"></label>
+          <label>Minimal relation score:<input type="range"></label>
+          <label>Minimal hitcount:<input type="range"></label>
           <h1 onclick="addKeywordFilter();">+ Filter by keywords</h1>
           <div id="keyword-filter">
           </div>
+          <input type="submit" value="Filter" onclick="filterKeywords();">
         </div>
       </div>
       <input type="submit" value="Search" onclick="search();">
@@ -34,7 +35,7 @@
     <h1><i class="fas fa-info-circle"></i> &nbsp;Info</h1>
     <div id="info-content" class="widget-content">
       <p><b>Welcome to the BATMAN Network!</b></p>
-      <p>Sroll to zoom in and out, drag the left mousebutton to navigate the graph...</p>
+      <p>Sroll to zoom in and out, drag the left mousebutton on the background to navigate the graph, click an item to select it (and display its properties here) and drag nodes to change their positions.</p>
     </div>
   </div>
 </aside>

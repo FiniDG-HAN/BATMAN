@@ -54,10 +54,10 @@
 <section id="boxes">
 	<div class="box">
 		<a href="https://www.ncbi.nlm.nih.gov/pubmed"><img src="{{ url_for('static', filename='img/pubmed-logo.png')}}" alt="PubMed"></a>
-		<h3>PubMed Articles</h3>
-		<p>Our data comes from very reliable
+		<h3>PubMed Abstracts</h3>
+		<p>Our data comes from reliable
 			<a href="https://www.ncbi.nlm.nih.gov/pubmed">PubMed</a>
-			 articles written by experienced certified scientists.</p>
+			 abstracts from articles written by experienced certified scientists.</p>
 	</div>
 	<div class="box">
 		<img src="{{ url_for('static', filename='img/text-mining.png')}}" alt="Text Mining">
@@ -80,12 +80,23 @@
 		<div class="widget-content">
 			<ul class="news">
 				<li>
+					<h3>Changelog version 0.4<span class="info">by Jonathan Feenstra, 17-05-2018</span></h3>
+					<p>
+						<ul>
+							<li>Added network selection on click</li>
+							<li>Added network highlighting on mouseover</li>
+							<li>Added network info widget</li>
+							<li>Added network filter option</li>
+						</ul>
+					</p>
+				</li>
+				<li>
 					<h3>Changelog version 0.3<span class="info">by Jonathan Feenstra, 04-05-2018</span></h3>
 					<p>
 						<ul>
-							<li>Completed <a href="{{ url_for('about') }}">About page</a></li>
-							<li>Added <a href="{{ url_for('network') }}">network graph</a> with drag and zoom functionality</li>
-							<li>Added search function to the network graph that zooms in on the node corresponding to the keyword and makes other nodes transparent</li>
+							<li>Completed the <a href="{{ url_for('about') }}">about page</a></li>
+							<li>Added <a href="{{ url_for('network') }}">network</a> with drag and zoom functionality</li>
+							<li>Added network search function</li>
 						</ul>
 					</p>
 				</li>
@@ -93,11 +104,10 @@
 					<h3>Changelog version 0.2<span class="info">by Jonathan Feenstra, 02-05-2018</span></h3>
 					<p>
 						<ul>
-							<li>Added slider image</li>
+							<li>Added image slider</li>
 							<li>Added PubMed chart</li>
-							<li>Added <a href="{{ url_for('login') }}">login</a> and <a href="{{ url_for('register') }}">register</a> pages</li>
 							<li>Added news widget</li>
-							<li>Changed box shadows</li>
+							<li>New layout</li>
 						</ul>
 					</p>
 				</li>

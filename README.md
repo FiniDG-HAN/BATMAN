@@ -4,10 +4,10 @@ Biomedical Article Text Mining ApplicatioN
 
 ## Authors
 ### HAN BIN-2c project group 8 (course 8 2018)
-* **Jonathan Feenstra** - Project leader, software designer &amp; web developer - [JonathanFeenstra](https://github.com/JonathanFeenstra)
+* **Jonathan Feenstra** - Project leader, software engineer, database designer &amp; web developer - [JonathanFeenstra](https://github.com/JonathanFeenstra)
 * **Fini De Gruyter** - Biologist &amp; text mining specialist - [FiniDG-HAN](https://github.com/FiniDG-HAN)
 * **Alex Janse** - Software designer &amp; database administrator - [grimcode](https://github.com/grimcode)
-* **Thijs Weenink** - Software developer - [youixentoo](https://github.com/youixentoo)
+* **Thijs Weenink** - Text mining software developer - [youixentoo](https://github.com/youixentoo)
 
 All Batman-related material is trademarked by [DC Comics](https://www.dccomics.com/copyright).
 

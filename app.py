@@ -10,7 +10,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-__version__ = '0.3'
+__version__ = '0.4'
 
 
 from functools import wraps
@@ -25,7 +25,10 @@ from wtforms.fields.html5 import EmailField
 
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_object('config')
-app.config.from_pyfile('config.py')
+try:
+    app.config.from_pyfile('config.py')
+except:
+    pass
 mysql = MySQL(app)
 
 
