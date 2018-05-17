@@ -12,6 +12,7 @@ var svg = d3.select("#network"),
     height = svg.node().getBoundingClientRect().height,
     g = svg.append("g"),
     color = d3.scaleOrdinal(d3.schemeCategory20);
+    focus = 0;
 
 // Start D3 Force simulation
 var simulation = d3.forceSimulation()
@@ -45,12 +46,47 @@ d3.json("../static/json/network.json", function(error, graph) {
        .data(graph.nodes)
        .enter().append("g")
        .on("click", selectNode)
+       .on("click", toggleFocus)
        .on("mouseover", highlightNode)
        .on("mouseleave", unhighlightNode);
 
    var nodeIds = graph.nodes.map(function(node) {
      return node["id"];
    });
+
+   // Find directly connecteted nodes and links
+   var directConnections = {};
+
+   graph.nodes.forEach(function(d) {
+     directConnections[d.id + "," + d.id] = 1;
+   });
+
+   graph.links.forEach(function (d) {
+     directConnections[d.source + "," + d.target] = 1;
+   });
+
+   function neighboring(a, b) {
+     return directConnections[a + "," + b] | directConnections[a.id + "," + b.id];
+   }
+
+   // Fade/unfade unconnected nodes
+   function toggleFocus() {
+     if (focus == 0) {
+        d = d3.select(this).node().__data__;
+        node.transition().style("opacity", function (o) {
+          return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
+        });
+        link.transition().style("opacity", function (o) {
+          return d.index == o.source.index | d.index == o.target.index ? 1 : 0.1;
+        });
+        focus = 1;
+      } else {
+        node.transition().style("opacity", 1);
+        link.transition().style("opacity", 1);
+        focus = 0;
+    }
+
+}
 
    // Release all nodes
    d3.select("#release").on("click", function() {
@@ -154,6 +190,11 @@ var selectedItem = false;
 function selectNode(d) {
   if (selectedItem) {
     unselectItem();
+  }
+  if (selectedItem == document.getElementById(d.id)) {
+    focus = 1;
+  } else {
+    focus = 0;
   }
   selectedItem = document.getElementById(d.id);
   selectedFill = selectedItem.style["fill"];
@@ -277,7 +318,7 @@ function zoomed() {
 // Expand or collapse advanced options
 function toggleAdvanced() {
   var collapsible = document.getElementById("collapsible");
-      toggleAdv = document.getElementById("toggle-advanced");
+      toggleAdv = document.getElementById("focus-advanced");
   if (collapsible.style["display"] == "block") {
     toggleAdv.innerHTML = "+ More options";
     collapsible.style["display"] = "none";
