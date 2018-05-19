@@ -12,7 +12,7 @@ var svg = d3.select("#network"),
     height = svg.node().getBoundingClientRect().height,
     g = svg.append("g"),
     color = d3.scaleOrdinal(d3.schemeCategory20);
-    focus = 0;
+    focus = false;
 
 // Start D3 Force simulation
 var simulation = d3.forceSimulation()
@@ -33,7 +33,7 @@ d3.json("../static/json/network.json", function(error, graph) {
        .data(graph.links)
        .enter().append("line")
        .attr("id", function(d) { return d.source + "-" + d.target; })
-       .attr("stroke-width", function(d) { return 1 + (Math.sqrt(d.value)) * 0.7; })
+       .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
        .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
        .on("click", selectLink)
        .on("mouseover", highlightLink)
@@ -47,8 +47,21 @@ d3.json("../static/json/network.json", function(error, graph) {
        .enter().append("g")
        .on("click", selectNode)
        .on("click", toggleFocus)
+       .on("dblclick", removeNode)
        .on("mouseover", highlightNode)
        .on("mouseleave", unhighlightNode);
+
+   // Draw nodes
+   node.append("circle")
+       .attr("r", 5)
+       .attr("fill", function(d) { return color(d.group); })
+       .attr("id", function(d) { return d.id; });
+
+   // Labels
+   node.append("text")
+       .attr("dx", 6)
+       .attr("id", function(d) { return d.id + "-label"; })
+       .text(function(d) { return d.id; });
 
    var nodeIds = graph.nodes.map(function(node) {
      return node["id"];
@@ -69,36 +82,75 @@ d3.json("../static/json/network.json", function(error, graph) {
      return directConnections[a + "," + b] | directConnections[a.id + "," + b.id];
    }
 
-   // Fade/unfade unconnected nodes
+   // Fade/unfade unconnected nodes when selecting a node
    function toggleFocus() {
-     if (focus == 0) {
+     if (!focus) {
         d = d3.select(this).node().__data__;
-        node.transition().style("opacity", function (o) {
+        node.style("opacity", function (o) {
           return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
         });
-        link.transition().style("opacity", function (o) {
+        link.style("opacity", function (o) {
           return d.index == o.source.index | d.index == o.target.index ? 1 : 0.1;
         });
-        focus = 1;
+        focus = true;
       } else {
-        node.transition().style("opacity", 1);
-        link.transition().style("opacity", 1);
-        focus = 0;
-    }
+        node.style("opacity", 1);
+        link.style("opacity", 1);
+        focus = false;
+      }
+   }
 
-}
+   // Remove node
+   function removeNode(d) {
+      if (selectedItem) {
+        unselectItem();
+      }
+      if (highlightedNode) {
+        unhighlightNode(highlightedNode);
+        highlightedNode = false;
+      }
+      graph.nodes = graph.nodes.filter(function(o) {
+        return d.id != o.id;
+      });
+      graph.links = graph.links.filter(function(l) {
+        return l.source.id != d.id && l.target.id != d.id;
+      });
+      if (d3.event) {
+        d3.event.stopPropagation();
+      }
+      node.exit().remove();
+      node.data(graph.nodes);
+      node.select("circle").remove();
+      node.append("circle")
+          .attr("r", 5)
+          .attr("fill", function(d) { return color(d.group); })
+          .attr("id", function(d) { return d.id; });
+      node.select("text").remove();
+      node.append("text")
+          .attr("dx", 6)
+          .attr("id", function(d) { return d.id + "-label"; })
+          .text(function(d) { return d.id; });
+      node.node().parentNode.removeChild(node.node().parentNode.lastChild);
+      link.node().parentNode.outerHTML = "";
+      link = g.insert("g", "g")
+          .attr("class", "link")
+          .selectAll("line")
+          .data(graph.links)
+          .enter().append("line")
+          .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
+          .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
+          .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+          .on("click", selectLink)
+          .on("mouseover", highlightLink)
+          .on("mouseleave", unhighlightLink);
+      simulation.restart();
+    }
 
    // Release all nodes
    d3.select("#release").on("click", function() {
       node.each(releaseNode);
       simulation.alpha(0.3).restart();
   });
-
-  // Draw nodes
-  node.append("circle")
-      .attr("r", 5)
-      .attr("fill", function(d) { return color(d.group); })
-      .attr("id", function(d) { return d.id; });
 
   // Handle drag events
   var draghandler = d3.drag()
@@ -108,12 +160,6 @@ d3.json("../static/json/network.json", function(error, graph) {
 
   draghandler(node);
   zoomhandler(svg);
-
-  // Labels
-  node.append("text")
-      .attr("dx", 6)
-      .attr("id", function(d) { return d.id + "-label"; })
-      .text(function(d) { return d.id; });
 
   // Add nodes and links to simulation
   simulation
@@ -131,7 +177,33 @@ d3.json("../static/json/network.json", function(error, graph) {
         .attr("y2", function(d) { return d.target.y; });
 
     node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+  }
+
+  // Create filter button
+  var filterDiv = document.getElementById("collapsible");
+      filterButton = document.createElement("input");
+
+  filterButton.type = "submit";
+  filterButton.value = "Filter";
+  filterButton.onclick = function() { filterKeywords(); };
+
+  filterDiv.appendChild(filterButton);
+
+  // Filter the network on keywords
+  function filterKeywords() {
+    var filters = filterDiv.getElementsByTagName("select");
+        keywords = new Set();
+
+    for (var i = 0; i < filters.length; i++) {
+      keywords.add(filters[i].value);
     }
+
+    node.each(function(d) {
+      if (!keywords.has(d.id)) {
+        removeNode(d);
+      }
+    });
+  }
 
   // Search autocomplete
   $( function() {
@@ -191,11 +263,6 @@ function selectNode(d) {
   if (selectedItem) {
     unselectItem();
   }
-  if (selectedItem == document.getElementById(d.id)) {
-    focus = 1;
-  } else {
-    focus = 0;
-  }
   selectedItem = document.getElementById(d.id);
   selectedFill = selectedItem.style["fill"];
   selectedStroke = "none";
@@ -206,7 +273,10 @@ function selectNode(d) {
       zoomButton = document.createElement("input");
   releaseButton.type = "submit";
   releaseButton.value = "Release node";
-  releaseButton.onclick = function() { releaseNode(d); }
+  releaseButton.onclick = function() {
+    releaseNode(d);
+    simulation.alpha(0.3).restart();
+  }
   zoomButton.type = "submit";
   zoomButton.value = "Zoom in on node";
   zoomButton.onclick = function() {
@@ -248,6 +318,27 @@ function selectLink(d) {
                  + "</span></b></p><p>Relationship score:</p>"
                  + "<p>Mutual PubMed articles:</p>";
   info.appendChild(zoomButton);
+  /* Link focus, incompatible with node focus
+  var node = svg.selectAll("circle");
+      link = svg.selectAll("line");
+      label = svg.selectAll("text");
+  if (!focus) {
+    node.style("opacity", function(o) {
+      return (d.source == o | d.target == o) ? 1 : 0.1;
+    });
+    label.style("opacity", function(o) {
+      return (d.source.id == o.id | d.target.id == o.id) ? 1 : 0.1;
+    });
+    link.style("opacity", function (o) {
+      return d == o ? 1 : 0.1;
+    });
+    focus = true;
+  } else {
+    node.style("opacity", 1);
+    link.style("opacity", 1);
+    label.style("opacity", 1);
+    focus = false;
+  }*/
 }
 
 // Unselect item
@@ -275,13 +366,15 @@ function highlightNode(d) {
   }
   highlightedNode = document.getElementById(d.id);
   document.getElementById(d.id + "-label").style["fill"] = "green";
+  document.getElementById(d.id + "-label").style["stroke"] = "rgba(0,255,0,0.8)";
   highlightedNode.style["stroke"] = "rgba(0,255,0,0.8)";
 }
 
 // Unhighlight node
 function unhighlightNode(d) {
   highlightedNode.style["stroke"] = "none";
-  if (highlightedNode != selectedItem) {
+  document.getElementById(d.id + "-label").style["stroke"] = "none";
+  if (highlightedNode.id != selectedItem.id) {
     document.getElementById(d.id + "-label").style["fill"] = "black";
   } else {
     document.getElementById(d.id + "-label").style["fill"] = "blue";
@@ -294,7 +387,7 @@ function highlightLink(d) {
     unhighlightLink(highlightedLink);
   }
   highlightedLink = document.getElementById(d.source.id + "-" + d.target.id);
-  highlightedLink.style["stroke"] = "rgba(0,255,0,0.3)";
+  highlightedLink.style["stroke"] = "rgba(0,255,0,0.5)";
 }
 
 // Unhighlight link
@@ -318,7 +411,7 @@ function zoomed() {
 // Expand or collapse advanced options
 function toggleAdvanced() {
   var collapsible = document.getElementById("collapsible");
-      toggleAdv = document.getElementById("focus-advanced");
+      toggleAdv = document.getElementById("toggle-advanced");
   if (collapsible.style["display"] == "block") {
     toggleAdv.innerHTML = "+ More options";
     collapsible.style["display"] = "none";
@@ -345,11 +438,6 @@ function addKeywordFilter() {
     label.appendChild(span);
     label.appendChild(keywordFilter);
     div.appendChild(label);
-}
-
-// Filter the network on keywords
-function filterKeywords() {
-
 }
 
 // Search function
