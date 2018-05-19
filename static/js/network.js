@@ -36,6 +36,7 @@ d3.json("../static/json/network.json", function(error, graph) {
        .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
        .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
        .on("click", selectLink)
+       .on("dblclick", removeLink)
        .on("mouseover", highlightLink)
        .on("mouseleave", unhighlightLink);
 
@@ -83,9 +84,8 @@ d3.json("../static/json/network.json", function(error, graph) {
    }
 
    // Fade/unfade unconnected nodes when selecting a node
-   function toggleFocus() {
+   function toggleFocus(d) {
      if (!focus) {
-        d = d3.select(this).node().__data__;
         node.style("opacity", function (o) {
           return neighboring(d, o) | neighboring(o, d) ? 1 : 0.1;
         });
@@ -104,10 +104,14 @@ d3.json("../static/json/network.json", function(error, graph) {
    function removeNode(d) {
       if (selectedItem) {
         unselectItem();
+        document.getElementById("info-content").innerHTML = "<p>Node removed.</p>";
       }
       if (highlightedNode) {
         unhighlightNode(highlightedNode);
         highlightedNode = false;
+      }
+      if (focus) {
+        toggleFocus(d);
       }
       graph.nodes = graph.nodes.filter(function(o) {
         return d.id != o.id;
@@ -141,9 +145,135 @@ d3.json("../static/json/network.json", function(error, graph) {
           .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
           .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
           .on("click", selectLink)
+          .on("dblclick", removeLink)
           .on("mouseover", highlightLink)
           .on("mouseleave", unhighlightLink);
       simulation.restart();
+    }
+
+    // Remove link
+    function removeLink(d) {
+      if (selectedItem) {
+        unselectItem();
+        document.getElementById("info-content").innerHTML = "<p>Link removed.</p>";
+      }
+      if (d3.event) {
+        d3.event.stopPropagation();
+      }
+      graph.links = graph.links.filter(function(l) {
+        return !(l.source.id == d.source.id && l.target.id == d.target.id);
+      });
+      link.remove();
+      link.data(graph.links);
+      link = g.insert("g", "g")
+          .attr("class", "link")
+          .selectAll("line")
+          .data(graph.links)
+          .enter().append("line")
+          .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
+          .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
+          .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+          .on("click", selectLink)
+          .on("dblclick", removeLink)
+          .on("mouseover", highlightLink)
+          .on("mouseleave", unhighlightLink);
+      simulation.restart();
+    }
+
+    // Select node
+    function selectNode(d) {
+      if (selectedItem) {
+        unselectItem();
+      }
+      selectedItem = document.getElementById(d.id);
+      selectedFill = selectedItem.style["fill"];
+      selectedStroke = "none";
+      selectedItem.style["fill"] = "blue";
+      document.getElementById(d.id + "-label").style["fill"] = "blue";
+      var info = document.getElementById("info-content");
+          releaseButton = document.createElement("input");
+          zoomButton = document.createElement("input");
+          removeButton = document.createElement("input");
+      releaseButton.type = "submit";
+      releaseButton.value = "Release node";
+      releaseButton.onclick = function() {
+        releaseNode(d);
+        simulation.alpha(0.3).restart();
+      }
+      zoomButton.type = "submit";
+      zoomButton.value = "Zoom in on node";
+      zoomButton.onclick = function() {
+        zoomhandler.translateTo(svg, d.x, d.y);
+        zoomhandler.scaleTo(svg.transition(), 2);
+      }
+      removeButton.type = "submit";
+      removeButton.value = "Remove node";
+      removeButton.onclick = function() { removeNode(d); }
+      info.innerHTML = "<p style=\"color:" + color(d.group) + ";\"><b>"
+                     + d.id + " (hitcount)"
+                     + "</b></p><p>Type:</p>"
+                     + "<p>Also known as:</p>"
+                     + "<p>Related articles:</p>"
+                     + "<p><a href=\"http://www.uniprot.org/uniprot/?query="
+                     + d.id + "&sort=score\">Search UniProt</a></p>";
+      info.appendChild(releaseButton);
+      info.appendChild(zoomButton);
+      info.appendChild(removeButton);
+    }
+
+    // Select link
+    function selectLink(d) {
+      if (selectedItem) {
+        unselectItem();
+        if (focus) {
+          toggleFocus(selectedItem);
+        }
+      }
+      var linkId = d.source.id + "-" + d.target.id;
+          info = document.getElementById("info-content");
+          zoomButton = document.createElement("input");
+          removeButton = document.createElement("input");
+      selectedItem = document.getElementById(linkId);
+      selectedFill = "none";
+      selectedStroke = "rgba(0,0,0,0.15)";
+      selectedItem.style["stroke"] = "rgba(0,0,255,0.5)";
+      zoomButton.type = "submit";
+      zoomButton.value = "Zoom in on link";
+      zoomButton.onclick = function() {
+        zoomhandler.translateTo(svg, (d.source.x + d.target.x) / 2, (d.source.y + d.target.y) / 2);
+        zoomhandler.scaleTo(svg.transition(), 2);
+      }
+      removeButton.type = "submit";
+      removeButton.value = "Remove link";
+      removeButton.onclick = function() { removeLink(d); }
+      info.innerHTML = "<p><b><span style=\"color:" + color(d.source.group) + ";\">"
+                     + d.source.id + "</span> - <span style=\"color:"
+                     + color(d.target.group) + ";\">" + d.target.id
+                     + "</span></b></p><p>Relationship score:</p>"
+                     + "<p>Mutual PubMed articles:</p>";
+      info.appendChild(zoomButton);
+      info.appendChild(removeButton);
+      /* Link focus, incompatible with node focus
+      var node = svg.selectAll("circle");
+          link = svg.selectAll("line");
+          label = svg.selectAll("text");
+      if (!focus) {
+        node.style("opacity", function(o) {
+          return (d.source == o | d.target == o) ? 1 : 0.1;
+        });
+        label.style("opacity", function(o) {
+          return (d.source.id == o.id | d.target.id == o.id) ? 1 : 0.1;
+        });
+        link.style("opacity", function (o) {
+          return d == o ? 1 : 0.1;
+        });
+        focus = true;
+      } else {
+        node.style("opacity", 1);
+        link.style("opacity", 1);
+        label.style("opacity", 1);
+        focus = false;
+      }*/
     }
 
    // Release all nodes
@@ -157,6 +287,28 @@ d3.json("../static/json/network.json", function(error, graph) {
 			.on("start", dragstarted)
 			.on("drag", dragged)
 			.on("end", dragended);
+
+  // Drag events
+  function dragstarted(d) {
+    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(d) {
+    d.fx = d3.event.x;
+    d.fy = d3.event.y;
+  }
+
+  function dragended(d) {
+    if (!d3.event.active) simulation.alphaTarget(0);
+    selectNode(d);
+  }
+
+  // Get dragsubject
+  function dragsubject() {
+    return simulation.find(d3.event.x, d3.event.y);
+  }
 
   draghandler(node);
   zoomhandler(svg);
@@ -198,11 +350,51 @@ d3.json("../static/json/network.json", function(error, graph) {
       keywords.add(filters[i].value);
     }
 
-    node.each(function(d) {
-      if (!keywords.has(d.id)) {
-        removeNode(d);
-      }
+    if (focus) {
+      toggleFocus(selectedItem);
+    }
+    if (selectedItem) {
+      unselectItem();
+    }
+    if (highlightedNode) {
+      unhighlightNode(highlightedNode);
+      highlightedNode = false;
+    }
+
+    graph.nodes = graph.nodes.filter(function(d) {
+      return keywords.has(d.id);
     });
+    graph.links = graph.links.filter(function(l) {
+      return keywords.has(l.source.id) && keywords.has(l.target.id);
+    });
+    if (d3.event) {
+      d3.event.stopPropagation();
+    }
+    node.exit().remove();
+    node.data(graph.nodes);
+    node.select("circle").remove();
+    node.append("circle")
+        .attr("r", 5)
+        .attr("fill", function(d) { return color(d.group); })
+        .attr("id", function(d) { return d.id; });
+    node.select("text").remove();
+    node.append("text")
+        .attr("dx", 6)
+        .attr("id", function(d) { return d.id + "-label"; })
+        .text(function(d) { return d.id; });
+    link.node().parentNode.outerHTML = "";
+    link = g.insert("g", "g")
+        .attr("class", "link")
+        .selectAll("line")
+        .data(graph.links)
+        .enter().append("line")
+        .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
+        .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
+        .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+        .on("click", selectLink)
+        .on("mouseover", highlightLink)
+        .on("mouseleave", unhighlightLink);
+    simulation.restart();
   }
 
   // Search autocomplete
@@ -231,115 +423,10 @@ var zoomhandler = d3.zoom()
     .on("zoom", zoomed)
     .scaleExtent([0.1,15]);
 
-// Drag events
-function dragstarted(d) {
-  if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-  d.fx = d.x;
-  d.fy = d.y;
-}
-
-function dragged(d) {
-  d.fx = d3.event.x;
-  d.fy = d3.event.y;
-}
-
-function dragended(d) {
-  if (!d3.event.active) simulation.alphaTarget(0);
-  selectNode(d);
-}
-
-// Get dragsubject
-function dragsubject() {
-  return simulation.find(d3.event.x, d3.event.y);
-}
-
 // Network selection variables
 var selectedItem = false;
     selectedFill = false;
     selectedStroke = false;
-
-// Select node
-function selectNode(d) {
-  if (selectedItem) {
-    unselectItem();
-  }
-  selectedItem = document.getElementById(d.id);
-  selectedFill = selectedItem.style["fill"];
-  selectedStroke = "none";
-  selectedItem.style["fill"] = "blue";
-  document.getElementById(d.id + "-label").style["fill"] = "blue";
-  var info = document.getElementById("info-content");
-      releaseButton = document.createElement("input");
-      zoomButton = document.createElement("input");
-  releaseButton.type = "submit";
-  releaseButton.value = "Release node";
-  releaseButton.onclick = function() {
-    releaseNode(d);
-    simulation.alpha(0.3).restart();
-  }
-  zoomButton.type = "submit";
-  zoomButton.value = "Zoom in on node";
-  zoomButton.onclick = function() {
-    zoomhandler.translateTo(svg, d.x, d.y);
-    zoomhandler.scaleTo(svg.transition(), 2);
-  }
-  info.innerHTML = "<p style=\"color:" + color(d.group) + ";\"><b>"
-                 + d.id + " (hitcount)"
-                 + "</b></p><p>Type:</p>"
-                 + "<p>Also known as:</p>"
-                 + "<p>Related articles:</p>"
-                 + "<p><a href=\"http://www.uniprot.org/uniprot/?query="
-                 + d.id + "&sort=score\">Search UniProt</a></p>";
-  info.appendChild(releaseButton);
-  info.appendChild(zoomButton);
-}
-
-// Select link
-function selectLink(d) {
-  if (selectedItem) {
-    unselectItem();
-  }
-  var linkId = d.source.id + "-" + d.target.id;
-      info = document.getElementById("info-content");
-      zoomButton = document.createElement("input");
-  selectedItem = document.getElementById(linkId);
-  selectedFill = "none";
-  selectedStroke = "rgba(0,0,0,0.15)";
-  selectedItem.style["stroke"] = "rgba(0,0,255,0.3)";
-  zoomButton.type = "submit";
-  zoomButton.value = "Zoom in on link";
-  zoomButton.onclick = function() {
-    zoomhandler.translateTo(svg, (d.source.x + d.target.x) / 2, (d.source.y + d.target.y) / 2);
-    zoomhandler.scaleTo(svg.transition(), 2);
-  }
-  info.innerHTML = "<p><b><span style=\"color:" + color(d.source.group) + ";\">"
-                 + d.source.id + "</span> - <span style=\"color:"
-                 + color(d.target.group) + ";\">" + d.target.id
-                 + "</span></b></p><p>Relationship score:</p>"
-                 + "<p>Mutual PubMed articles:</p>";
-  info.appendChild(zoomButton);
-  /* Link focus, incompatible with node focus
-  var node = svg.selectAll("circle");
-      link = svg.selectAll("line");
-      label = svg.selectAll("text");
-  if (!focus) {
-    node.style("opacity", function(o) {
-      return (d.source == o | d.target == o) ? 1 : 0.1;
-    });
-    label.style("opacity", function(o) {
-      return (d.source.id == o.id | d.target.id == o.id) ? 1 : 0.1;
-    });
-    link.style("opacity", function (o) {
-      return d == o ? 1 : 0.1;
-    });
-    focus = true;
-  } else {
-    node.style("opacity", 1);
-    link.style("opacity", 1);
-    label.style("opacity", 1);
-    focus = false;
-  }*/
-}
 
 // Unselect item
 function unselectItem() {
