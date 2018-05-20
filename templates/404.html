@@ -1,0 +1,7 @@
+{% extends 'layout.html' %}
+{% block title %}BATMAN - Page not found{% endblock %}
+
+{% block content %}
+<h1>404 - Page not found</h1>
+<img src="{{ url_for('static', filename='img/sadbatman.gif') }}" alt="This page was not found">
+{% endblock %}

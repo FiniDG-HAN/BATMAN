@@ -19,7 +19,7 @@ var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody()
                        .strength(-150))
-    .force("collide", d3.forceCollide(6))
+    .force("collide", d3.forceCollide(function(d) { return 4 + (d.hitcount / 500000) * 4; }))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
 // Load JSON data
@@ -33,8 +33,8 @@ d3.json("../static/json/network.json", function(error, graph) {
        .data(graph.links)
        .enter().append("line")
        .attr("id", function(d) { return d.source + "-" + d.target; })
-       .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
-       .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+       .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
+       .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
        .on("click", selectLink)
        .on("dblclick", removeLink)
        .on("mouseover", highlightLink)
@@ -54,7 +54,7 @@ d3.json("../static/json/network.json", function(error, graph) {
 
    // Draw nodes
    node.append("circle")
-       .attr("r", 5)
+       .attr("r", function(d) { return 4 + (d.hitcount / 500000) * 4; })
        .attr("fill", function(d) { return color(d.group); })
        .attr("id", function(d) { return d.id; });
 
@@ -71,16 +71,12 @@ d3.json("../static/json/network.json", function(error, graph) {
    // Find directly connecteted nodes and links
    var directConnections = {};
 
-   graph.nodes.forEach(function(d) {
-     directConnections[d.id + "," + d.id] = 1;
-   });
-
    graph.links.forEach(function (d) {
      directConnections[d.source + "," + d.target] = 1;
    });
 
    function neighboring(a, b) {
-     return directConnections[a + "," + b] | directConnections[a.id + "," + b.id];
+     return directConnections[a + "," + b] || directConnections[a.id + "," + b.id] || a.id == b.id;
    }
 
    // Fade/unfade unconnected nodes when selecting a node
@@ -104,7 +100,8 @@ d3.json("../static/json/network.json", function(error, graph) {
    function removeNode(d) {
       if (selectedItem) {
         unselectItem();
-        document.getElementById("info-content").innerHTML = "<p>Node removed.</p>";
+        document.getElementById("info-content").innerHTML = "<p>Node <span style=\"color:"
+                + color(d.group) + ";\">" + d.id + "</span> removed.</p>";
       }
       if (highlightedNode) {
         unhighlightNode(highlightedNode);
@@ -113,11 +110,20 @@ d3.json("../static/json/network.json", function(error, graph) {
       if (focus) {
         toggleFocus(d);
       }
+      nodeIds = nodeIds.filter(function(id) {
+        return d.id != id;
+      });
+      $("#search").autocomplete({source: nodeIds});
+      document.getElementById(d.id + "-option").outerHTML = "";
       graph.nodes = graph.nodes.filter(function(o) {
         return d.id != o.id;
       });
       graph.links = graph.links.filter(function(l) {
         return l.source.id != d.id && l.target.id != d.id;
+      });
+      directConnections = {};
+      graph.links.forEach(function (d) {
+        directConnections[d.source.id + "," + d.target.id] = 1;
       });
       if (d3.event) {
         d3.event.stopPropagation();
@@ -126,7 +132,7 @@ d3.json("../static/json/network.json", function(error, graph) {
       node.data(graph.nodes);
       node.select("circle").remove();
       node.append("circle")
-          .attr("r", 5)
+          .attr("r", function(d) { return 4 + (d.hitcount / 500000) * 4; })
           .attr("fill", function(d) { return color(d.group); })
           .attr("id", function(d) { return d.id; });
       node.select("text").remove();
@@ -135,19 +141,24 @@ d3.json("../static/json/network.json", function(error, graph) {
           .attr("id", function(d) { return d.id + "-label"; })
           .text(function(d) { return d.id; });
       node.node().parentNode.removeChild(node.node().parentNode.lastChild);
-      link.node().parentNode.outerHTML = "";
+      if (link.node()) {
+        link.node().parentNode.outerHTML = "";
+      }
       link = g.insert("g", "g")
           .attr("class", "link")
           .selectAll("line")
           .data(graph.links)
           .enter().append("line")
           .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-          .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
-          .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+          .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
+          .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
           .on("click", selectLink)
           .on("dblclick", removeLink)
           .on("mouseover", highlightLink)
           .on("mouseleave", unhighlightLink);
+
+      simulation.nodes(graph.nodes)
+                .force("link").links(graph.links);
       simulation.restart();
     }
 
@@ -155,13 +166,21 @@ d3.json("../static/json/network.json", function(error, graph) {
     function removeLink(d) {
       if (selectedItem) {
         unselectItem();
-        document.getElementById("info-content").innerHTML = "<p>Link removed.</p>";
+        document.getElementById("info-content").innerHTML = "<p>Link <span style=\"color:"
+                + color(d.source.group) + ";\">"
+                + d.source.id + "</span> - <span style=\"color:"
+                + color(d.target.group) + ";\">" + d.target.id
+                + "</span> removed.</p>";
       }
       if (d3.event) {
         d3.event.stopPropagation();
       }
       graph.links = graph.links.filter(function(l) {
         return !(l.source.id == d.source.id && l.target.id == d.target.id);
+      });
+      directConnections = {};
+      graph.links.forEach(function (d) {
+        directConnections[d.source.id + "," + d.target.id] = 1;
       });
       link.remove();
       link.data(graph.links);
@@ -171,12 +190,13 @@ d3.json("../static/json/network.json", function(error, graph) {
           .data(graph.links)
           .enter().append("line")
           .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-          .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
-          .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+          .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
+          .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
           .on("click", selectLink)
           .on("dblclick", removeLink)
           .on("mouseover", highlightLink)
           .on("mouseleave", unhighlightLink);
+      simulation.force("link").links(graph.links);
       simulation.restart();
     }
 
@@ -186,9 +206,8 @@ d3.json("../static/json/network.json", function(error, graph) {
         unselectItem();
       }
       selectedItem = document.getElementById(d.id);
-      selectedFill = selectedItem.style["fill"];
       selectedStroke = "none";
-      selectedItem.style["fill"] = "blue";
+      selectedItem.style["stroke"] = "rgba(0,0,255)";
       document.getElementById(d.id + "-label").style["fill"] = "blue";
       var info = document.getElementById("info-content");
           releaseButton = document.createElement("input");
@@ -209,13 +228,22 @@ d3.json("../static/json/network.json", function(error, graph) {
       removeButton.type = "submit";
       removeButton.value = "Remove node";
       removeButton.onclick = function() { removeNode(d); }
-      info.innerHTML = "<p style=\"color:" + color(d.group) + ";\"><b>"
-                     + d.id + " (hitcount)"
-                     + "</b></p><p>Type:</p>"
+      info.innerHTML = "<h3 style=\"color:" + color(d.group) + ";\">"
+                     + d.id + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + (d.hitcount != 1 ? " hits)" : " hit)")
+                     + "</h3><p>Type: " + "Compound" + "</p>"
                      + "<p>Also known as:</p>"
-                     + "<p>Related articles:</p>"
+                     + "<p>PubMed articles:</p>"
+                     + "<table>"
+                     + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>"
+                     + "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
+                     + 29776004 + "\">"
+                     + "Knowledge and Health Beliefs about Gestational Diabetes and Healthy Pregnancy's Breastfeeding Intention."
+                     + "</a></td><td>" + "Park S, Lee JL, In Sun J, Kim Y"
+                     + "</td><td>" + "2018 May 18" + "</td></tr>"
+                     + "</table>"
                      + "<p><a href=\"http://www.uniprot.org/uniprot/?query="
-                     + d.id + "&sort=score\">Search UniProt</a></p>";
+                     + d.id + "&sort=score\">Search UniProt for \"" + d.id +
+                     "\"</a></p>";
       info.appendChild(releaseButton);
       info.appendChild(zoomButton);
       info.appendChild(removeButton);
@@ -234,8 +262,7 @@ d3.json("../static/json/network.json", function(error, graph) {
           zoomButton = document.createElement("input");
           removeButton = document.createElement("input");
       selectedItem = document.getElementById(linkId);
-      selectedFill = "none";
-      selectedStroke = "rgba(0,0,0,0.15)";
+      selectedStroke = "rgba(0,0,0,0.12)";
       selectedItem.style["stroke"] = "rgba(0,0,255,0.5)";
       zoomButton.type = "submit";
       zoomButton.value = "Zoom in on link";
@@ -246,11 +273,18 @@ d3.json("../static/json/network.json", function(error, graph) {
       removeButton.type = "submit";
       removeButton.value = "Remove link";
       removeButton.onclick = function() { removeLink(d); }
-      info.innerHTML = "<p><b><span style=\"color:" + color(d.source.group) + ";\">"
+      info.innerHTML = "<h3><span style=\"color:" + color(d.source.group) + ";\">"
                      + d.source.id + "</span> - <span style=\"color:"
                      + color(d.target.group) + ";\">" + d.target.id
-                     + "</span></b></p><p>Relationship score:</p>"
-                     + "<p>Mutual PubMed articles:</p>";
+                     + "</span></h3><p>Relationship score: " + d.value + "</p>"
+                     + "<p>Mutual PubMed articles:</p><table>"
+                     + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>"
+                     + "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
+                     + 29776004 + "\">"
+                     + "Knowledge and Health Beliefs about Gestational Diabetes and Healthy Pregnancy's Breastfeeding Intention."
+                     + "</a></td><td>" + "Park S, Lee JL, In Sun J, Kim Y"
+                     + "</td><td>" + "2018 May 18" + "</td></tr>"
+                     + "</table>";
       info.appendChild(zoomButton);
       info.appendChild(removeButton);
       /* Link focus, incompatible with node focus
@@ -345,11 +379,9 @@ d3.json("../static/json/network.json", function(error, graph) {
   function filterKeywords() {
     var filters = filterDiv.getElementsByTagName("select");
         keywords = new Set();
-
     for (var i = 0; i < filters.length; i++) {
       keywords.add(filters[i].value);
     }
-
     if (focus) {
       toggleFocus(selectedItem);
     }
@@ -360,7 +392,6 @@ d3.json("../static/json/network.json", function(error, graph) {
       unhighlightNode(highlightedNode);
       highlightedNode = false;
     }
-
     graph.nodes = graph.nodes.filter(function(d) {
       return keywords.has(d.id);
     });
@@ -389,16 +420,72 @@ d3.json("../static/json/network.json", function(error, graph) {
         .data(graph.links)
         .enter().append("line")
         .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-        .attr("stroke-width", function(d) { return 1.5 + (Math.sqrt(d.value)); })
-        .style("stroke", function(d) { return "rgba(0,0,0,0.15)"; })
+        .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
+        .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
         .on("click", selectLink)
         .on("mouseover", highlightLink)
         .on("mouseleave", unhighlightLink);
     simulation.restart();
   }
 
+  // Create search button
+  var searchWidget = document.getElementById("search-widget");
+      searchBar = document.getElementById("search");
+      searchButton = document.createElement("input");
+      options =  document.getElementById("options");
+
+  searchButton.type = "submit";
+  searchButton.value = "Search";
+  searchButton.onclick = function() { search(); };
+  searchBar.onkeydown = function(e) {
+    if (e.keyCode == 13) {
+      search();
+    }
+  };
+  options.onchange = function() { updateSearch() };
+
+  searchWidget.appendChild(searchButton);
+
+  // Search function
+  function search() {
+    if (focus) {
+      toggleFocus(selectedItem);
+    }
+    var query = searchBar.value.toUpperCase();
+        foundNode = false;
+        otherNodes = svg.selectAll("circle").filter(function(d, i) {
+          if (d.id.toUpperCase() == query) {
+            foundNode = d;
+            }
+            return d.id.toUpperCase() != query;
+        });
+    if (foundNode) {
+      document.getElementById("alert").style["display"] = "none";
+      otherNodes.style("opacity", "0.1");
+      d3.selectAll(".link").style("opacity", "0.1");
+      var label = svg.selectAll("text");
+      otherLabels = label.filter(function() { return this.innerHTML.toUpperCase() != query;});
+      zoomhandler.translateTo(svg, foundNode.x, foundNode.y);
+      zoomhandler.scaleTo(svg.transition(), 2);
+      otherLabels.style("opacity", "0");
+      d3.selectAll("circle, .link, text").transition()
+        .duration(2000)
+        .style("opacity", 1);
+      selectNode(foundNode);
+    } else {
+      document.getElementById("alert").style["display"] = "block";
+      document.getElementById("info-content").innerHTML = "<img src=\"../static/img/sadbatman.gif\">";
+    }
+  }
+
+  // Set search input with selected value and search
+  function updateSearch() {
+    searchBar.value = options.value;
+    search();
+  }
+
   // Search autocomplete
-  $( function() {
+  $(function() {
     $("#search").autocomplete({
       source: nodeIds,
       messages: {
@@ -410,10 +497,11 @@ d3.json("../static/json/network.json", function(error, graph) {
   });
 
   // Fill drop-down menu
-  $(document).ready(function() {
+  $(function() {
     var $dropdown = $("#options");
     $.each(nodeIds, function(key, value) {
-      $dropdown.append("<option value=\"" + value + "\">" + value + "</option>");
+      $dropdown.append("<option id=\""
+      + value + "-option\" value=\"" + value + "\">" + value + "</option>");
     });
   });
 });
@@ -425,12 +513,10 @@ var zoomhandler = d3.zoom()
 
 // Network selection variables
 var selectedItem = false;
-    selectedFill = false;
     selectedStroke = false;
 
 // Unselect item
 function unselectItem() {
-  selectedItem.style["fill"] = selectedFill;
   selectedItem.style["stroke"] = selectedStroke;
   if (document.getElementById(selectedItem.id + "-label")) {
     document.getElementById(selectedItem.id + "-label").style["fill"] = "black";
@@ -452,19 +538,18 @@ function highlightNode(d) {
     unhighlightNode(highlightedNode);
   }
   highlightedNode = document.getElementById(d.id);
-  document.getElementById(d.id + "-label").style["fill"] = "green";
-  document.getElementById(d.id + "-label").style["stroke"] = "rgba(0,255,0,0.8)";
+  document.getElementById(d.id + "-label").style["fill"] = "#00be00";
   highlightedNode.style["stroke"] = "rgba(0,255,0,0.8)";
 }
 
 // Unhighlight node
 function unhighlightNode(d) {
-  highlightedNode.style["stroke"] = "none";
-  document.getElementById(d.id + "-label").style["stroke"] = "none";
   if (highlightedNode.id != selectedItem.id) {
     document.getElementById(d.id + "-label").style["fill"] = "black";
+    highlightedNode.style["stroke"] = "none";
   } else {
     document.getElementById(d.id + "-label").style["fill"] = "blue";
+    highlightedNode.style["stroke"] = "rgba(0,0,255,0.8)";
   }
 }
 
@@ -480,7 +565,7 @@ function highlightLink(d) {
 // Unhighlight link
 function unhighlightLink(d) {
   if (highlightedLink != selectedItem) {
-    highlightedLink.style["stroke"] = "rgba(0,0,0,0.15)";
+    highlightedLink.style["stroke"] = "rgba(0,0,0,0.12)";
   } else {
     highlightedLink.style["stroke"] = "rgba(0,0,255,0.3)";
   }
@@ -527,39 +612,20 @@ function addKeywordFilter() {
     div.appendChild(label);
 }
 
-// Search function
-function search() {
-  var query = document.getElementById("search").value.toUpperCase();
-      node = svg.selectAll("circle");
-      foundNode = false;
-      otherNodes = node.filter(function(d, i) {
-        if (d.id.toUpperCase() == query) {
-          foundNode = d;
-          }
-          return d.id.toUpperCase() != query;
-      });
-  if (foundNode) {
-    document.getElementById("alert").style["display"] = "none";
-    otherNodes.style("opacity", "0.1");
-    var link = svg.selectAll(".link")
-        .style("opacity", "0.1");
-    var label = svg.selectAll("text");
-    otherLabels = label.filter(function() { return this.innerHTML.toUpperCase() != query;});
-    zoomhandler.translateTo(svg, foundNode.x, foundNode.y);
-    zoomhandler.scaleTo(svg.transition(), 2);
-    otherLabels.style("opacity", "0");
-    d3.selectAll("circle, .link, text").transition()
-      .duration(2000)
-      .style("opacity", 1);
-    selectNode(foundNode);
-  } else {
-    document.getElementById("alert").style["display"] = "block";
-    document.getElementById("info-content").innerHTML = "<img src=\"../static/img/sadbatman.gif\">";
-  }
+// Download svg as PNG
+function downloadAsPNG() {
+  var canvas = document.createElement("canvas");
+      a = document.createElement('a');
+      xml = (new XMLSerializer()).serializeToString(svg.node());
+   xml = xml.replace(/xmlns=\"http:\/\/www\.w3\.org\/2000\/svg\"/, '');
+   canvas.width = width;
+   canvas.height = height;
+   canvg(canvas, xml);
+   var dataURL = canvas.toDataURL("image/png");
+   dataURL = dataURL.replace(/^data:image\/[^;]*/, "data:application/octet-stream");
+   dataURL = dataURL.replace(/^data:application\/octet-stream/, "data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png");
+   this.href = dataURL;
 }
 
-// Set search input with selected value and search
-function updateSearch() {
-  document.getElementById("search").value = document.getElementById("options").value;
-  search();
-}
+// Add download event listener to link
+document.getElementById("download").addEventListener("click", downloadAsPNG, false);

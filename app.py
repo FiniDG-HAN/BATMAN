@@ -10,7 +10,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-__version__ = '0.4'
+__version__ = '0.5'
 
 
 from functools import wraps
@@ -141,6 +141,11 @@ def logout():
     session.clear()
     flash('Logout successful', 'success')
     return redirect(url_for('index'))
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 
 @app.route('/shutdown')

@@ -7,19 +7,20 @@
 <article class="main-col">
   <svg id="network"></svg>
   <input id="release" type="submit" value="Release all nodes">
+  <a id="download" download="network.png" href="#">Download as PNG</a>
 </article>
 <aside class="sidebar">
   <div class="widget">
     <h1><i class="fas fa-search"></i> &nbsp;Search</h1>
     <div id="search-widget" class="widget-content">
       <label>Search:
-        <input id="search" type="text" onkeydown="javascript: if (event.keyCode==13) search();" placeholder="Bitter gourd, diabetes, etc...">
+        <input id="search" type="text" placeholder="Bitter gourd, diabetes, etc...">
       </label>
       <p id="alert">Keyword not found.</p>
       <div id="advanced">
         <h1 id="toggle-advanced" onclick="toggleAdvanced();">+ More options</h1>
         <div id="collapsible">
-          <select id="options" onchange="updateSearch();"></select>
+          <label>Nodes:<select id="options" onchange="updateSearch();"></select></label>
           <label>Minimal relation score:<input type="range"></label>
           <label>Minimal hitcount:<input type="range"></label>
           <h1 onclick="addKeywordFilter();">+ Filter by keywords</h1>
@@ -27,13 +28,12 @@
           </div>
         </div>
       </div>
-      <input type="submit" value="Search" onclick="search();">
     </div>
   </div>
   <div class="widget" style="margin-top: 10px;">
     <h1><i class="fas fa-info-circle"></i> &nbsp;Info</h1>
     <div id="info-content" class="widget-content">
-      <p><b>Welcome to the BATMAN Network!</b></p>
+      <h3>Welcome to the BATMAN Network!</h3>
       <p>Sroll to zoom in and out, drag the left mousebutton on the background to navigate the graph, click an item to select it (and display its properties here), drag nodes to change their positions and doubleclick to remove them.</p>
     </div>
   </div>
@@ -45,6 +45,9 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="http://canvg.github.io/canvg/rgbcolor.js"></script>
+<script src="http://canvg.github.io/canvg/StackBlur.js"></script>
+<script src="http://canvg.github.io/canvg/canvg.js"></script>
 <!-- JavaScript -->
 <script src="{{ url_for('static', filename='js/network.js') }}"></script>
 {% endblock %}
