@@ -115,9 +115,7 @@ d3.json("../static/json/network.json", function(error, graph) {
       });
       $("#search").autocomplete({source: nodeIds});
       document.getElementById(d.id + "-option").outerHTML = "";
-      graph.nodes = graph.nodes.filter(function(o) {
-        return d.id != o.id;
-      });
+      graph.nodes.splice(d.index, 1);
       graph.links = graph.links.filter(function(l) {
         return l.source.id != d.id && l.target.id != d.id;
       });
@@ -128,38 +126,24 @@ d3.json("../static/json/network.json", function(error, graph) {
       if (d3.event) {
         d3.event.stopPropagation();
       }
+      node = node.data(graph.nodes, function(d) { return d.id;});
       node.exit().remove();
-      node.data(graph.nodes);
-      node.select("circle").remove();
-      node.append("circle")
-          .attr("r", function(d) { return 4 + (d.hitcount / 500000) * 4; })
-          .attr("fill", function(d) { return color(d.group); })
-          .attr("id", function(d) { return d.id; });
+      node = node.enter().append("circle").attr("fill", function(d) {
+        return color(d.group);
+       })
+       .attr("r", function(d) { return 4 + (d.hitcount / 500000) * 4; })
+       .merge(node);
       node.select("text").remove();
       node.append("text")
           .attr("dx", 6)
           .attr("id", function(d) { return d.id + "-label"; })
           .text(function(d) { return d.id; });
-      node.node().parentNode.removeChild(node.node().parentNode.lastChild);
-      if (link.node()) {
-        link.node().parentNode.outerHTML = "";
-      }
-      link = g.insert("g", "g")
-          .attr("class", "link")
-          .selectAll("line")
-          .data(graph.links)
-          .enter().append("line")
-          .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-          .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
-          .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
-          .on("click", selectLink)
-          .on("dblclick", removeLink)
-          .on("mouseover", highlightLink)
-          .on("mouseleave", unhighlightLink);
-
+      link = link.data(graph.links, function(d) { return d.source.id + "-" + d.target.id; });
+      link.exit().remove();
+      link = link.enter().append("line").merge(link);
       simulation.nodes(graph.nodes)
                 .force("link").links(graph.links);
-      simulation.restart();
+      simulation.alpha(1).restart();
     }
 
     // Remove link
@@ -182,22 +166,11 @@ d3.json("../static/json/network.json", function(error, graph) {
       graph.links.forEach(function (d) {
         directConnections[d.source.id + "," + d.target.id] = 1;
       });
-      link.remove();
-      link.data(graph.links);
-      link = g.insert("g", "g")
-          .attr("class", "link")
-          .selectAll("line")
-          .data(graph.links)
-          .enter().append("line")
-          .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-          .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
-          .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
-          .on("click", selectLink)
-          .on("dblclick", removeLink)
-          .on("mouseover", highlightLink)
-          .on("mouseleave", unhighlightLink);
+      link = link.data(graph.links, function(d) { return d.source.id + "-" + d.target.id; });
+      link.exit().remove();
+      link = link.enter().append("line").merge(link);
       simulation.force("link").links(graph.links);
-      simulation.restart();
+      simulation.alpha(1).restart();
     }
 
     // Select node
@@ -229,8 +202,10 @@ d3.json("../static/json/network.json", function(error, graph) {
       removeButton.value = "Remove node";
       removeButton.onclick = function() { removeNode(d); }
       info.innerHTML = "<h3 style=\"color:" + color(d.group) + ";\">"
-                     + d.id + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + (d.hitcount != 1 ? " hits)" : " hit)")
-                     + "</h3><p>Type: " + "Compound" + "</p>"
+                     + d.id + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                     + (d.hitcount != 1 ? " hits)" : " hit)")
+                     + "</h3><p>Type: <span style=\"color:" + color(d.group) + ";\">"
+                     + "Health effect" + "</span></p>"
                      + "<p>Also known as:</p>"
                      + "<p>PubMed articles:</p>"
                      + "<table>"
@@ -392,6 +367,13 @@ d3.json("../static/json/network.json", function(error, graph) {
       unhighlightNode(highlightedNode);
       highlightedNode = false;
     }
+    nodeIds = nodeIds.filter(function(id) {
+      if (!keywords.has(id)) {
+        document.getElementById(id + "-option").outerHTML = "";
+      }
+      return keywords.has(id);
+    });
+    $("#search").autocomplete({source: nodeIds});
     graph.nodes = graph.nodes.filter(function(d) {
       return keywords.has(d.id);
     });
@@ -401,31 +383,24 @@ d3.json("../static/json/network.json", function(error, graph) {
     if (d3.event) {
       d3.event.stopPropagation();
     }
+    node = node.data(graph.nodes, function(d) { return d.id;});
     node.exit().remove();
-    node.data(graph.nodes);
-    node.select("circle").remove();
-    node.append("circle")
-        .attr("r", 5)
-        .attr("fill", function(d) { return color(d.group); })
-        .attr("id", function(d) { return d.id; });
+    node = node.enter().append("circle").attr("fill", function(d) {
+      return color(d.group);
+     })
+     .attr("r", function(d) { return 4 + (d.hitcount / 500000) * 4; })
+     .merge(node);
     node.select("text").remove();
     node.append("text")
         .attr("dx", 6)
         .attr("id", function(d) { return d.id + "-label"; })
         .text(function(d) { return d.id; });
-    link.node().parentNode.outerHTML = "";
-    link = g.insert("g", "g")
-        .attr("class", "link")
-        .selectAll("line")
-        .data(graph.links)
-        .enter().append("line")
-        .attr("id", function(d) { return d.source.id + "-" + d.target.id; })
-        .attr("stroke-width", function(d) { return 1.4 + (Math.sqrt(d.value)); })
-        .style("stroke", function(d) { return "rgba(0,0,0,0.12)"; })
-        .on("click", selectLink)
-        .on("mouseover", highlightLink)
-        .on("mouseleave", unhighlightLink);
-    simulation.restart();
+    link = link.data(graph.links, function(d) { return d.source.id + "-" + d.target.id; });
+    link.exit().remove();
+    link = link.enter().append("line").merge(link);
+    simulation.nodes(graph.nodes)
+                .force("link").links(graph.links);
+    simulation.alpha(1).restart();
   }
 
   // Create search button
@@ -623,7 +598,7 @@ function downloadAsPNG() {
    canvg(canvas, xml);
    var dataURL = canvas.toDataURL("image/png");
    dataURL = dataURL.replace(/^data:image\/[^;]*/, "data:application/octet-stream");
-   dataURL = dataURL.replace(/^data:application\/octet-stream/, "data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=Canvas.png");
+   dataURL = dataURL.replace(/^data:application\/octet-stream/, "data:application/octet-stream;headers=Content-Disposition%3A%20attachment%3B%20filename=network.png");
    this.href = dataURL;
 }
 
