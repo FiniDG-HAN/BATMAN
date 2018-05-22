@@ -26,7 +26,7 @@ header {
 	min-height: 80px;
 	padding-top: 10px;
 	border-bottom: orange solid 2px;
-	overflow: auto;
+	overflow: hidden;
 	z-index: 3;
 }
 
@@ -67,7 +67,7 @@ ul {
 /* Branding */
 #logo {
 	margin: 0;
-	width: 200px;
+	position: absolute;
 	text-align: center;
 	float: left;
 }
@@ -120,18 +120,6 @@ ul {
 
 .nav li a:hover, .nav ul#session li a:hover {
 	color: orange;
-}
-
-.nav ul#session {
-	width: 200px;
-}
-
-.nav ul#session li a {
- 	color: #CCC;
-}
-
-.nav .active, .nav ul#session li a.active {
-	color: #FFF200;
 }
 
 /* Content */
@@ -662,10 +650,6 @@ a.github {
 }
 
 @media(max-width: 800px) {
-	.nav ul#session li {
-		display: flex;
-	}
-
 	.slider .slides li .caption h1 {
 		font-size: 20px;
 	}

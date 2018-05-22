@@ -20,9 +20,9 @@
           <img src="{{ url_for('static', filename='img/batmanlogo.png')}}" alt="BATMAN" height="80">
         </a>
       </div>
-      <div id="branding">
-        <h1><a href="{{ url_for('index') }}" >BATMAN</a></h1>
-      </div>
+        <div id="branding">
+          <h1><a href="{{ url_for('index') }}" >BATMAN</a></h1>
+        </div>
       <div class="container">
         <!-- Navigation -->
     		<div class="nav">
@@ -34,16 +34,6 @@
     				<li><a {% if active_page == 'contact' %}class="active"{% endif %} href="{{ url_for('contact') }}">Contact</a></li>
     			</ul>
         </div>
-      </div>
-      <div class="nav">
-        <ul id="session">
-          {% if session.logged_in %}
-          <li><a {% if active_page == 'logout' %}class="active"{% endif %} href="{{ url_for('logout') }}">Logout</a></li>
-          {% else %}
-          <li><a {% if active_page == 'login' %}class="active"{% endif %} href="{{ url_for('login') }}">Login</a></li>
-          <li><a {% if active_page == 'register' %}class="active"{% endif %} href="{{ url_for('register') }}">Register</a></li>
-          {% endif %}
-        </ul>
       </div>
   	</header>
     <!-- Main content -->

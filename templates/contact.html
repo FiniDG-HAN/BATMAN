@@ -68,10 +68,10 @@
 	<!-- Message form -->
 	<h2>Send us a message</h2>
 		<form id="message" action="https://formspree.io/JCD.Feenstra@student.han.nl" method="POST">
-			<label><span>Name</span><input type="text" name="name" placeholder="John Doe" value="{% if session.logged_in %}session.name{% endif %}"></label>
-			<label><span>Email</span><input type="email" name="_replyto" placeholder="&#x2709; john.doe@example.org" value="{% if session.logged_in %}session.email{% endif %}"></label>
+			<label><span>Name</span><input type="text" name="name" placeholder="John Doe"></label>
+			<label><span>Email</span><input type="email" name="_replyto" placeholder="&#x2709; john.doe@example.org"></label>
 			<label><span>Message</span>
-				<textarea name="message" placeholder="Dear BATMAN staff,&#13;&#10;&#13;&#10;...&#13;&#10;&#13;&#10;Sincerely,&#13;&#10;&#13;&#10;{% if session.logged_in %}session.name{% else %}John Doe{% endif %}"></textarea>
+				<textarea name="message" placeholder="Dear BATMAN staff,&#13;&#10;&#13;&#10;...&#13;&#10;&#13;&#10;Sincerely,&#13;&#10;&#13;&#10;John Doe"></textarea>
 			</label>
 			<div class="wrapper">
 				<div class="g-recaptcha" data-sitekey="6LcpFFQUAAAAAEL30BerQwoYrOEmxH9k4gud1GQH"></div>
