@@ -122,6 +122,10 @@ ul {
 	color: orange;
 }
 
+.nav li a.active {
+	color: yellow;
+}
+
 /* Content */
 #content {
 	margin-top: 96px;
@@ -242,9 +246,11 @@ ul {
 /* Boxes */
 #boxes {
 	text-align: center;
+	display: flex;
 }
 
 #boxes .box {
+	flex: 1;
 	float: left;
 	width: 30%;
 	padding: 1%;
@@ -448,6 +454,10 @@ ul {
 }
 
 /* Info widget */
+#info-content {
+	overflow: hidden;
+}
+
 #info-content h3 {
 	padding: 5px 10px;
 	margin: -5px;
