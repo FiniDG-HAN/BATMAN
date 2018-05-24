@@ -121,6 +121,8 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Download CSV file for a node or link
     function generateCSV(d) {
+      if (typeof(d.articles)=='undefined')
+        window.alert("No articles for this node or link available");
       var array = d.articles;
 
         var str = 'PubMedID,ArticleTitle,ArticleAuthors,Date' + '\r\n';
@@ -271,7 +273,7 @@ d3.json("../static/json/network.json", function (error, graph) {
                 + "</h3><p>Type: <span style=\"color:" + color(d.group) + ";\">"
                 + "Health effect" + "</span></p>"
                 + "<p>Also known as:</p>"
-                + "<p>PubMed articles: " + d.articles.length + "</p>"
+                + "<p>PubMed articles:</p>"
                 + "<table>"
                 + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>"
                 + "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
