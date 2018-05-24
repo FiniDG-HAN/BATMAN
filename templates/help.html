@@ -4,6 +4,13 @@
 
 {% block content %}
 <h1>Support</h1>
-<img src="{{ url_for('static', filename='img/batmanhelp.gif')}}" alt="Waiting for Batman to help...">
 <h2>Frequently Asked Questions</h2>
+<h3>What is text mining?</h3>
+The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application find specific keywords using the PubMed database of biochemical research papers to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (edges) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker edges (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
+
+<h3>What sort of questions can this application answer?</h3>
+This application cannot directly answer research questions, but it can help to find the right information in literature to find the information a biologist needs. Additionally, it can find indirect relationships between certain keywords. These indirect relationships can show interesting research topics to a new angle that hasn't been found before, or it can help to find research articles with the right information that could not be found by using regular search terms in PubMed.
+At a much higher level, the network that is generated with our application can show the relationships between all the keywords at a glance. Clusters of keywords can be distinguished and previously unknown relations are shown.
+
+<h3><img src="{{ url_for('static', filename='img/batmanhelp.gif')}}" alt="Waiting for Batman to help..."></h3>
 {% endblock %}

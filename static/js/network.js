@@ -118,6 +118,27 @@ d3.json("../static/json/network.json", function (error, graph) {
         }
     }
 
+
+    // Download CSV file for a node or link
+    function generateCSV(d) {
+      var array = d.articles;
+
+        var str = 'PubMedID, ArticleTitle, ArticleAuthors, Date' + '\r\n';
+
+        for (var i = 0; i < array.length; i++) {
+            var line = '';
+
+            for (var index in array[i]) {
+                line += array[i][index] + ',';
+            }
+
+            line.slice(0,line.Length-1);
+
+            str += line + '\r\n';
+        }
+        window.open( "data:text/csv;charset=utf-8," + escape(str))
+    }
+
     // Remove node
     function removeNode(d) {
         if (selectedItem) {
@@ -220,6 +241,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         releaseButton = document.createElement("input");
         zoomButton = document.createElement("input");
         removeButton = document.createElement("input");
+        downloadButton = document.createElement("input");
         releaseButton.type = "submit";
         releaseButton.value = "Release node";
         releaseButton.onclick = function () {
@@ -237,13 +259,19 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton.onclick = function () {
             removeNode(d);
         };
+        downloadButton.type = "submit";
+        downloadButton.value = "Download CSV";
+        downloadButton.onclick = function () {
+          generateCSV(d);
+        }
+
         info.innerHTML = "<h3 style=\"color:" + color(d.group) + ";\">"
                 + d.id + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + (d.hitcount !== 1 ? " hits)" : " hit)")
                 + "</h3><p>Type: <span style=\"color:" + color(d.group) + ";\">"
                 + "Health effect" + "</span></p>"
                 + "<p>Also known as:</p>"
-                + "<p>PubMed articles:</p>"
+                + "<p>PubMed articles: " + d.articles.length + "</p>"
                 + "<table>"
                 + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>"
                 + "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
@@ -258,6 +286,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         info.appendChild(releaseButton);
         info.appendChild(zoomButton);
         info.appendChild(removeButton);
+        info.appendChild(downloadButton);
     }
 
     // Select link
@@ -272,6 +301,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         info = document.getElementById("info-content");
         zoomButton = document.createElement("input");
         removeButton = document.createElement("input");
+        downloadButton = document.createElement("input");
         selectedItem = document.getElementById(linkId);
         selectedStroke = "rgba(0,0,0,0.12)";
         selectedItem.style["stroke"] = "rgba(0,0,255,0.5)";
@@ -286,6 +316,11 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton.onclick = function () {
             removeLink(d);
         };
+        downloadButton.type = "submit";
+        downloadButton.value = "Download CSV"
+        downloadButton.onclick = function () {
+          generateCSV(d);
+        }
         info.innerHTML = "<h3><span style=\"color:" + color(d.source.group) + ";\">"
                 + d.source.id + "</span> - <span style=\"color:"
                 + color(d.target.group) + ";\">" + d.target.id
@@ -300,6 +335,7 @@ d3.json("../static/json/network.json", function (error, graph) {
                 + "</table>";
         info.appendChild(zoomButton);
         info.appendChild(removeButton);
+        info.appendChild(downloadButton);
         /* Link focus, incompatible with node focus
          var node = svg.selectAll("circle");
          link = svg.selectAll("line");

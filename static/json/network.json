@@ -1,7 +1,15 @@
 {
   "nodes": [
-    {"id": "Kidney", "group": 1, "hitcount": 116109},
-    {"id": "Bladder", "group": 1, "hitcount": 424661},
+    {"id": "Kidney", "group": 1, "hitcount": 116109, "articles": [
+		  {"pmid": 15555, "title":"title voorbeeld", "authors":"Pietje en Jantje", "date": "12-may-2018"},
+      {"pmid": 16666, "title":"nog een voorbeeld", "authors":"Hans en Grietje", "date": "14-june-2018"}
+      ]
+    },
+    {"id": "Bladder", "group": 1, "hitcount": 424661, "articles": [
+		  {"pmid": 15555, "title":"title voorbeeld", "authors":"Pietje en Jantje", "date": "12-may-2018"},
+      {"pmid": 16666, "title":"nog een voorbeeld", "authors":"Hans en Grietje", "date": "14-june-2018"}
+      ]
+    },
     {"id": "Pancreas", "group": 1, "hitcount": 258372},
     {"id": "Stomach", "group": 1, "hitcount": 329306},
     {"id": "Hormones", "group": 1, "hitcount": 270016},
