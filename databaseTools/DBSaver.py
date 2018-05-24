@@ -1,8 +1,8 @@
 import DBConnector as dbc
 import traceback
-# from flask import Flask
-#
-# app = Flask(__name__, instance_relative_config=True)
+from flask import Flask
+
+app = Flask(__name__, instance_relative_config=True)
 
 # todo: exception handeling
 def save(synonymDict, pmidDict, linkDict):
@@ -112,12 +112,12 @@ def getScore(term,pmid,cursor):
         score = int(foundScore[0])
     return score
 
-# @app.route("/")
-# def test():
-#     return save({"testTerm":[["ts2"],{"pmidtest":5},"test33"],"testTerm2":[["ts4"],{"pmidtest":6},"test33"]}
-#                 ,{"pmidtest":["titeltest","authortest",19950803]},
-#                 {"testTerm":{"testTerm2":["pmidtest"]}})
-#
-# if __name__ == '__main__':
-#     app.run(debug=True)
+@app.route("/")
+def test():
+    return save({"testTerm":[["ts2"],{"pmidtest":5},"test33"],"testTerm2":[["ts4"],{"pmidtest":6},"test33"]}
+                ,{"pmidtest":["titeltest","authortest",19950803]},
+                {"testTerm":{"testTerm2":["pmidtest"]}})
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
