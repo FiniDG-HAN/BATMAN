@@ -1,7 +1,7 @@
 import DBConnector as dbc
 import traceback
 # from flask import Flask
-
+#
 # app = Flask(__name__, instance_relative_config=True)
 
 # todo: exception handeling
@@ -102,7 +102,7 @@ def insertNodeLink(term,linkID,cursor):
 def getTotalScore(term,linkterm,pmidList, cursor):
     totalScore = 0
     for pmid in pmidList:
-        totalScore += getScore(term,pmid,cursor) + getScore(linkterm,pmid,cursor)
+        totalScore += (getScore(term,pmid,cursor) + getScore(linkterm,pmid,cursor))
     return totalScore
 
 def getScore(term,pmid,cursor):
@@ -114,8 +114,8 @@ def getScore(term,pmid,cursor):
 
 # @app.route("/")
 # def test():
-#     return save({"testTerm":[["ts2"],{"pmidtest":5},"test33"],"testTerm2":[["ts4"],{"pmidtest2":6},"test33"]}
-#                 ,{"testid555":["titeltest","authortest",19950803]},
+#     return save({"testTerm":[["ts2"],{"pmidtest":5},"test33"],"testTerm2":[["ts4"],{"pmidtest":6},"test33"]}
+#                 ,{"pmidtest":["titeltest","authortest",19950803]},
 #                 {"testTerm":{"testTerm2":["pmidtest"]}})
 #
 # if __name__ == '__main__':

@@ -6,6 +6,6 @@ def connect():
                              password = "blaat1234",
                              host = "localhost",
                              database="owe8_pg8")
-    return connection.cursor(), connection
+    return connection.cursor(buffered=True), connection
 
 
