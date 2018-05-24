@@ -87,7 +87,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         return node["id"];
     });
 
-    // Find directly connecteted nodes and links
+    // Find directly connected nodes and links
     var directConnections = {};
 
     graph.links.forEach(function (d) {
@@ -123,7 +123,7 @@ d3.json("../static/json/network.json", function (error, graph) {
     function generateCSV(d) {
       var array = d.articles;
 
-        var str = 'PubMedID, ArticleTitle, ArticleAuthors, Date' + '\r\n';
+        var str = 'PubMedID,ArticleTitle,ArticleAuthors,Date' + '\r\n';
 
         for (var i = 0; i < array.length; i++) {
             var line = '';
