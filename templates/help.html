@@ -3,14 +3,33 @@
 {% block title %}BATMAN - Help{% endblock %}
 
 {% block content %}
-<h1>Support</h1>
+<h2>Instructions webapplication</h2>
+
+<h3>How can I look at the data?</h3>
+<h3>How can I change the data?</h3>
+<h3>How can I save my results?</h3>
+
 <h2>Frequently Asked Questions</h2>
 <h3>What is text mining?</h3>
-The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application find specific keywords using the PubMed database of biochemical research papers to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (edges) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker edges (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
+The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (edges) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker edges (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
 
 <h3>What sort of questions can this application answer?</h3>
 This application cannot directly answer research questions, but it can help to find the right information in literature to find the information a biologist needs. Additionally, it can find indirect relationships between certain keywords. These indirect relationships can show interesting research topics to a new angle that hasn't been found before, or it can help to find research articles with the right information that could not be found by using regular search terms in PubMed.
 At a much higher level, the network that is generated with our application can show the relationships between all the keywords at a glance. Clusters of keywords can be distinguished and previously unknown relations are shown.
+
+<h3>How do I use this application to get the most interesting results?</h3>
+The most interesting results can be found by tweaking and zooming the generated network. To help with this, there are additional functions that can be used find specific relationships. One of them is the "Filter by keywords" option that can be found in the "Search" box by clicking "More options". Here it is possible to select more than one keyword, and show only those keywords and the relations between them. By selecting more than two keywords, indirect relationships are possible to arise.
+Another option that can help is temporary removing nodes from the network. This makes the network easier to read and interpret.
+
+<h3>Which data from PubMed is stored in the application?</h3>
+PubMedIDs, article titles, article abstracts, article date, article authors, synonyms of the searched keyword
+
+<h3>Where can I find the source code of the application?</h3>
+The source code is available on <a href="https://github.com/JonathanFeenstra/BATMAN">github</a>
+
+<h3>My question is not answered, is it possible to ask another question?</h3>
+Yes. You can use the contact page to contact one of the developers of this application. Please contact the person that is most suitable to answer your question.
+
 
 <h3><img src="{{ url_for('static', filename='img/batmanhelp.gif')}}" alt="Waiting for Batman to help..."></h3>
 {% endblock %}
