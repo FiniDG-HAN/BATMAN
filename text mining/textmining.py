@@ -24,7 +24,7 @@ from Bio import Medline
 from Bio import Entrez
 Entrez.email = "youi.xentoo@gmail.com"
 
-from urllib.error import HTTPError, URLError
+import urllib
 import time
 import json
 import csv
@@ -40,6 +40,7 @@ def main():
     # Outputs: PMID, mainterm, relation_term
     #
     """
+    print("Start of script")
     one_of_the_terms_doesnt_give_results = False
 
     cat_dict = load_csv()
@@ -256,7 +257,6 @@ def ncbi_search(search_term):
         except Exception as err:
             raise
     except RuntimeError as err:
-        print(err.with_traceback)
         amount_of_hits = 0
         record = None
 
@@ -306,7 +306,7 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                                              webenv=record["WebEnv"],
                                              query_key=record["QueryKey"])
 
-            except HTTPError as err:
+            except urllib.error.HTTPError as err:
                 if 500 <= err.code <= 599:
                     print("Received error from server %s" % err)
                     print("Attempt %i of %i" % (attempt, max_number_of_attempts))
@@ -315,16 +315,14 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                     time.sleep(15)
                 else:
                     connection = False
-                    print(err.with_traceback)
                     print("NCBI doesn't want to cooperate with this download")
                     pass
-            except URLError as err:
+            except urllib.error.URLError as err:
                 print("Connection lost, waiting 15 seconds")
                 attempt += 1
                 connection = False
                 time.sleep(15)
             except Exception as err:
-                print(err.with_traceback)
                 connection = False
 
             # Only performed if there is a connection
@@ -357,7 +355,6 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                             else:
                                 PMID_score[pmid] = pmid_syn_score
                     except KeyError as err:
-                        print(err.with_traceback)
                         pass
                     except Exception as err:
                         raise
@@ -426,7 +423,7 @@ def plot(time_dict):
         # the line equation:
         print("y=%.6fx+(%.6f)"%(z[0],z[1]))
     except Exception as err:
-        print(err.with_traceback)
+        print("zip")
 
 
     plt.plot(*zip(*sorted(time_dict.items())))
