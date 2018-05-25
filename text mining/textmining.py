@@ -2,21 +2,21 @@
 """
 Created on Thu May 17 14:07:53 2018
 
-Version 1.2
+Version 1.3
 
 @authors: Thijs Weenink and Fini De Gruyter
 
 ##############################################################
 #                                                            #
 # Output:                                                    #
-# {mainterm : [[synoniemen], {pmid : score}, categorie]}    #
+# {mainterm : [[synoniemen], {pmid : score}, categorie]}     #
 #                                                            #
 # {PMID : [title, authors, date]}                            #
 # {relationterm : {linkterm : [PMID]}                        #
 #                                                            #
 ##############################################################
 
->>> REMOVE LINES 250-253 AT FINAL RELEASE <<<
+>>> REMOVE LINES 371-376 AT FINAL RELEASE <<<
 
 """
 
@@ -27,9 +27,12 @@ Entrez.email = "youi.xentoo@gmail.com"
 from urllib.error import HTTPError, URLError
 import time
 import json
+import csv
 import re
 
 import matplotlib.pyplot as plt
+import numpy
+
 
 def main():
     """
@@ -37,32 +40,79 @@ def main():
     # Outputs: PMID, mainterm, relation_term
     #
     """
+    one_of_the_terms_doesnt_give_results = False
 
-    search_terms = ["yam","bitter gourd"]
-    for search_term in search_terms:
+    cat_dict = load_csv()
+
+    pmidDict_search_term = {}
+    pmidDict_link_term = {}
+    synonymDict_search_term = {}
+    synonymDict_link_term = {}
+
+    search_terms = ["Momordica charantia", "diabetes"]
+    #search_terms = ["Dioscorea batatas", "Momordica charantia"] # yam
+    for index, search_term in enumerate(search_terms):
         # Main text mining function, PMID and mainterm are dictonaries,
         # structure can be seen on line 7-15
-        PMID, mainterm, terms ,time_dict = text_mining(search_term)
+        print("Search term: %s" % (search_term))
+        PMID, mainterm, terms ,time_dict = text_mining(search_term, cat_dict)
+
+        # Saves the 2 above dicts
+        if index == 0:
+            pmidDict_search_term = PMID
+            synonymDict_search_term = mainterm
+        elif index == 1:
+            pmidDict_link_term = PMID
+            synonymDict_link_term = mainterm
 
         # Writes the dictionaries to JSON files
-        dump_to_json(PMID, "PMID_%s" % (search_term))
-        dump_to_json(mainterm, "mainterm_%s" % (search_term))
+        #dump_to_json(PMID, "PMID_%s" % (search_term))
+        #dump_to_json(mainterm, "mainterm_%s" % (search_term))
 
+        """
         # Plotting useful with testing
-        plot(time_dict)
+        if not time_dict == None:
+            plot(time_dict)
+        """
+
+
+        # Making sure the script doesnt continue if one of the search terms doesnt give any results
+        if PMID == None or mainterm == None or time_dict == None:
+            one_of_the_terms_doesnt_give_results = True
+            faulty_search_term = search_term
 
         # Sleeping to prevent overloading the server
-        print("Sleeping 15 seconds...")
+        print("\nSleeping 15 seconds...\n")
         time.sleep(15)
 
-    # Retrieve the previously created JSON file
-    PMID_search_term_data, PMID_link_term_data = load_json(search_terms[0], search_terms[1])
-    # Compare 2 search terms on PMID
-    relation_term = compare_two_search_word(search_terms[0], search_terms[1], PMID_search_term_data, PMID_link_term_data)
 
-    # Write the final dictionary to JSON
-    dump_to_json(relation_term, "RelationTerm_%s_%s" % (search_terms[0], search_terms[1]))
-    print("Finished")
+
+    if not one_of_the_terms_doesnt_give_results: # So if all terms have results
+        # Retrieve the previously created JSON file
+        #PMID_search_term_data, PMID_link_term_data = load_json("PMID", search_terms[0], search_terms[1])
+        #mainterm_search_term_data, mainterm_link_term_data = load_json("mainterm", search_terms[0], search_terms[1])
+
+        # Compare the 2 terms on PMID
+        linkDict = compare_two_search_word(search_terms[0], search_terms[1], pmidDict_search_term, pmidDict_link_term)
+
+        # Write the final dictionary to JSON
+        #dump_to_json(relation_term, "RelationTerm_%s_%s" % (search_terms[0], search_terms[1]))
+        #print("Finished")
+
+        # Combining both the term dictionaries into 1:
+        pmidDict = merge_dict(pmidDict_search_term, pmidDict_link_term)
+        synonymDict = merge_dict(synonymDict_search_term, synonymDict_link_term)
+
+        filenames = ["relations_bitter_diabetes", "pmid_bitter_diabetes", "synonym_bitter_diabetes"]
+        dicts = [linkDict, pmidDict, synonymDict]
+        dump_to_json(dicts, filenames)
+
+
+        print("finished textmining")
+        #print(synonymDict)
+    else:
+        print("The search term %s didn't return any results" % (faulty_search_term))
+
 
 
 """
@@ -80,6 +130,8 @@ def compare_two_search_word(search_term, link_term, PMID_search_term_data, PMID_
     link_term_set = set(PMID_link_term_data.keys())
     intersection_set = search_term_set.intersection(link_term_set)
 
+    print("Intersected PMID: "+str(intersection_set))
+
     link_term_dict[link_term] = list(intersection_set)
     relation_term[search_term] = link_term_dict
 
@@ -88,35 +140,67 @@ def compare_two_search_word(search_term, link_term, PMID_search_term_data, PMID_
 
 """
 #
+# Combining dictionaries into 1
+#
+"""
+def merge_dict(*dict_args):
+    """
+    Given any number of dicts, shallow copy and merge into a new dict,
+    precedence goes to key value pairs in latter dicts.
+    """
+    result = {}
+    for dictionary in dict_args:
+        result.update(dictionary)
+    return result
+
+
+"""
+#
 # Fuctions using files
 #
 """
 # Writes a dictionary to a JSON file
-def dump_to_json(data, filename):
-    with open("%s.txt" % (filename), "w") as output_file:
-        json.dump(data, output_file)
-    output_file.close()
+def dump_to_json(dicts, filenames):
+    for index, dictionary in enumerate(dicts):
+        filename = str(filenames[index])
+        with open("%s.txt" % (filename), "w") as output_file:
+            json.dump(dictionary, output_file)
+        output_file.close()
 
-# Loads the JSON file of the search term and the link term in a dictionary to
-# compare them.
-def load_json(search_term, link_term):
-    with open("PMID_%s.txt" % (search_term)) as file_search:
-        PMID_search_term_data = json.load(file_search)
+# Loads the JSON file of the search term and the link term into dictionaries
+def load_json(file_type, search_term, link_term):
+    with open("%s_%s.txt" % (file_type, search_term)) as file_search:
+        search_term_data = json.load(file_search)
     file_search.close()
 
-    with open("PMID_%s.txt" % (link_term)) as file_link:
-        PMID_link_term_data = json.load(file_link)
+    with open("%s_%s.txt" % (file_type, link_term)) as file_link:
+        link_term_data = json.load(file_link)
     file_link.close()
 
-    return PMID_search_term_data, PMID_link_term_data
+    return search_term_data, link_term_data
 
-# Loads a csv file to a dictionary
-def load_csv(search_term):
-    health_set = set([3,5])
+# Loads a csv file to a dictionary, tab seperated in this case
+def load_csv():
+    reader = csv.DictReader(open('keywords.csv'), delimiter="\t")
+
+    result = {}
+    for row in reader:
+        for column, value in row.items():
+            if not value == "":
+                result.setdefault(value.lower(), column)
+
+    return result
 
 # Specifies which category the term belongs to
-def get_category(file, term):
-    return "plant"
+def get_category(cat_dict, synterms):
+    categories = []
+
+    for term in synterms:
+        cat = cat_dict.get(term)
+        if not cat == None:
+            categories.append(cat)
+
+    return str(set(categories)).strip("{").strip("}").strip("'")
 
 
 """
@@ -125,45 +209,66 @@ def get_category(file, term):
 #
 """
 # The main function for text mining, with configuration file
-def text_mining(search_term):
+def text_mining(search_term, cat_dict):
     ##### Config #####
-    max_amount_downloaded = 4
-    max_return = 3
+    max_amount_downloaded = 18
+    max_return = 5
     max_number_of_attempts = 3
     title_weigth = 2
     abstract_weigth = 1
     ##################
 
+    max_amount_downloaded = int(max_amount_downloaded/3)
+
     terms, amount_of_hits, record = ncbi_search(search_term)
-    return ncbi_fetch(record, search_term, terms, amount_of_hits,
-                      [max_amount_downloaded, max_return, max_number_of_attempts, title_weigth, abstract_weigth])
+    if not record == None and amount_of_hits > 0:
+        return ncbi_fetch(record, search_term, terms, amount_of_hits,
+                          [max_amount_downloaded, max_return, max_number_of_attempts, title_weigth, abstract_weigth],
+                          cat_dict)
+    else:
+        return None, None, terms, None
 
 
 # Searches the PubMed database with the search term, returns the TranslationSet, amount of hits and the esearch record
 def ncbi_search(search_term):
     #search_string = (search_term.lower())+"[TIAB] AND hasabstract[All Fields] NOT pubmed books[filter]"
+
+    if search_term.lower() == "momordica charantia":
+        search_term = "bitter gourd"
+
     search_string = "(%s[ALL]) AND %s[TIAB] AND hasabstract[All Fields] NOT pubmed books[filter]" % (search_term.lower(), search_term.lower()) #(diabetes[ALL]) AND diabetes[TIAB]
-    record = Entrez.read(Entrez.esearch(db="pubmed",
-                            term=search_string,
-                            usehistory="y"))
 
-    amount_of_hits = int(record["Count"])
+   # if search_term.lower() == "momordica charantia":
+    #    search_string = """("momordica charantia"[MeSH Terms] OR ("momordica"[All Fields] AND "charantia"[All Fields]) OR "momordica charantia"[All Fields] OR ("bitter"[All Fields] AND "gourd"[All Fields]) OR "bitter gourd"[All Fields]) AND bitter gourd[TIAB] AND hasabstract[All Fields] NOT pubmed books[filter]"""
+
     try:
-        translationSet = record["TranslationSet"][0]["To"]
-        terms = set(re.findall('"(.*?)"', translationSet))
-    except IndexError as err:
-        terms = set([search_term.lower()])
-    print(terms)
+        record = Entrez.read(Entrez.esearch(db="pubmed",
+                                term=search_string,
+                                usehistory="y"))
 
-    aprox_time = int((amount_of_hits)/60)
+        amount_of_hits = int(record["Count"])
+        try:
+            translationSet = record["TranslationSet"][0]["To"]
+            print(translationSet)
+            terms = set(re.findall('"(.*?)"', translationSet))
+        except IndexError as err:
+            terms = set([search_term.lower()])
+        except Exception as err:
+            raise
+    except RuntimeError as err:
+        print(err.with_traceback)
+        amount_of_hits = 0
+        record = None
+
+    aprox_time = int(((0.2282835*amount_of_hits)+(4.0993715))/60)
     aprox_hours = int(aprox_time/60)
-    print("%i results found, this will take aprox. %i minutes (%i hours)" % (amount_of_hits, aprox_time, aprox_hours))
+    print("%i results found, this will take aprox. %i minutes (%i hours)\n" % (amount_of_hits, aprox_time, aprox_hours))
     return terms, amount_of_hits, record
     #print(record)
 
 
 # Fetches the data from the record gotten from ncbi_search(), returns all data needed
-def ncbi_fetch(record, search_term, terms, amount_of_hits, config):
+def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
     time_dict = {}
 
     max_amount_downloaded = config[0]
@@ -182,12 +287,14 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config):
     #out_handle = open("text_mining_record.txt", "w")
     time_dict[0] = 0
     start_time = time.time()
+
     for start in range(0,amount_of_hits,max_return): # amount_of_hits,max_return
-        if start % 30:
+        if start % 60 == 0:
             time.sleep(5)
-        #print(start)
-        #end = min(amount_of_hits, start+max_return)
-        print("Downloading %i out of %i" % (current_result, amount_of_hits))
+
+        #print("Downloading %i out of %i" % (current_result, amount_of_hits))
+        end = min(amount_of_hits, start+max_return)
+        print("Downloading record %i to %i" % (start+1, end))
         attempt = 1
         fetched = False
         while attempt <= max_number_of_attempts and fetched == False:
@@ -208,9 +315,11 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config):
                     time.sleep(15)
                 else:
                     connection = False
-                    raise
+                    print(err.with_traceback)
+                    print("NCBI doesn't want to cooperate with this download")
+                    pass
             except URLError as err:
-                print("Connection lost")
+                print("Connection lost, waiting 15 seconds")
                 attempt += 1
                 connection = False
                 time.sleep(15)
@@ -226,37 +335,47 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config):
                 records = Medline.parse(fetch_handle)
 
                 for article in records:
-                    pmid = article["PMID"]
-                    title = str(article["TI"])
-                    authors = ", ".join((article["AU"])).strip("[").strip("]")
-                    publish_data = str(article["DP"])
+                    try:
+                        pmid = article["PMID"]
+                        title = str(article["TI"])
+                        authors = ", ".join((article["AU"])).strip("[").strip("]")
+                        publish_data = str(article["DP"])
 
-                    # PMID dictionary:
-                    PMID_data[pmid] = [title, authors, publish_data]
+                        # PMID dictionary:
+                        PMID_data[pmid] = [title, authors, publish_data]
 
-                    abstract = (article["AB"].replace("This article is protected by copyright. All rights reserved.", "")).lower()
+                        abstract = (article["AB"].replace("This article is protected by copyright. All rights reserved.", "")).lower()
 
-                    # The PMID score dictionary, part of the mainterm dictionary:
-                    for syn_search_term in terms:
-                        syn_ti_score = (title.count(syn_search_term))*title_weigth
-                        syn_ab_score = (abstract.count(syn_search_term))*abstract_weigth
-                        pmid_syn_score = syn_ti_score+syn_ab_score
+                        # The PMID score dictionary, part of the mainterm dictionary:
+                        for syn_search_term in terms:
+                            syn_ti_score = (title.count(syn_search_term))*title_weigth
+                            syn_ab_score = (abstract.count(syn_search_term))*abstract_weigth
+                            pmid_syn_score = syn_ti_score+syn_ab_score
 
-                        if pmid in PMID_score.keys():
-                            PMID_score[pmid] += pmid_syn_score
-                        else:
-                            PMID_score[pmid] = pmid_syn_score
+                            if pmid in PMID_score.keys():
+                                PMID_score[pmid] += pmid_syn_score
+                            else:
+                                PMID_score[pmid] = pmid_syn_score
+                    except KeyError as err:
+                        print(err.with_traceback)
+                        pass
+                    except Exception as err:
+                        raise
+
+
            ### End of if statement ###
 
         # Mostly for testing only
-        time_dict[current_result-1] = ((time.time()-start_time))
+        time_dict[start] = ((time.time()-start_time))
 
         # Cuts off at a certain point, REMOVE BEFORE FINAL RELEASE
-        if current_result == (max_amount_downloaded+1):
-            break
+        if current_result >= (max_amount_downloaded):
+            x = 0
+            #break
+
         # REMOVE BEFORE FINAL RELEASE
 
-    mainterm = main_term_dict(terms, search_term, PMID_score)
+    mainterm = main_term_dict(terms, search_term, PMID_score, cat_dict)
 
     end_time = time.time()
     total_time = end_time-start_time
@@ -270,7 +389,7 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config):
 # The creation of the mainterm dictionary
 #
 """
-def main_term_dict(terms, search_term, PMID_score):
+def main_term_dict(terms, search_term, PMID_score, cat_dict):
     mainterm = {}
     synterm = {}
     mainterm_internal_list = []
@@ -282,7 +401,10 @@ def main_term_dict(terms, search_term, PMID_score):
         synterm[key] = item
 
     mainterm_internal_list.append(synterm)
-    mainterm_internal_list.append(get_category("not_here.yet", search_term))
+    category = get_category(cat_dict, terms)
+    if category == "set()":
+        category = "none"
+    mainterm_internal_list.append(category)
     mainterm[search_term] = mainterm_internal_list
 
     return mainterm
@@ -295,6 +417,17 @@ def main_term_dict(terms, search_term, PMID_score):
 """
 def plot(time_dict):
     #download, time = zip(sorted(time_dict.items()))
+    try:
+        x, y = zip(*sorted(time_dict.items()))
+            # calc the trendline
+        z = numpy.polyfit(x, y, 1)
+        p = numpy.poly1d(z)
+        #pylab.plot(x,p(x),"r--")
+        # the line equation:
+        print("y=%.6fx+(%.6f)"%(z[0],z[1]))
+    except Exception as err:
+        print(err.with_traceback)
+
 
     plt.plot(*zip(*sorted(time_dict.items())))
     plt.xlabel('Downloaded articles')
