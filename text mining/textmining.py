@@ -24,7 +24,11 @@ from Bio import Medline
 from Bio import Entrez
 Entrez.email = "youi.xentoo@gmail.com"
 
-import urllib
+try:
+    from urllib.error import HTTPError, URLError  # for Python 3
+except ImportError:
+    from urllib2 import HTTPError, URLError  # for Python 2
+
 import time
 import json
 import csv
