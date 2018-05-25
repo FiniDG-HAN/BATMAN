@@ -1,25 +1,39 @@
-import DBConnector as dbc
-import traceback
-from flask import Flask
+#################################
+# Methodes om gegevens van de   #
+# textmining op te slaan in     #
+# de databank.                  #
+#################################
+# Gemaakt door: Alex Janse      #
+# Versie 2.0.0.                 #
+# Datum: 25-05-2018             #
+#################################
 
-app = Flask(__name__, instance_relative_config=True)
+import DBConnector as dbc                               # wordt gebruikt om de cursor en de connectie object op te halen
+import DBLoader as dbl
+import traceback                                        # Wordt gebruikt om de volledige error te krijgen ipv alleen de titel
+# from flask import Flask
+
+# app = Flask(__name__, instance_relative_config=True)
 
 # todo: exception handeling
+# Hoofd methode die de sub methodes aanroept om de verschillende directories op te slaan
 def save(synonymDict, pmidDict, linkDict):
     try:
-        cursor, connection = dbc.connect()
-        savePMID(pmidDict,cursor)
+        cursor, connection = dbc.connect()              # De cursor en connection objecten worden op gehaald om queries te kunnen uitvoeren en de verbinding te verbreken
+        savePMID(pmidDict,cursor)                       # De savePMID wordt aangeroepen om de gegevens van de pmidDict op te slaan in de db
         saveTerms(synonymDict, cursor)
         saveLinks(linkDict,cursor)
-        commit(cursor)
-        connection.disconnect()
-        return "klaar3"
+        commit(cursor)                                  # De commit methode wordt aangeroepen als er geen exceptions zijn geweest en de queries die zijn uitgevoerd bevestigd kunnen worden in de db
+        connection.disconnect()                         # Verbreek de connectie met de db
+        dbl.getData()                                   # maak van de db een JSON
     except Exception as e:
-        return str(traceback.format_exc())
+        print(str(traceback.format_exc()))              # Laat de error zien als deze heeft plaats gevonden
 
+# Methode om de gegevens uit de dictonary te halen
+# en de methodes aan te roepen die ze vervolgens op slaat
 def saveTerms(dict, cursor):
     for mainterm in dict.keys():
-        valueList = dict[mainterm]
+        valueList = dict[mainterm]                      # Bevat [[synonymen],[pmid],category]
         category = valueList[2]
         pmid = valueList[1]
         synonymList = valueList[0]
@@ -29,7 +43,7 @@ def saveTerms(dict, cursor):
         for synonym in synonymList:
             saveSynonym(synonym,mainterm,cursor)
 
-
+# Methode om de category op te slaan als deze nog niet in de db staat
 def saveCategory(category, cursor):
     if checkUniqueness("type","classification",category,cursor):
         cursor.execute("INSERT INTO type VALUES (%s)", (category,))
@@ -112,12 +126,11 @@ def getScore(term,pmid,cursor):
         score = int(foundScore[0])
     return score
 
-@app.route("/")
-def test():
-    return save({"testTerm":[["ts2"],{"pmidtest":5},"test33"],"testTerm2":[["ts4"],{"pmidtest":6},"test33"]}
-                ,{"pmidtest":["titeltest","authortest",19950803]},
-                {"testTerm":{"testTerm2":["pmidtest"]}})
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
+# @app.route("/")
+# def test():
+#     return save({"testTerm":[["ts2"],{"pmidtest":5},"test33"],"testTerm2":[["ts4"],{"pmidtest":6},"test33"]}
+#                 ,{"pmidtest":["titeltest","authortest",19950803]},
+#                 {"testTerm":{"testTerm2":["pmidtest"]}})
+#
+# if __name__ == '__main__':
+#     app.run(debug=True)

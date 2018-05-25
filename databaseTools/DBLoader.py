@@ -15,8 +15,11 @@ def getData():
     except Exception as e:
         return str(traceback.format_exc())
 
+
 def createJSONData(cursor):
     cursor.execute("SELECT * FROM node")
+    catList = {}
+    catMax = 0
     data = {}
     data["nodes"] = []
     data["links"] = []
@@ -28,7 +31,10 @@ def createJSONData(cursor):
         synonyms = getSynonyms(term,cursor)
         pmidDict = getPMIDData(pmidScoreDict,cursor)
         linkDict = getLink(term, cursor)
-        data = createNodes(term, category,nodeScore,synonyms,pmidDict, data)
+        data, catList, catMax = createNodes(term, category,
+                                            nodeScore,synonyms,
+                                            pmidDict, data,
+                                            catList, catMax)
         data = createLinks(linkDict,term,data,cursor)
     return data
 
@@ -37,8 +43,8 @@ def createJSON(data):
     json.dump(data, bestand, indent=4, sort_keys=True, default=str)
     bestand.close()
 
-def createNodes(term, category, nodeScore, synonyms, pmidDict, data):
-    group = getCatInt(category)
+def createNodes(term, category, nodeScore, synonyms, pmidDict, data, catList, catMax):
+    group, catList, catMax = getCatInt(category, catList,catMax)
     data["nodes"].append({
         'id' : term,
         'group' : group,
@@ -55,7 +61,7 @@ def createNodes(term, category, nodeScore, synonyms, pmidDict, data):
             'date' : pmidDict[pmid][2],
             'score' : pmidDict[pmid][3]
         })
-    return data
+    return data, catList, catMax
 
 def createLinks(linkDict,hoofdterm,data,cursor):
     for linkID in linkDict.keys():
@@ -67,8 +73,12 @@ def createLinks(linkDict,hoofdterm,data,cursor):
     return data
 
 #todo: dit afmaken
-def getCatInt(category):
-    return 1
+def getCatInt(category,catList, catMax):
+    if catList.keys().__contains__(category):
+        return catList[category], catList, catMax
+    else:
+        catList[category] = catMax
+        return catMax, catList, catMax+1
 
 def getLinkTerm(linkID,hoofdTerm,cursor):
     cursor.execute("SELECT term FROM nodeXlink WHERE link_id LIKE %s AND term NOT LIKE %s",(linkID,hoofdTerm))
