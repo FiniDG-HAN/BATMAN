@@ -2,7 +2,7 @@
 """
 Created on Thu May 17 14:07:53 2018
 
-Version 1.3
+Version 1.5
 
 @authors: Thijs Weenink and Fini De Gruyter
 
@@ -15,8 +15,6 @@ Version 1.3
 # {relationterm : {linkterm : [PMID]}                        #
 #                                                            #
 ##############################################################
-
->>> REMOVE LINES 371-376 AT FINAL RELEASE <<<
 
 """
 
@@ -33,6 +31,7 @@ import time
 import json
 import csv
 import re
+import itertools
 
 import matplotlib.pyplot as plt
 import numpy
@@ -49,30 +48,28 @@ def main():
 
     cat_dict = load_csv()
 
-    pmidDict_search_term = {}
-    pmidDict_link_term = {}
-    synonymDict_search_term = {}
-    synonymDict_link_term = {}
+    pmid_dict = {}
+    synonym_dict = {}
+    linkterm_dict = {}
 
-    search_terms = ["Momordica charantia", "diabetes"]
-    #search_terms = ["Dioscorea batatas", "Momordica charantia"] # yam
-    for index, search_term in enumerate(search_terms):
+    index_test = int(get_previous_search_index())+1
+
+    search_terms = list(cat_dict.keys())[int(index_test)::]
+
+
+    for index_of_searches, search_term in enumerate(search_terms):
+        if search_term == "diabetes":
+            continue
+
+        try:
+            linkterm_dict, pmid_dict, synonym_dict = get_previous_search_terms("relations", "pmid", "synonym")
+        except Exception:
+            make_history("relations", "pmid", "synonym")
+
         # Main text mining function, PMID and mainterm are dictonaries,
         # structure can be seen on line 7-15
         print("Search term: %s" % (search_term))
-        PMID, mainterm, terms ,time_dict = text_mining(search_term, cat_dict)
-
-        # Saves the 2 above dicts
-        if index == 0:
-            pmidDict_search_term = PMID
-            synonymDict_search_term = mainterm
-        elif index == 1:
-            pmidDict_link_term = PMID
-            synonymDict_link_term = mainterm
-
-        # Writes the dictionaries to JSON files
-        #dump_to_json(PMID, "PMID_%s" % (search_term))
-        #dump_to_json(mainterm, "mainterm_%s" % (search_term))
+        PMID, synonym, terms ,time_dict = text_mining(search_term, cat_dict)
 
         """
         # Plotting useful with testing
@@ -80,65 +77,58 @@ def main():
             plot(time_dict)
         """
 
-
         # Making sure the script doesnt continue if one of the search terms doesnt give any results
-        if PMID == None or mainterm == None or time_dict == None:
+        if PMID == None or synonym == None or time_dict == None:
             one_of_the_terms_doesnt_give_results = True
             faulty_search_term = search_term
 
-        # Sleeping to prevent overloading the server
-        print("\nSleeping 15 seconds...\n")
-        time.sleep(15)
+
+        if not one_of_the_terms_doesnt_give_results: # So if all terms have results...
+
+            linkDict = relations(search_term, linkterm_dict, synonym, synonym_dict)
+
+            # Combining dictionaries into 1:
+            pmidDict = merge_dict(pmid_dict, PMID)
+            synonymDict = merge_dict(synonym, synonym_dict)
+
+            filenames = ["relations", "pmid", "synonym"]
+            dicts = [linkDict, pmidDict, synonymDict]
+            dump_to_json(dicts, filenames)
 
 
+            print("finished textmining")
+        else:
+            print("The search term %s didn't return any results" % (faulty_search_term))
 
-    if not one_of_the_terms_doesnt_give_results: # So if all terms have results
-        # Retrieve the previously created JSON file
-        #PMID_search_term_data, PMID_link_term_data = load_json("PMID", search_terms[0], search_terms[1])
-        #mainterm_search_term_data, mainterm_link_term_data = load_json("mainterm", search_terms[0], search_terms[1])
+        add_to_search_indexes(str(index_of_searches + int(index_test)))
 
-        # Compare the 2 terms on PMID
-        linkDict = compare_two_search_word(search_terms[0], search_terms[1], pmidDict_search_term, pmidDict_link_term)
-
-        # Write the final dictionary to JSON
-        #dump_to_json(relation_term, "RelationTerm_%s_%s" % (search_terms[0], search_terms[1]))
-        #print("Finished")
-
-        # Combining both the term dictionaries into 1:
-        pmidDict = merge_dict(pmidDict_search_term, pmidDict_link_term)
-        synonymDict = merge_dict(synonymDict_search_term, synonymDict_link_term)
-
-        filenames = ["relations_bitter_diabetes", "pmid_bitter_diabetes", "synonym_bitter_diabetes"]
-        dicts = [linkDict, pmidDict, synonymDict]
-        dump_to_json(dicts, filenames)
-
-
-        print("finished textmining")
-        #print(synonymDict)
-    else:
-        print("The search term %s didn't return any results" % (faulty_search_term))
-
-
+        if index_of_searches == 4:
+            break
 
 """
 #
-# Comparing the two search words, returns the "relationterm" dictionary
+# Comparing the pmids from terms, returns the "relationterm" dictionary
 #
 """
-def compare_two_search_word(search_term, link_term, PMID_search_term_data, PMID_link_term_data):
-    # {relationterm : {linkterm : [PMID]}  --> Structure
+def relations(search_term, linkterm_dict, synonym_dict_current, synonym_dict_previous):
+    previous_terms = synonym_dict_previous.keys()
+    future_dict_keys = [item for item in itertools.chain(previous_terms, [search_term])]
+    all_terms_pmid_dict = merge_dict(synonym_dict_current, synonym_dict_previous)
+
     relation_term = {}
-    link_term_dict = {}
 
-    # Set comparing to find PMID that are the same in both sets
-    search_term_set = set(PMID_search_term_data.keys())
-    link_term_set = set(PMID_link_term_data.keys())
-    intersection_set = search_term_set.intersection(link_term_set)
+    for term_key in future_dict_keys:
+        key_apostrophe_s_pmids_set = set((all_terms_pmid_dict.get(term_key)[1]).keys())
+        link_term = {}
+        for term_value in future_dict_keys:
+            if term_key == term_value:
+                continue
+            else:
+                value_apostrophe_s_pmids_set = set((all_terms_pmid_dict.get(term_value)[1]).keys())
+                intersected = key_apostrophe_s_pmids_set.intersection(value_apostrophe_s_pmids_set)
+                link_term[term_value] = [ item for item in intersected]
 
-    print("Intersected PMID: "+str(intersection_set))
-
-    link_term_dict[link_term] = list(intersection_set)
-    relation_term[search_term] = link_term_dict
+        relation_term[term_key] = link_term
 
     return relation_term
 
@@ -164,6 +154,32 @@ def merge_dict(*dict_args):
 # Fuctions using files
 #
 """
+# Gets the previous dictionaries
+def get_previous_search_terms(relation, pmid, synonym):
+    with open("%s.txt" % (relation), "r") as relations_file:
+        relation_dict = json.load(relations_file)
+    relations_file.close()
+
+    with open("%s.txt" % (pmid), "r") as pmid_file:
+        pmid_dict = json.load(pmid_file)
+    pmid_file.close()
+
+    with open("%s.txt" % (synonym), "r") as synonym_file:
+        synonym_dict = json.load(synonym_file)
+    synonym_file.close()
+
+    return relation_dict, pmid_dict, synonym_dict
+
+def make_history(relation, pmid, synonym):
+    with open("%s.txt" % (relation), "w") as relations_file:
+        relations_file.close()
+
+    with open("%s.txt" % (pmid), "w") as pmid_file:
+        pmid_file.close()
+
+    with open("%s.txt" % (synonym), "w") as synonym_file:
+        synonym_file.close()
+
 # Writes a dictionary to a JSON file
 def dump_to_json(dicts, filenames):
     for index, dictionary in enumerate(dicts):
@@ -207,6 +223,47 @@ def get_category(cat_dict, synterms):
 
     return str(set(categories)).strip("{").strip("}").strip("'")
 
+"""
+#
+# In case the script crashes or NCBI throws out the script, so you dont have to strart from the beginning again
+#
+"""
+def get_previous_search_index():
+    try:
+        with open("previous_search_index.txt", "a+") as file:
+            file.seek(0)
+            lines = [i.strip() for i in file.readlines()]
+            file.close()
+    except Exception as err:
+        print("Error: "+str(err))
+
+    if len(lines) == 0:
+        index = 0
+    else:
+        index = max(lines)
+
+    return index
+
+"""
+#
+# Adds an number to the indexes file
+#
+"""
+def add_to_search_indexes(index):
+    try:
+        if index == 0:
+            with open("previous_search_index.txt", "w") as file:
+                file.write(str(0)+"\n")
+                file.close()
+        else:
+            with open("previous_search_index.txt", "a+") as file:
+                file.seek(0)
+                file.write(str(index)+"\n")
+                file.close()
+
+    except Exception as err:
+        print("Error: "+str(err))
+
 
 """
 #
@@ -236,15 +293,11 @@ def text_mining(search_term, cat_dict):
 
 # Searches the PubMed database with the search term, returns the TranslationSet, amount of hits and the esearch record
 def ncbi_search(search_term):
-    #search_string = (search_term.lower())+"[TIAB] AND hasabstract[All Fields] NOT pubmed books[filter]"
 
     if search_term.lower() == "momordica charantia":
         search_term = "bitter gourd"
 
     search_string = "(%s[ALL]) AND %s[TIAB] AND hasabstract[All Fields] NOT pubmed books[filter]" % (search_term.lower(), search_term.lower()) #(diabetes[ALL]) AND diabetes[TIAB]
-
-   # if search_term.lower() == "momordica charantia":
-    #    search_string = """("momordica charantia"[MeSH Terms] OR ("momordica"[All Fields] AND "charantia"[All Fields]) OR "momordica charantia"[All Fields] OR ("bitter"[All Fields] AND "gourd"[All Fields]) OR "bitter gourd"[All Fields]) AND bitter gourd[TIAB] AND hasabstract[All Fields] NOT pubmed books[filter]"""
 
     try:
         record = Entrez.read(Entrez.esearch(db="pubmed",
@@ -284,8 +337,6 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
     # All of the dictionaries needed in this function
     PMID_data = {}
     PMID_score = {}
-    relationterm = {}
-    linkterm = {}
 
     current_result = 1
     #out_handle = open("text_mining_record.txt", "w")
@@ -310,7 +361,7 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                                              webenv=record["WebEnv"],
                                              query_key=record["QueryKey"])
 
-            except urllib.error.HTTPError as err:
+            except HTTPError as err:
                 if 500 <= err.code <= 599:
                     print("Received error from server %s" % err)
                     print("Attempt %i of %i" % (attempt, max_number_of_attempts))
@@ -321,7 +372,7 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                     connection = False
                     print("NCBI doesn't want to cooperate with this download")
                     pass
-            except urllib.error.URLError as err:
+            except URLError as err:
                 print("Connection lost, waiting 15 seconds")
                 attempt += 1
                 connection = False
@@ -363,18 +414,10 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                     except Exception as err:
                         raise
 
-
-           ### End of if statement ###
+            ### End of if statement ###
 
         # Mostly for testing only
         time_dict[start] = ((time.time()-start_time))
-
-        # Cuts off at a certain point, REMOVE BEFORE FINAL RELEASE
-        if current_result >= (max_amount_downloaded):
-            x = 0
-            #break
-
-        # REMOVE BEFORE FINAL RELEASE
 
     mainterm = main_term_dict(terms, search_term, PMID_score, cat_dict)
 
@@ -422,8 +465,6 @@ def plot(time_dict):
         x, y = zip(*sorted(time_dict.items()))
             # calc the trendline
         z = numpy.polyfit(x, y, 1)
-        p = numpy.poly1d(z)
-        #pylab.plot(x,p(x),"r--")
         # the line equation:
         print("y=%.6fx+(%.6f)"%(z[0],z[1]))
     except Exception as err:
@@ -527,5 +568,9 @@ As described in Section 9.12.1 above, you can then use Bio.Medline to parse the 
 
 
 >>> REMOVE LINES 250-253 AT FINAL RELEASE <<<
+
+
+
+
 
 """
