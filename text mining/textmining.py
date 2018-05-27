@@ -2,7 +2,7 @@
 """
 Created on Thu May 17 14:07:53 2018
 
-Version 1.5
+Version 1.5.1
 
 @authors: Thijs Weenink and Fini De Gruyter
 
@@ -58,9 +58,6 @@ def main():
 
 
     for index_of_searches, search_term in enumerate(search_terms):
-        if search_term == "diabetes":
-            continue
-
         try:
             linkterm_dict, pmid_dict, synonym_dict = get_previous_search_terms("relations", "pmid", "synonym")
         except Exception:
@@ -273,14 +270,14 @@ def add_to_search_indexes(index):
 # The main function for text mining, with configuration file
 def text_mining(search_term, cat_dict):
     ##### Config #####
-    max_amount_downloaded = 18
+    max_amount_downloaded = 500
     max_return = 5
     max_number_of_attempts = 3
     title_weigth = 2
     abstract_weigth = 1
     ##################
 
-    max_amount_downloaded = int(max_amount_downloaded/3)
+    max_amount_downloaded = int(max_amount_downloaded/max_return)
 
     terms, amount_of_hits, record = ncbi_search(search_term)
     if not record == None and amount_of_hits > 0:
