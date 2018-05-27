@@ -36,6 +36,7 @@ import itertools
 import matplotlib.pyplot as plt
 import numpy
 
+import afterprocessing
 
 def main():
     """
@@ -52,10 +53,11 @@ def main():
     synonym_dict = {}
     linkterm_dict = {}
 
-    index_test = int(get_previous_search_index())+1
+    index_test = int(get_previous_search_index())
 
     search_terms = list(cat_dict.keys())[int(index_test)::]
-
+    print(search_terms)
+    print(len(search_terms))
 
     for index_of_searches, search_term in enumerate(search_terms):
         try:
@@ -99,8 +101,11 @@ def main():
 
         add_to_search_indexes(str(index_of_searches + int(index_test)))
 
-        if index_of_searches == 4:
-            break
+        #if index_of_searches == 4:
+         #   break
+
+    # Cleans up the dictionary as I dont want to mess with this script anymore
+    afterprocessing.clean_up_dictionary("relations.txt")
 
 """
 #
@@ -237,7 +242,7 @@ def get_previous_search_index():
     if len(lines) == 0:
         index = 0
     else:
-        index = max(lines)
+        index = max(lines)+1
 
     return index
 
@@ -412,6 +417,8 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                         raise
 
             ### End of if statement ###
+        if current_result >= max_amount_downloaded:
+            break
 
         # Mostly for testing only
         time_dict[start] = ((time.time()-start_time))
