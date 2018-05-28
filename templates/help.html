@@ -54,7 +54,7 @@
 <h2>Frequently Asked Questions</h2>
 <button class="accordion">+ What is text mining?</button>
 <div class="panel">
-  <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (edges) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker edges (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
+  <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker links (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
   </p>
 </div>
 
@@ -71,9 +71,9 @@ At a much higher level, the network that is generated with our application can s
 Another option that can help is temporary removing nodes from the network. This makes the network easier to read and interpret.
 <h3><img src="{{ url_for('static', filename='img/helpfigures.png')}}" alt="Finding indirect results in application"></h3>
 Figure 1:
-Apple has no direct relation with health effect 2, but tomato has a clear direct relationship. However, compound X related to the health effect is also apple and therefore could have a relation with this health effect. More researched organisms like <i>C. sativus</i> could create a link to a compound or health effect for a less researched organism like <i>M. charanti</i>.
+Apple has no direct relation with health effect 2, but tomato has a clear direct relationship. However, compound X related to the health effect is also present in apple and therefore could have a relation with this health effect. More researched organisms like <i>C. sativus</i> could create a indirect link to a compound or health effect for a less researched organism like <i>M. charanti</i>.
 <BR>Figure 2:
-Compound X has a relation with health effect 1, which is present in cucumber. However no direct link between cucumber and health effect 1 is present, but cucumber might still have this health effect.
+Compound Z has a relation with health effect 1, which is present in cucumber. However no direct link between cucumber and health effect 1 is present, but cucumber might still have this health effect.
 </p>
 </div>
 
