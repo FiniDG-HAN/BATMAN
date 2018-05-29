@@ -8,7 +8,7 @@
  * This script is responsible for the network visualisation and the related
  * functionality, including searching and filtering.
  *
- * Known bugs: none. 
+ * Known bugs: none.
  */
 
 // Select svg element
@@ -130,13 +130,13 @@ d3.json("../static/json/network.json", function (error, graph) {
         window.alert("No articles for this node or link available");
       var array = d.articles;
 
-        var str = 'PubMedID,ArticleTitle,ArticleAuthors,Date' + '\r\n';
+        var str = 'ArticleAuthors\tDate\tPubMedID\tScore\tArticleTitle' + '\r\n';
 
         for (var i = 0; i < array.length; i++) {
             var line = '';
 
             for (var index in array[i]) {
-                line += array[i][index] + ',';
+                line += array[i][index] + '\t';
             }
 
             line.slice(0,line.Length-1);
