@@ -25,7 +25,7 @@ var simulation = d3.forceSimulation()
             return d.id;
         }))
         .force("charge", d3.forceManyBody()
-                .strength(-150))
+                .strength(-400))
         .force("collide", d3.forceCollide(function (d) {
             return 4 + (d.hitcount / 500000) * 4;
         }))
@@ -46,10 +46,10 @@ d3.json("../static/json/network.json", function (error, graph) {
                 return d.source + "-" + d.target;
             })
             .attr("stroke-width", function (d) {
-                return 1.4 + (Math.sqrt(d.value));
+                return 1.4 + (Math.sqrt(d.value / 10));
             })
             .style("stroke", function (d) {
-                return "rgba(0,0,0,0.12)";
+                return "rgba(0,0,0,0.08)";
             })
             .on("click", selectLink)
             .on("mouseover", highlightLink)
@@ -310,7 +310,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton = document.createElement("input");
         downloadButton = document.createElement("input");
         selectedItem = document.getElementById(linkId);
-        selectedStroke = "rgba(0,0,0,0.12)";
+        selectedStroke = "rgba(0,0,0,0.08)";
         selectedItem.style["stroke"] = "rgba(0,0,255,0.5)";
         zoomButton.type = "submit";
         zoomButton.value = "Zoom in on link";
@@ -651,7 +651,7 @@ function highlightLink(d) {
 // Unhighlight link
 function unhighlightLink(d) {
     if (highlightedLink !== selectedItem) {
-        highlightedLink.style["stroke"] = "rgba(0,0,0,0.12)";
+        highlightedLink.style["stroke"] = "rgba(0,0,0,0.08)";
     } else {
         highlightedLink.style["stroke"] = "rgba(0,0,255,0.3)";
     }
