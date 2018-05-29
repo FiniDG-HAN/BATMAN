@@ -1,7 +1,22 @@
+/*!
+ * BATMAN PubMed chart JavaScript
+ * https://github.com/JonathanFeenstra/BATMAN
+ *
+ * Copyright (c) 2018 Jonathan Feenstra
+ * MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
+ *
+ * This script is responsible for the chart visualisation on the home page.
+ *
+ * Known bugs: none.
+ */
+
+// Select canvas
 var ctx = document.getElementById('chart').getContext('2d');
 
+// White font color
 Chart.defaults.global.defaultFontColor = '#FFF';
 
+// Create chart
 var chart = new Chart(ctx, {
   type: 'line',
   data: {

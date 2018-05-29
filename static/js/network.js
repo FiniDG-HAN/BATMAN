@@ -4,6 +4,11 @@
  *
  * Copyright (c) 2018 Jonathan Feenstra
  * MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
+ *
+ * This script is responsible for the network visualisation and the related
+ * functionality, including searching and filtering.
+ *
+ * Known bugs: none. 
  */
 
 // Select svg element

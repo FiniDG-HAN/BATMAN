@@ -1,3 +1,17 @@
+/*!
+ * Pacman JavaScript
+ * Altered version of https://github.com/daleharvey/pacman/blob/master/pacman.js
+ *
+ * Original version by Dale Harvey, published under the WTFPL license.
+ * Modified by Jonathan Feenstra
+ *
+ * This script is responsible for the Pacman game. Since it is not a part of the
+ * main functionality, functions aren't documented.
+ *
+ * Known bugs: ghosts don't go back to their base after eating them, ghost
+ * mechanics are not perfect.
+ */
+
 var NONE        = 4,
     UP          = 3,
     LEFT        = 2,
