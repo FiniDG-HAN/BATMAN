@@ -49,7 +49,7 @@ d3.json("../static/json/network.json", function (error, graph) {
                 return 1.4 + (Math.sqrt(d.value / 10));
             })
             .style("stroke", function (d) {
-                return "rgba(0,0,0,0.08)";
+                return "rgba(0,0,0,0.05)";
             })
             .on("click", selectLink)
             .on("mouseover", highlightLink)
@@ -69,7 +69,7 @@ d3.json("../static/json/network.json", function (error, graph) {
     // Draw nodes
     node.append("circle")
             .attr("r", function (d) {
-                return 4 + (d.hitcount / 500000) * 4;
+                return 3 + (d.hitcount / 5000) * 4.5;
             })
             .attr("fill", function (d) {
                 return color(d.group);
@@ -272,24 +272,27 @@ d3.json("../static/json/network.json", function (error, graph) {
           generateCSV(d);
         }
 
-        info.innerHTML = "<h3 style=\"color:" + color(d.group) + ";\">"
-                + d.id + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+        var infoContent = "<h3 style=\"color:"
+                + color(d.group) + ";\">" + d.id
+                + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + (d.hitcount !== 1 ? " hits)" : " hit)")
                 + "</h3><p>Type: <span style=\"color:" + color(d.group) + ";\">"
                 + "Health effect" + "</span></p>"
                 + "<p>Also known as:</p>"
-                + "<p>PubMed articles:</p>"
-                + "<table>"
-                + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>"
-                + "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
-                + 29776004 + "\">"
-                + "Knowledge and Health Beliefs about Gestational Diabetes and Healthy Pregnancy's Breastfeeding Intention."
-                + "</a></td><td>" + "Park S, Lee JL, In Sun J, Kim Y"
-                + "</td><td>" + "2018 May 18" + "</td></tr>"
-                + "</table>"
-                + "<p><a href=\"http://www.uniprot.org/uniprot/?query="
-                + d.id + "&sort=score\">Search UniProt for \"" + d.id +
-                "\"</a></p>";
+                + "<p>PubMed articles: " + d.articles.length + "</p>"
+                + "<div id=\"scrollpane\"><table>"
+                + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>";
+        for (var i = 0; i < d.articles.length; i++) {
+          infoContent += "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
+                         + d.articles[i].pmid + "\">" + d.articles[i].title
+                         + "</a></td><td>"
+                         + d.articles[i].authors + "</td><td>"
+                         + d.articles[i].date
+                         + "</td></tr>"
+        }
+        infoContent += "</table></div><p><a href=\"http://www.uniprot.org/uniprot/?query="
+                + d.id + "&sort=score\">Search UniProt for \"" + d.id + "\"</a></p>";
+        info.innerHTML = infoContent;
         info.appendChild(releaseButton);
         info.appendChild(zoomButton);
         info.appendChild(removeButton);
@@ -310,7 +313,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton = document.createElement("input");
         downloadButton = document.createElement("input");
         selectedItem = document.getElementById(linkId);
-        selectedStroke = "rgba(0,0,0,0.08)";
+        selectedStroke = "rgba(0,0,0,0.05)";
         selectedItem.style["stroke"] = "rgba(0,0,255,0.5)";
         zoomButton.type = "submit";
         zoomButton.value = "Zoom in on link";
@@ -651,7 +654,7 @@ function highlightLink(d) {
 // Unhighlight link
 function unhighlightLink(d) {
     if (highlightedLink !== selectedItem) {
-        highlightedLink.style["stroke"] = "rgba(0,0,0,0.08)";
+        highlightedLink.style["stroke"] = "rgba(0,0,0,0.05)";
     } else {
         highlightedLink.style["stroke"] = "rgba(0,0,255,0.3)";
     }

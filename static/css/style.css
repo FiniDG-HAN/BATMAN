@@ -468,8 +468,14 @@ ul {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
+#info-content #scrollpane {
+	height: 300px;
+	overflow-x: hidden;
+}
+
 #info-content table {
 	width: 100%;
+	background-color: #333;
 	border-collapse: collapse;
 }
 
