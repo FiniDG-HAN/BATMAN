@@ -271,14 +271,13 @@ d3.json("../static/json/network.json", function (error, graph) {
         downloadButton.onclick = function () {
           generateCSV(d);
         }
-
         var infoContent = "<h3 style=\"color:"
                 + color(d.group) + ";\">" + d.id
                 + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + (d.hitcount !== 1 ? " hits)" : " hit)")
                 + "</h3><p>Type: <span style=\"color:" + color(d.group) + ";\">"
                 + "Health effect" + "</span></p>"
-                + "<p>Also known as:</p>"
+                + "<p>Also known as: " + d.synonyms.join(", ") + "</p>"
                 + "<p>PubMed articles: " + d.articles.length + "</p>"
                 + "<div id=\"scrollpane\"><table>"
                 + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>";
@@ -331,18 +330,28 @@ d3.json("../static/json/network.json", function (error, graph) {
         downloadButton.onclick = function () {
           generateCSV(d);
         }
-        info.innerHTML = "<h3><span style=\"color:" + color(d.source.group) + ";\">"
+        var mutualArticles = d.source.articles.filter(function(a) {
+          return d.target.articles.some(function(b) {
+            return a.pmid === b.pmid;
+          });
+        });
+        var infoContent = "<h3><span style=\"color:" + color(d.source.group) + ";\">"
                 + d.source.id + "</span> - <span style=\"color:"
                 + color(d.target.group) + ";\">" + d.target.id
                 + "</span></h3><p>Relationship score: " + d.value + "</p>"
-                + "<p>Mutual PubMed articles:</p><table>"
-                + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>"
-                + "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
-                + 29776004 + "\">"
-                + "Knowledge and Health Beliefs about Gestational Diabetes and Healthy Pregnancy's Breastfeeding Intention."
-                + "</a></td><td>" + "Park S, Lee JL, In Sun J, Kim Y"
-                + "</td><td>" + "2018 May 18" + "</td></tr>"
-                + "</table>";
+                + "<p>Mutual PubMed articles: " + mutualArticles.length
+                + "</p><div id=\"scrollpane\"><table>"
+                + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>";
+        for (var i = 0; i < mutualArticles.length; i++) {
+          infoContent += "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
+                         + mutualArticles[i].pmid + "\">" + mutualArticles[i].title
+                         + "</a></td><td>"
+                         + mutualArticles[i].authors + "</td><td>"
+                         + mutualArticles[i].date
+                         + "</td></tr>"
+        }
+        infoContent += "</table></div>";
+        info.innerHTML = infoContent;
         info.appendChild(zoomButton);
         info.appendChild(removeButton);
         info.appendChild(downloadButton);

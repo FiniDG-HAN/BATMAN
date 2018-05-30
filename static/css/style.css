@@ -469,7 +469,7 @@ ul {
 }
 
 #info-content #scrollpane {
-	height: 300px;
+	max-height: 300px;
 	overflow-x: hidden;
 }
 
@@ -488,7 +488,11 @@ ul {
 }
 
 #info-content th, td {
-    border: 1px solid #999;
+  border: 1px solid #999;
+}
+
+#info-content tr:nth-child(even) {
+	background-color: #222;
 }
 
 #info-content a {

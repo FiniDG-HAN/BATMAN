@@ -4,7 +4,11 @@
     ~~~~~~~~~~
 
     Web application for visualizing the health effects of bitter gourd and yam
-    compounds, based on our results from text mining PubMed articles.
+    compounds, based on our results from text mining PubMed abstracts.
+
+    This script is responsible for running the web application.
+
+    Known bugs: none.
 
     :copyright: © 2018 by Jonathan Feenstra.
     :license: MIT, see LICENSE for more details.
