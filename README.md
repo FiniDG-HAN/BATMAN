@@ -2,6 +2,8 @@
 
 Biomedical Article Text Mining ApplicatioN
 
+[Differences between disign and final application -- Thijn van Kempen](README_Thijn.md)
+
 ## Authors
 ### HAN BIN-2c project group 8 (course 8 2018)
 * **Jonathan Feenstra** - Project leader, software engineer, database designer &amp; web developer - [JonathanFeenstra](https://github.com/JonathanFeenstra)
