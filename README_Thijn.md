@@ -5,11 +5,13 @@ Biomedical Article Text Mining ApplicatioN<br>
 Een webapplicatie voor textmining in biomedische artikelen voor de onderzoeksvraag van het BioCentre<br>
 
 
-copyright: 
+copyright:
 Jonathan Feenstra, Fini De Gruyter, Alex Janse & Alex Thijs Weenink 2018.
 
 ![Alt text](static/img/batmanlogo.png?raw=true "Technisch ERD")
 ![Alt text](static/img/batmanlogo.png?raw=true "logisch ERD")
+![Alt text](static/img/systeemarchitectuur.png?raw=true "Systeemarchitectuur")
+![Alt text](static/img/classdiagram.png?raw=true "Software-architectuur (Class diagram)")
 
 <h2>Afwijkingen van het analyse/ontwerp met argumentatie:</h2>
 
@@ -55,6 +57,3 @@ mainterm : [[synoniemen], {pmid : score}, categorie]}<br>
 -"node_id" is veranderd naar "mainterm". Dit zijn de namen van de nodes, die al uniek moeten zijn in onze applicatie.<br>
 <ins>In de entiteit "keyword"</ins><br>
 - Er is een attribuut verwijderd, namelijk "hitcount". Dit omdat de score op een andere plek opgeslagen wordt, namelijk in de tussentabel "nodeXarticle". de totale score van een node wordt nu berekend door alle scores bij elkaar op te tellen. De score opgeslagen in "nodeXarticle" is nu de score per artikel, zodat ze ook makkelijker op volgorde opgeslagen kunnen worden.</h5>
-
-
-
