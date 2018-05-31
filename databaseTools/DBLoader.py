@@ -1,9 +1,9 @@
 import DBConnector as dbc
 import traceback
 import json
-# from flask import Flask
+from flask import Flask
 
-# app = Flask(__name__, instance_relative_config=True)
+app = Flask(__name__, instance_relative_config=True)
 
 def getData():
     try:
@@ -24,6 +24,7 @@ def createJSONData(cursor):
     data["nodes"] = []
     data["links"] = []
     results = cursor.fetchall()
+    linkMemory = []                                                 # Houdt bij welke links er al zijn gemaakt om duplicaten te voorkomen
     for result in results:
         term = result[0]
         category = result[1]
@@ -35,11 +36,11 @@ def createJSONData(cursor):
                                             nodeScore,synonyms,
                                             pmidDict, data,
                                             catList, catMax)
-        data = createLinks(linkDict,term,data,cursor)
+        data, linkMemory = createLinks(linkDict,term,data,cursor,linkMemory)
     return data
 
 def createJSON(data):
-    bestand = open(r'/home/owe8_pg8/public_html/BATMAN/static/json/test.json','w')
+    bestand = open(r'/home/owe8_pg8/public_html/BATMAN/static/json/test2.json','w')
     json.dump(data, bestand, indent=4, sort_keys=True, default=str)
     bestand.close()
 
@@ -63,16 +64,21 @@ def createNodes(term, category, nodeScore, synonyms, pmidDict, data, catList, ca
         })
     return data, catList, catMax
 
-def createLinks(linkDict,hoofdterm,data,cursor):
+def createLinks(linkDict,hoofdterm,data,cursor,linkMemory):
     for linkID in linkDict.keys():
-        data["links"].append({
-            'scource' : hoofdterm,
-            'target' : getLinkTerm(linkID,hoofdterm,cursor),
-            'value' : linkDict[linkID]
-        })
-    return data
+        for lijst in linkMemory:
+            linkTerm = getLinkTerm(linkID, hoofdterm, cursor)
+            if not (lijst.__contains__(hoofdterm) and lijst.__contains__(linkTerm)):
+                data["links"].append({
+                    'source' : hoofdterm,
+                    'target' : linkTerm,
+                    'value' : linkDict[linkID]
+                })
+                linkMemory.append([hoofdterm,linkTerm])
 
-#todo: dit afmaken
+    return data,linkMemory
+
+
 def getCatInt(category,catList, catMax):
     if catList.keys().__contains__(category):
         return catList[category], catList, catMax
@@ -132,9 +138,9 @@ def getLinkScore(link,cursor):
         score = int(item)
     return score
 
-# @app.route("/")
-# def test():
-#     return getData()
-#
-# if __name__ == '__main__':
-#     app.run(debug=True)
+@app.route("/")
+def test():
+    return getData()
+
+if __name__ == '__main__':
+    app.run(debug=True)

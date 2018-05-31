@@ -67,7 +67,7 @@ def checkUniqueness(tableName,columnName,
         query += extraSQL
     cursor.execute(query,(searchTerm,))
     count = 0
-    for resultaat in cursor:
+    for (resultaat,) in cursor:
         count += 1
     if count > 0:
         return False
