@@ -4,6 +4,7 @@
 
 {% block content %}
 <h2>Network</h2>
+<p>Missing some keywords? <a href="{{ url_for('contact') }}">Ask the staff</a> to add them to the network.</p>
 <article class="main-col">
   <svg id="network"></svg>
   <input id="release" type="submit" value="Release all nodes">
@@ -21,8 +22,8 @@
         <h1 id="toggle-advanced" onclick="toggleAdvanced();">+ More options</h1>
         <div id="collapsible">
           <label>Nodes:<select id="options" onchange="updateSearch();"></select></label>
-          <label>Minimal relation score:<input type="range"></label>
-          <label>Minimal hitcount:<input type="range"></label>
+          <label>Minimal relation score:<input id="minrelfilter" type="range"></label>
+          <label>Minimal hitcount:<input id="minhitfilter" type="range"></label>
           <h1 onclick="addKeywordFilter();">+ Filter by keywords</h1>
           <div id="keyword-filter">
           </div>
