@@ -503,7 +503,6 @@ d3.json("../static/json/network.json", function (error, graph) {
         var filters = filterDiv.getElementsByTagName("select");
         words = new Set();
         for (var i = 1; i < filters.length; i++) {
-            console.log(filters[i].value);
             words.add(filters[i].value);
         }
         if (focus) {
