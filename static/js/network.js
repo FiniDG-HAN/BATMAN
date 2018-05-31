@@ -19,7 +19,7 @@ var svg = d3.select("#network"),
         height = svg.node().getBoundingClientRect().height,
         g = svg.append("g"),
         color = d3.scaleOrdinal(d3.schemeCategory20),
-        maxHitcount = 0,
+        maxNodeScore = 0,
         maxRelScore = 0,
         focus = false;
 
@@ -38,15 +38,15 @@ d3.json("../static/json/network.json", function (error, graph) {
         throw error;
 
     // Create sets of keywords and synonyms, determine maximum hitcount
-    var keywords = new Set();
-        mainterms = new Set();
+    var keywords = [];
+        mainterms =[];
     graph.nodes.forEach(function(d) {
-      maxHitcount = d.hitcount > maxHitcount ? d.hitcount : maxHitcount;
-      keywords.add(d.id);
-      mainterms.add(d.id);
+      maxNodeScore = d.hitcount > maxNodeScore ? d.hitcount : maxNodeScore;
+      keywords.push(d.id);
+      mainterms.push(d.id);
       d.synonyms.forEach(function(s) {
         if (s !== d.id) {
-          keywords.add(s + " (" + d.id + ")");
+          keywords.push(s + " (" + d.id + ")");
         }
       });
     });
@@ -59,11 +59,11 @@ d3.json("../static/json/network.json", function (error, graph) {
     });
 
     // Adjust filter values
-    var minHitcountFilter = document.getElementById("minhitfilter"),
+    var minNodeScoreFilter = document.getElementById("minnodefilter"),
         minRelScoreFilter = document.getElementById("minrelfilter");
-    minHitcountFilter.setAttribute("max", maxHitcount);
-    minHitcountFilter.value = 0;
-    minHitcountFilter.onchange = function() { filterScores(); };
+    minNodeScoreFilter.setAttribute("max", maxNodeScore);
+    minNodeScoreFilter.value = 0;
+    minNodeScoreFilter.onchange = function() { filterScores(); };
     minRelScoreFilter.setAttribute("max", maxRelScore);
     minRelScoreFilter.value = 0;
     minRelScoreFilter.onchange = function() { filterScores(); };
@@ -100,13 +100,13 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Add node collision
     simulation.force("collide", d3.forceCollide(function (d) {
-        return 3 + (d.hitcount / maxHitcount) * 4.5;
+        return 3 + (d.hitcount / maxNodeScore) * 4.5;
     }));
 
     // Draw nodes
     node.append("circle")
             .attr("r", function (d) {
-                return 3 + (d.hitcount / maxHitcount) * 4.5;
+                return 3 + (d.hitcount / maxNodeScore) * 4.5;
             })
             .attr("fill", function (d) {
                 return color(d.group);
@@ -225,19 +225,27 @@ d3.json("../static/json/network.json", function (error, graph) {
         if (focus) {
             toggleFocus(d);
         }
-        keywords = Array.from(keywords).filter(function (keyword) {
+        keywords = keywords.filter(function (keyword) {
           if (d.id === keyword) {
             return false;
           } else {
             for (var i = 0; i < keyword.split("(").length; i++) {
-              if (d.id.toUpperCase() === keyword.split("(")[i].split(')')[0]) {
+              if (d.id === keyword.split("(")[i].split(')')[0]) {
                 return false;
               }
             }
           }
           return true;
         });
-        $("#search").autocomplete({source: keywords});
+        $("#search").autocomplete({
+          source: keywords,
+          messages: {
+              noResults: "",
+              results: function(count) {}
+          },
+          autoFocus: true,
+          classes: {"ui-autocomplete": "autocomplete"}
+        });
         document.getElementById(d.id + "-option").outerHTML = "";
         graph.nodes.splice(d.index, 1);
         graph.links = graph.links.filter(function (l) {
@@ -247,37 +255,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         graph.links.forEach(function (d) {
             directConnections[d.source.id + "," + d.target.id] = 1;
         });
-        if (d3.event) {
-            d3.event.stopPropagation();
-        }
-        node = node.data(graph.nodes, function (d) {
-            return d.id;
-        });
-        node.exit().remove();
-        node = node.enter().append("circle").attr("fill", function (d) {
-            return color(d.group);
-        })
-                .attr("r", function (d) {
-                    return 3 + (d.hitcount / maxHitcount) * 4.5;
-                })
-                .merge(node);
-        node.select("text").remove();
-        node.append("text")
-                .attr("dx", 6)
-                .attr("id", function (d) {
-                    return d.id + "-label";
-                })
-                .text(function (d) {
-                    return d.id;
-                });
-        link = link.data(graph.links, function (d) {
-            return d.source.id + "-" + d.target.id;
-        });
-        link.exit().remove();
-        link = link.enter().append("line").merge(link);
-        simulation.nodes(graph.nodes)
-                .force("link").links(graph.links);
-        simulation.alpha(1).restart();
+        updateNetwork();
     }
 
     // Remove link
@@ -533,15 +511,28 @@ d3.json("../static/json/network.json", function (error, graph) {
             unhighlightNode(highlightedNode);
             highlightedNode = false;
         }
-        keywords = Array.from(keywords).filter(function (id) {
-            if (words.has(id)) {
-                document.getElementById(id + "-option").outerHTML = "";
-            }
-            return words.has(id);
-        });
-        $("#search").autocomplete({source: keywords});
+        keywords = [];
+        mainterms = [];
         graph.nodes = graph.nodes.filter(function (d) {
-            return words.has(d.id);
+            if (words.has(d.id)) {
+              mainterms.push(d.id);
+              keywords.push(d.id);
+              d.synonyms.forEach(function(s) {
+                if (s !== d.id) {
+                  keywords.push(s + " (" + d.id + ")");
+                }
+            });
+          }
+          return words.has(d.id);
+        });
+        $("#search").autocomplete({
+          source: keywords,
+          messages: {
+            noResults: "",
+            results: function(count) {}
+          },
+          autoFocus: true,
+          classes: {"ui-autocomplete": "autocomplete"}
         });
         graph.links = graph.links.filter(function (l) {
             return words.has(l.source.id) && words.has(l.target.id);
@@ -561,8 +552,28 @@ d3.json("../static/json/network.json", function (error, graph) {
           unhighlightNode(highlightedNode);
           highlightedNode = false;
       }
+      keywords = [];
+      mainterms = [];
       graph.nodes = graph.nodes.filter(function (d) {
-          return d.hitcount >= minHitcountFilter.value;
+          if (d.hitcount >= minNodeScoreFilter.value) {
+            mainterms.push(d.id);
+            keywords.push(d.id);
+            d.synonyms.forEach(function(s) {
+              if (s !== d.id) {
+                keywords.push(s + " (" + d.id + ")");
+              }
+          });
+          return d.hitcount >= minNodeScoreFilter.value;
+        }
+      });
+      $("#search").autocomplete({
+        source: keywords,
+        messages: {
+          noResults: "",
+          results: function(count) {}
+        },
+        autoFocus: true,
+        classes: {"ui-autocomplete": "autocomplete"}
       });
       graph.links = graph.links.filter(function (l) {
           return l.value >= minRelScoreFilter.value
@@ -585,7 +596,7 @@ d3.json("../static/json/network.json", function (error, graph) {
           return color(d.group);
       })
               .attr("r", function (d) {
-                  return 3 + (d.hitcount / maxHitcount) * 4.5;
+                  return 3 + (d.hitcount / maxNodeScore) * 4.5;
               })
               .merge(node);
       node.select("text").remove();
@@ -684,9 +695,10 @@ d3.json("../static/json/network.json", function (error, graph) {
     // Search autocomplete
     $(function () {
         $("#search").autocomplete({
-            source: Array.from(keywords),
+            source: keywords,
             messages: {
-                noResults: ""
+                noResults: "",
+                results: function(count) {}
             },
             autoFocus: true,
             classes: {"ui-autocomplete": "autocomplete"}
@@ -696,7 +708,7 @@ d3.json("../static/json/network.json", function (error, graph) {
     // Fill drop-down menu
     $(function () {
         var $dropdown = $("#options");
-        $.each(Array.from(mainterms), function (key, value) {
+        $.each(mainterms, function (key, value) {
             $dropdown.append("<option id=\""
                     + value + "-option\" value=\"" + value + "\">" + value + "</option>");
         });
