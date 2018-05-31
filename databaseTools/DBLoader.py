@@ -1,22 +1,33 @@
+#############################
+# Methodes om de data       #
+# uit de db te halen en     #
+# op te slaan in een JSON.  #
+#############################
+# Gemaakt door: Alex Janse  #
+# Versie: 2.0.0.            #
+# Datum: 31-05-2018         #
+#############################
+
 import DBConnector as dbc
 import traceback
 import json
-from flask import Flask
+# from flask import Flask
 
-app = Flask(__name__, instance_relative_config=True)
+# app = Flask(__name__, instance_relative_config=True)
 
+#
 def getData():
     try:
         cursor, connection = dbc.connect()
-        data = createJSONData(cursor)
-        createJSON(data)
+        data = __createJSONData(cursor)
+        __createJSON(data)
         connection.close()
         return "klaar"
     except Exception as e:
         return str(traceback.format_exc())
 
 
-def createJSONData(cursor):
+def __createJSONData(cursor):
     cursor.execute("SELECT * FROM node")
     catList = {}
     catMax = 0
@@ -32,19 +43,19 @@ def createJSONData(cursor):
         synonyms = getSynonyms(term,cursor)
         pmidDict = getPMIDData(pmidScoreDict,cursor)
         linkDict = getLink(term, cursor)
-        data, catList, catMax = createNodes(term, category,
-                                            nodeScore,synonyms,
-                                            pmidDict, data,
-                                            catList, catMax)
-        data, linkMemory = createLinks(linkDict,term,data,cursor,linkMemory)
+        data, catList, catMax = __createNodes(term, category,
+                                              nodeScore, synonyms,
+                                              pmidDict, data,
+                                              catList, catMax)
+        data, linkMemory = __createLinks(linkDict, term, data, cursor, linkMemory)
     return data
 
-def createJSON(data):
+def __createJSON(data):
     bestand = open(r'/home/owe8_pg8/public_html/BATMAN/static/json/test2.json','w')
     json.dump(data, bestand, indent=4, sort_keys=True, default=str)
     bestand.close()
 
-def createNodes(term, category, nodeScore, synonyms, pmidDict, data, catList, catMax):
+def __createNodes(term, category, nodeScore, synonyms, pmidDict, data, catList, catMax):
     group, catList, catMax = getCatInt(category, catList,catMax)
     data["nodes"].append({
         'id' : term,
@@ -64,7 +75,7 @@ def createNodes(term, category, nodeScore, synonyms, pmidDict, data, catList, ca
         })
     return data, catList, catMax
 
-def createLinks(linkDict,hoofdterm,data,cursor,linkMemory):
+def __createLinks(linkDict, hoofdterm, data, cursor, linkMemory):
     for linkID in linkDict.keys():
         for lijst in linkMemory:
             linkTerm = getLinkTerm(linkID, hoofdterm, cursor)
@@ -138,9 +149,9 @@ def getLinkScore(link,cursor):
         score = int(item)
     return score
 
-@app.route("/")
-def test():
-    return getData()
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# @app.route("/")
+# def test():
+#     return getData()
+#
+# if __name__ == '__main__':
+#     app.run(debug=True)
