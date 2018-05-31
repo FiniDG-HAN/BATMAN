@@ -8,8 +8,8 @@ Een webapplicatie voor textmining in biomedische artikelen voor de onderzoeksvra
 :copyright:
 Jonathan Feenstra, Fini De Gruyter, Alex Janse & Alex Thijs Weenink 2018.
 
-![Alt text](static/img/batmanlogo.png?raw=true "Technisch ERD")
-![Alt text](static/img/batmanlogo.png?raw=true "logisch ERD")
+![Alt text](static/img/technischERD.png?raw=true "Technisch ERD")
+![Alt text](static/img/logischERD.png?raw=true "logisch ERD")
 ![Alt text](static/img/systeemarchitectuur.png?raw=true "Systeemarchitectuur")
 ![Alt text](static/img/classdiagram.png?raw=true "Software-architectuur (Class diagram)")
 
