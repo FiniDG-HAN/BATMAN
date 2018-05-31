@@ -161,7 +161,16 @@ d3.json("../static/json/network.json", function (error, graph) {
 
             str += line + '\r\n';
         }
-        window.open( "data:text/csv;charset=utf-8," + escape(str))
+        var uri = "data:text/csv;charset=utf-8," + escape(str)
+
+
+        var downloadLink = document.createElement("a");
+        downloadLink.href = uri;
+        downloadLink.download = "data.tsv";
+
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     }
 
     function generateCSVLink(mutualArticles) {
@@ -183,7 +192,16 @@ d3.json("../static/json/network.json", function (error, graph) {
 
             str += line + '\r\n';
           }
-          window.open( "data:text/csv;charset=utf-8," + escape(str))
+          var uri = "data:text/csv;charset=utf-8," + escape(str)
+
+
+          var downloadLink = document.createElement("a");
+          downloadLink.href = uri;
+          downloadLink.download = "data.tsv";
+
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
 
         }
 
@@ -505,7 +523,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             highlightedNode = false;
         }
         keywords = Array.from(keywords).filter(function (id) {
-            if (!words.has(id)) {
+            if (words.has(id)) {
                 document.getElementById(id + "-option").outerHTML = "";
             }
             return words.has(id);
