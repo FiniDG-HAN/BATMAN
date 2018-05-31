@@ -2,7 +2,7 @@
  * BATMAN Network JavaScript
  * https://github.com/JonathanFeenstra/BATMAN
  *
- * Copyright (c) 2018 Jonathan Feenstra
+ * Copyright (c) 2018 Jonathan Feenstra + (Fini De Gruyter function: generateCSV)
  * MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
  *
  * This script is responsible for the network visualisation and the related
@@ -164,6 +164,29 @@ d3.json("../static/json/network.json", function (error, graph) {
         window.open( "data:text/csv;charset=utf-8," + escape(str))
     }
 
+    function generateCSVLink(mutualArticles) {
+      if (typeof(mutualArticles)=='undefined')
+        window.alert("No articles for this node or link available");
+
+      var array = mutualArticles;
+
+        var str = 'ArticleAuthors\tDate\tPubMedID\tScore\tArticleTitle' + '\r\n';
+
+        for (var i = 0; i < mutualArticles.length; i++) {
+            var line = '';
+
+            for (var index in array[i]) {
+                  line += array[i][index] + '\t';
+            }
+
+            line.slice(0,line.Length-1);
+
+            str += line + '\r\n';
+          }
+          window.open( "data:text/csv;charset=utf-8," + escape(str))
+
+        }
+
     // Remove node
     function removeNode(d) {
         if (selectedItem) {
@@ -296,7 +319,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         downloadButton.type = "submit";
         downloadButton.value = "Download CSV";
         downloadButton.onclick = function () {
-          generateCSV(d);
+            generateCSV(d);
         }
         var infoContent = "<h3 style=\"color:"
                 + color(d.group) + ";\">" + d.id
@@ -352,16 +375,17 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton.onclick = function () {
             removeLink(d);
         };
-        downloadButton.type = "submit";
-        downloadButton.value = "Download CSV"
-        downloadButton.onclick = function () {
-          generateCSV(d);
-        }
         var mutualArticles = d.source.articles.filter(function(a) {
           return d.target.articles.some(function(b) {
             return a.pmid === b.pmid;
           });
         });
+        downloadButton.type = "submit";
+        downloadButton.value = "Download CSV"
+        downloadButton.onclick = function () {
+            generateCSVLink(mutualArticles);
+        }
+
         var infoContent = "<h3><span style=\"color:" + color(d.source.group) + ";\">"
                 + d.source.id + "</span> - <span style=\"color:"
                 + color(d.target.group) + ";\">" + d.target.id
