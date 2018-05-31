@@ -148,7 +148,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         window.alert("No articles for this node or link available");
       var array = d.articles;
 
-        var str = 'ArticleAuthors\tDate\tPubMedID\tScore\tArticleTitle' + '\r\n';
+        var str = 'Authors\tDate\tPubMedID\tScore\tTitle' + '\r\n';
 
         for (var i = 0; i < array.length; i++) {
             var line = '';
@@ -179,7 +179,7 @@ d3.json("../static/json/network.json", function (error, graph) {
 
       var array = mutualArticles;
 
-        var str = 'ArticleAuthors\tDate\tPubMedID\tScore\tArticleTitle' + '\r\n';
+        var str = 'Authors\tDate\tPubMedID\tScore\tTitle' + '\r\n';
 
         for (var i = 0; i < mutualArticles.length; i++) {
             var line = '';
