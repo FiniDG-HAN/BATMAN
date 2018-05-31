@@ -2,8 +2,10 @@
  * BATMAN Network JavaScript
  * https://github.com/JonathanFeenstra/BATMAN
  *
- * Copyright (c) 2018 Jonathan Feenstra + (Fini De Gruyter function: generateCSV)
+ * Copyright (c) 2018 Jonathan Feenstra
  * MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
+ *
+ * Notable contributions: Fini De Gruyter - downloading TSV files.
  *
  * This script is responsible for the network visualisation and the related
  * functionality, including searching and filtering.
@@ -142,68 +144,59 @@ d3.json("../static/json/network.json", function (error, graph) {
     }
 
 
-    // Download CSV file for a node or link
-    function generateCSV(d) {
-      if (typeof(d.articles)=='undefined')
-        window.alert("No articles for this node or link available");
-      var array = d.articles;
+    // Download TSV file for a node
+    function generateTSV(d) {
+      if (typeof(d.articles) === "undefined") {
+        window.alert("No articles for this node are available");
+      }
+      var str = "Authors\tDate\tPubMedID\tScore\tTitle" + "\r\n";
 
-        var str = 'Authors\tDate\tPubMedID\tScore\tTitle' + '\r\n';
+      for (var i = 0; i < d.articles.length; i++) {
+          var line = "";
+          for (var index in d.articles[i]) {
+              line += d.articles[i][index] + "\t";
+          }
+          line.slice(0, line.Length -1);
+          str += line + "\r\n";
+      }
+      var uri = "data:text/tsv;charset=utf-8," + escape(str)
 
-        for (var i = 0; i < array.length; i++) {
-            var line = '';
 
-            for (var index in array[i]) {
-                line += array[i][index] + '\t';
-            }
+      var downloadLink = document.createElement("a");
+      downloadLink.href = uri;
+      downloadLink.download = d.id.replace(" ", "_") + ".tsv";
 
-            line.slice(0,line.Length-1);
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
 
-            str += line + '\r\n';
+    // Download TSV file for a link
+    function generateTSVLink(linkId, mutualArticles) {
+      var str = "Authors\tDate\tPubMedID\tScore\tTitle" + "\r\n";
+
+      for (var i = 0; i < mutualArticles.length; i++) {
+          var line = '';
+
+          for (var index in mutualArticles[i]) {
+                line += mutualArticles[i][index] + '\t';
+          }
+
+          line.slice(0, line.Length - 1);
+
+          str += line + '\r\n';
         }
-        var uri = "data:text/csv;charset=utf-8," + escape(str)
+        var uri = "data:text/tsv;charset=utf-8," + escape(str)
 
 
         var downloadLink = document.createElement("a");
         downloadLink.href = uri;
-        downloadLink.download = "data.tsv";
+        downloadLink.download = linkId.replace(" ", "_") + ".tsv";
 
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
     }
-
-    function generateCSVLink(mutualArticles) {
-      if (typeof(mutualArticles)=='undefined')
-        window.alert("No articles for this node or link available");
-
-      var array = mutualArticles;
-
-        var str = 'Authors\tDate\tPubMedID\tScore\tTitle' + '\r\n';
-
-        for (var i = 0; i < mutualArticles.length; i++) {
-            var line = '';
-
-            for (var index in array[i]) {
-                  line += array[i][index] + '\t';
-            }
-
-            line.slice(0,line.Length-1);
-
-            str += line + '\r\n';
-          }
-          var uri = "data:text/csv;charset=utf-8," + escape(str)
-
-
-          var downloadLink = document.createElement("a");
-          downloadLink.href = uri;
-          downloadLink.download = "data.tsv";
-
-          document.body.appendChild(downloadLink);
-          downloadLink.click();
-          document.body.removeChild(downloadLink);
-
-        }
 
     // Remove node
     function removeNode(d) {
@@ -335,9 +328,9 @@ d3.json("../static/json/network.json", function (error, graph) {
             removeNode(d);
         };
         downloadButton.type = "submit";
-        downloadButton.value = "Download CSV";
+        downloadButton.value = "Download table";
         downloadButton.onclick = function () {
-            generateCSV(d);
+            generateTSV(d);
         }
         var infoContent = "<h3 style=\"color:"
                 + color(d.group) + ";\">" + d.id
@@ -399,9 +392,9 @@ d3.json("../static/json/network.json", function (error, graph) {
           });
         });
         downloadButton.type = "submit";
-        downloadButton.value = "Download CSV"
+        downloadButton.value = "Download table"
         downloadButton.onclick = function () {
-            generateCSVLink(mutualArticles);
+            generateTSVLink(linkId, mutualArticles);
         }
 
         var infoContent = "<h3><span style=\"color:" + color(d.source.group) + ";\">"
@@ -509,7 +502,8 @@ d3.json("../static/json/network.json", function (error, graph) {
     function filterKeywords() {
         var filters = filterDiv.getElementsByTagName("select");
         words = new Set();
-        for (var i = 0; i < filters.length; i++) {
+        for (var i = 1; i < filters.length; i++) {
+            console.log(filters[i].value);
             words.add(filters[i].value);
         }
         if (focus) {
