@@ -27,7 +27,7 @@ var simulation = d3.forceSimulation()
         .force("charge", d3.forceManyBody()
                 .strength(-400))
         .force("collide", d3.forceCollide(function (d) {
-            return 4 + (d.hitcount / 500000) * 4;
+            return 3 + (d.hitcount / 5000) * 4.5;
         }))
         .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -88,9 +88,27 @@ d3.json("../static/json/network.json", function (error, graph) {
                 return d.id;
             });
 
-    var nodeIds = graph.nodes.map(function (node) {
-        return node["id"];
-    });
+    // List of keywords with synonyms
+    var keywords = new Set();
+        mainterms = new Set();
+    for (var i = 0; i < graph.nodes.length; i++) {
+      var currentNode = graph.nodes[i];
+      keywords.add(currentNode.id);
+      mainterms.add(currentNode.id);
+      for (var j = 0; j < currentNode.synonyms.length; j++) {
+        if (currentNode.synonyms[j] !== currentNode.id) {
+          keywords.add(currentNode.synonyms[j] + " ("
+            + currentNode.id + ")");
+        }
+      }
+    }
+
+    // Group to type dictionary
+    var groupTypeMap = new Map();
+    groupTypeMap.set(0, "Compound");
+    groupTypeMap.set(1, "Health effect");
+    groupTypeMap.set(2, "Unknown");
+    groupTypeMap.set(3, "Organism");
 
     // Find directly connected nodes and links
     var directConnections = {};
@@ -160,10 +178,19 @@ d3.json("../static/json/network.json", function (error, graph) {
         if (focus) {
             toggleFocus(d);
         }
-        nodeIds = nodeIds.filter(function (id) {
-            return d.id !== id;
+        keywords = Array.from(keywords).filter(function (keyword) {
+          if (d.id === keyword) {
+            return false;
+          } else {
+            for (var i = 0; i < keyword.split("(").length; i++) {
+              if (d.id.toUpperCase() === keyword.split("(")[i].split(')')[0]) {
+                return false;
+              }
+            }
+          }
+          return true;
         });
-        $("#search").autocomplete({source: nodeIds});
+        $("#search").autocomplete({source: keywords});
         document.getElementById(d.id + "-option").outerHTML = "";
         graph.nodes.splice(d.index, 1);
         graph.links = graph.links.filter(function (l) {
@@ -184,7 +211,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             return color(d.group);
         })
                 .attr("r", function (d) {
-                    return 4 + (d.hitcount / 500000) * 4;
+                    return 3 + (d.hitcount / 5000) * 4.5;
                 })
                 .merge(node);
         node.select("text").remove();
@@ -276,7 +303,7 @@ d3.json("../static/json/network.json", function (error, graph) {
                 + " (" + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + (d.hitcount !== 1 ? " hits)" : " hit)")
                 + "</h3><p>Type: <span style=\"color:" + color(d.group) + ";\">"
-                + "Health effect" + "</span></p>"
+                + groupTypeMap.get(d.group) + "</span></p>"
                 + "<p>Also known as: " + d.synonyms.join(", ") + "</p>"
                 + "<p>PubMed articles: " + d.articles.length + "</p>"
                 + "<div id=\"scrollpane\"><table>"
@@ -355,27 +382,6 @@ d3.json("../static/json/network.json", function (error, graph) {
         info.appendChild(zoomButton);
         info.appendChild(removeButton);
         info.appendChild(downloadButton);
-        /* Link focus, incompatible with node focus
-         var node = svg.selectAll("circle");
-         link = svg.selectAll("line");
-         label = svg.selectAll("text");
-         if (!focus) {
-         node.style("opacity", function(o) {
-         return (d.source == o | d.target == o) ? 1 : 0.1;
-         });
-         label.style("opacity", function(o) {
-         return (d.source.id == o.id | d.target.id == o.id) ? 1 : 0.1;
-         });
-         link.style("opacity", function (o) {
-         return d == o ? 1 : 0.1;
-         });
-         focus = true;
-         } else {
-         node.style("opacity", 1);
-         link.style("opacity", 1);
-         label.style("opacity", 1);
-         focus = false;
-         }*/
     }
 
     // Release all nodes
@@ -460,9 +466,9 @@ d3.json("../static/json/network.json", function (error, graph) {
     // Filter the network on keywords
     function filterKeywords() {
         var filters = filterDiv.getElementsByTagName("select");
-        keywords = new Set();
+        words = new Set();
         for (var i = 0; i < filters.length; i++) {
-            keywords.add(filters[i].value);
+            words.add(filters[i].value);
         }
         if (focus) {
             toggleFocus(selectedItem);
@@ -474,18 +480,18 @@ d3.json("../static/json/network.json", function (error, graph) {
             unhighlightNode(highlightedNode);
             highlightedNode = false;
         }
-        nodeIds = nodeIds.filter(function (id) {
-            if (!keywords.has(id)) {
+        keywords = Array.from(keywords).filter(function (id) {
+            if (!words.has(id)) {
                 document.getElementById(id + "-option").outerHTML = "";
             }
-            return keywords.has(id);
+            return words.has(id);
         });
-        $("#search").autocomplete({source: nodeIds});
+        $("#search").autocomplete({source: keywords});
         graph.nodes = graph.nodes.filter(function (d) {
-            return keywords.has(d.id);
+            return words.has(d.id);
         });
         graph.links = graph.links.filter(function (l) {
-            return keywords.has(l.source.id) && keywords.has(l.target.id);
+            return words.has(l.source.id) && words.has(l.target.id);
         });
         if (d3.event) {
             d3.event.stopPropagation();
@@ -498,7 +504,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             return color(d.group);
         })
                 .attr("r", function (d) {
-                    return 4 + (d.hitcount / 500000) * 4;
+                    return 3 + (d.hitcount / 5000) * 4.5;
                 })
                 .merge(node);
         node.select("text").remove();
@@ -552,8 +558,16 @@ d3.json("../static/json/network.json", function (error, graph) {
         otherNodes = svg.selectAll("circle").filter(function (d, i) {
             if (d.id.toUpperCase() === query) {
                 foundNode = d;
+                return false;
+            } else {
+              for (var i = 0; i < query.split("(").length; i++) {
+                if (d.id.toUpperCase() === query.split("(")[i].split(')')[0]) {
+                  foundNode = d;
+                  return false;
+                }
+              }
             }
-            return d.id.toUpperCase() !== query;
+            return true;
         });
         if (foundNode) {
             document.getElementById("alert").style["display"] = "none";
@@ -561,7 +575,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             d3.selectAll(".link").style("opacity", "0.1");
             var label = svg.selectAll("text");
             otherLabels = label.filter(function () {
-                return this.innerHTML.toUpperCase() !== query;
+                return this.innerHTML !== foundNode.id;
             });
             zoomhandler.translateTo(svg, foundNode.x, foundNode.y);
             zoomhandler.scaleTo(svg.transition(), 2);
@@ -585,7 +599,7 @@ d3.json("../static/json/network.json", function (error, graph) {
     // Search autocomplete
     $(function () {
         $("#search").autocomplete({
-            source: nodeIds,
+            source: Array.from(keywords),
             messages: {
                 noResults: ""
             },
@@ -597,7 +611,7 @@ d3.json("../static/json/network.json", function (error, graph) {
     // Fill drop-down menu
     $(function () {
         var $dropdown = $("#options");
-        $.each(nodeIds, function (key, value) {
+        $.each(Array.from(mainterms), function (key, value) {
             $dropdown.append("<option id=\""
                     + value + "-option\" value=\"" + value + "\">" + value + "</option>");
         });
