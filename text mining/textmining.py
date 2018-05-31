@@ -2,7 +2,7 @@
 """
 Created on Thu May 17 14:07:53 2018
 
-Version 1.5.1
+Version 1.6
 
 @authors: Thijs Weenink and Fini De Gruyter
 
@@ -17,34 +17,36 @@ Version 1.5.1
 ##############################################################
 
 """
-
-from Bio import Medline
-from Bio import Entrez
-Entrez.email = "youi.xentoo@gmail.com"
-
 try:
     from urllib.error import HTTPError, URLError  # for Python 3
 except ImportError:
     from urllib2 import HTTPError, URLError  # for Python 2
+
+import matplotlib.pyplot as plt
+import numpy
+from Bio import Medline
+from Bio import Entrez
+Entrez.email = "youi.xentoo@gmail.com"
 
 import time
 import json
 import csv
 import re
 import itertools
+import os
+import errno
 
-import matplotlib.pyplot as plt
-import numpy
+from afterprocessing import *
 
-import afterprocessing
+def main(search_list, search_list_name):
+    making_dirs(search_list_name)
 
-def main():
     """
     #
     # Outputs: PMID, mainterm, relation_term
     #
     """
-    print("Start of script")
+    print("Currently text mining\n")
     one_of_the_terms_doesnt_give_results = False
 
     cat_dict = load_csv()
@@ -55,11 +57,11 @@ def main():
 
     index_test = int(get_previous_search_index())
 
-    search_terms = list(cat_dict.keys())[int(index_test)::]
-    print(search_terms)
-    print(len(search_terms))
+    #search_terms = list(cat_dict.keys())[int(index_test)::]
+    #print(search_terms)
+    #print(len(search_terms))
 
-    for index_of_searches, search_term in enumerate(search_terms):
+    for index_of_searches, search_term in enumerate(search_list):
         try:
             linkterm_dict, pmid_dict, synonym_dict = get_previous_search_terms("relations", "pmid", "synonym")
         except Exception:
@@ -67,7 +69,7 @@ def main():
 
         # Main text mining function, PMID and mainterm are dictonaries,
         # structure can be seen on line 7-15
-        print("Search term: %s" % (search_term))
+        print("\nSearch term: %s" % (search_term))
         PMID, synonym, terms ,time_dict = text_mining(search_term, cat_dict)
 
         """
@@ -90,22 +92,58 @@ def main():
             pmidDict = merge_dict(pmid_dict, PMID)
             synonymDict = merge_dict(synonym, synonym_dict)
 
+
             filenames = ["relations", "pmid", "synonym"]
+
+
+
             dicts = [linkDict, pmidDict, synonymDict]
             dump_to_json(dicts, filenames)
 
 
-            print("finished textmining")
+            #print("finished textmining")
         else:
             print("The search term %s didn't return any results" % (faulty_search_term))
 
         add_to_search_indexes(str(index_of_searches + int(index_test)))
 
+    #print(synonymDict)
         #if index_of_searches == 4:
          #   break
+    new_relation_file_name = clean_up_data_relation_dict(linkDict, filenames[0])
+
+    new_pmid_file_name = clean_up_data_other_dicts(pmidDict, filenames[1], search_list_name)
+    new_synonym_file_name = clean_up_data_other_dicts(synonymDict, filenames[2], search_list_name)
+
+    final_file_synonym, final_file_link = remove_zero_values(new_synonym_file_name, new_relation_file_name, search_list_name)
+
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    print("\n######################################")
+    print("PMID file: %s.txt\nSynonym file: %s.txt\nLink file: %s.txt\n" % ((dir_path+os.sep+new_pmid_file_name), (dir_path+os.sep+new_synonym_file_name), (dir_path+os.sep+new_relation_file_name)))
 
     # Cleans up the dictionary as I dont want to mess with this script anymore
-    afterprocessing.clean_up_dictionary("relations.txt")
+    #afterprocessing.clean_up_dictionary("relations.txt")
+    #after_after_processing.main("processed_relations.txt")
+
+
+def making_dirs(search_list_name):
+    try:
+        os.mkdir("cache")
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
+
+    try:
+        os.mkdir("results")
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
+
+    try:
+        os.mkdir("results/%s" % (search_list_name))
+    except OSError as exception:
+        if exception.errno != errno.EEXIST:
+            raise
 
 """
 #
@@ -123,7 +161,7 @@ def relations(search_term, linkterm_dict, synonym_dict_current, synonym_dict_pre
         key_apostrophe_s_pmids_set = set((all_terms_pmid_dict.get(term_key)[1]).keys())
         link_term = {}
         for term_value in future_dict_keys:
-            if term_key == term_value:
+            if term_key == term_value or (term_value in term_key.split()):
                 continue
             else:
                 value_apostrophe_s_pmids_set = set((all_terms_pmid_dict.get(term_value)[1]).keys())
@@ -158,53 +196,42 @@ def merge_dict(*dict_args):
 """
 # Gets the previous dictionaries
 def get_previous_search_terms(relation, pmid, synonym):
-    with open("%s.txt" % (relation), "r") as relations_file:
+    with open("cache%s%s.txt" % (os.sep, relation), "r") as relations_file:
         relation_dict = json.load(relations_file)
     relations_file.close()
 
-    with open("%s.txt" % (pmid), "r") as pmid_file:
+    with open("cache%s%s.txt" % (os.sep, pmid), "r") as pmid_file:
         pmid_dict = json.load(pmid_file)
     pmid_file.close()
 
-    with open("%s.txt" % (synonym), "r") as synonym_file:
+    with open("cache%s%s.txt" % (os.sep, synonym), "r") as synonym_file:
         synonym_dict = json.load(synonym_file)
     synonym_file.close()
 
     return relation_dict, pmid_dict, synonym_dict
 
 def make_history(relation, pmid, synonym):
-    with open("%s.txt" % (relation), "w") as relations_file:
+    with open("cache%s%s.txt" % (os.sep, relation), "w") as relations_file:
         relations_file.close()
 
-    with open("%s.txt" % (pmid), "w") as pmid_file:
+    with open("cache%s%s.txt" % (os.sep, pmid), "w") as pmid_file:
         pmid_file.close()
 
-    with open("%s.txt" % (synonym), "w") as synonym_file:
+    with open("cache%s%s.txt" % (os.sep, synonym), "w") as synonym_file:
         synonym_file.close()
 
 # Writes a dictionary to a JSON file
 def dump_to_json(dicts, filenames):
     for index, dictionary in enumerate(dicts):
         filename = str(filenames[index])
-        with open("%s.txt" % (filename), "w") as output_file:
+        with open("cache%s%s.txt" % (os.sep, filename), "w") as output_file:
             json.dump(dictionary, output_file)
         output_file.close()
 
-# Loads the JSON file of the search term and the link term into dictionaries
-def load_json(file_type, search_term, link_term):
-    with open("%s_%s.txt" % (file_type, search_term)) as file_search:
-        search_term_data = json.load(file_search)
-    file_search.close()
-
-    with open("%s_%s.txt" % (file_type, link_term)) as file_link:
-        link_term_data = json.load(file_link)
-    file_link.close()
-
-    return search_term_data, link_term_data
 
 # Loads a csv file to a dictionary, tab seperated in this case
 def load_csv():
-    reader = csv.DictReader(open('keywords.csv'), delimiter="\t")
+    reader = csv.DictReader(open('keywords.csv'))
 
     result = {}
     for row in reader:
@@ -232,7 +259,7 @@ def get_category(cat_dict, synterms):
 """
 def get_previous_search_index():
     try:
-        with open("previous_search_index.txt", "a+") as file:
+        with open("cache"+os.sep+"previous_search_index.txt", "a+") as file:
             file.seek(0)
             lines = [i.strip() for i in file.readlines()]
             file.close()
@@ -242,7 +269,12 @@ def get_previous_search_index():
     if len(lines) == 0:
         index = 0
     else:
-        index = max(lines)+1
+        if str(lines[-1:]).isnumeric():
+            index = max(lines)+1
+        else:
+            index = 0
+            with open("cache"+os.sep+"previous_search_index.txt", "w") as file:
+                file.close()
 
     return index
 
@@ -254,11 +286,11 @@ def get_previous_search_index():
 def add_to_search_indexes(index):
     try:
         if index == 0:
-            with open("previous_search_index.txt", "w") as file:
+            with open("cache/previous_search_index.txt", "w") as file:
                 file.write(str(0)+"\n")
                 file.close()
         else:
-            with open("previous_search_index.txt", "a+") as file:
+            with open("cache/previous_search_index.txt", "a+") as file:
                 file.seek(0)
                 file.write(str(index)+"\n")
                 file.close()
@@ -275,7 +307,7 @@ def add_to_search_indexes(index):
 # The main function for text mining, with configuration file
 def text_mining(search_term, cat_dict):
     ##### Config #####
-    max_amount_downloaded = 500
+    max_amount_downloaded = 15
     max_return = 5
     max_number_of_attempts = 3
     title_weigth = 2
@@ -309,7 +341,7 @@ def ncbi_search(search_term):
         amount_of_hits = int(record["Count"])
         try:
             translationSet = record["TranslationSet"][0]["To"]
-            print(translationSet)
+            #print(translationSet)
             terms = set(re.findall('"(.*?)"', translationSet))
         except IndexError as err:
             terms = set([search_term.lower()])
@@ -319,9 +351,9 @@ def ncbi_search(search_term):
         amount_of_hits = 0
         record = None
 
-    aprox_time = int(((0.2282835*amount_of_hits)+(4.0993715))/60)
-    aprox_hours = int(aprox_time/60)
-    print("%i results found, this will take aprox. %i minutes (%i hours)\n" % (amount_of_hits, aprox_time, aprox_hours))
+    aprox_time = float(((0.2282835*amount_of_hits)+(4.0993715))/60)
+    aprox_hours = float(aprox_time/60)
+    print("%i results found, this will take aprox. %.2f minutes (%.2f hours)\n" % (amount_of_hits, aprox_time, aprox_hours))
     return terms, amount_of_hits, record
     #print(record)
 
@@ -348,10 +380,12 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
     for start in range(0,amount_of_hits,max_return): # amount_of_hits,max_return
         if start % 60 == 0:
             time.sleep(5)
+        if start % 750 == 0:
+            print("Downloading %i out of %i" % (current_result, amount_of_hits))
 
         #print("Downloading %i out of %i" % (current_result, amount_of_hits))
         end = min(amount_of_hits, start+max_return)
-        print("Downloading record %i to %i" % (start+1, end))
+        #print("Downloading record %i to %i" % (start+1, end))
         attempt = 1
         fetched = False
         while attempt <= max_number_of_attempts and fetched == False:
@@ -417,8 +451,8 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                         raise
 
             ### End of if statement ###
-        if current_result >= max_amount_downloaded:
-            break
+        #if current_result > max_amount_downloaded:
+         #   break
 
         # Mostly for testing only
         time_dict[start] = ((time.time()-start_time))
@@ -487,94 +521,5 @@ def plot(time_dict):
 # Calling the script
 #
 """
-if __name__ == "__main__":
-    main()
-
-
-###############################################################################
-###############################################################################
-###############################################################################
-
-"""
-from Bio import Entrez
-import time
-try:
-    from urllib.error import HTTPError  # for Python 3
-except ImportError:
-    from urllib2 import HTTPError  # for Python 2
-Entrez.email = "history.user@example.com"
-search_results = Entrez.read(Entrez.esearch(db="pubmed",
-                                            term="Opuntia[ORGN]",
-                                            reldate=365, datetype="pdat",
-                                            usehistory="y"))
-count = int(search_results["Count"])
-print("Found %i results" % count)
-
-batch_size = 10
-out_handle = open("recent_orchid_papers.txt", "w")
-for start in range(0,count,batch_size):
-    end = min(count, start+batch_size)
-    print("Going to download record %i to %i" % (start+1, end))
-    attempt = 1
-    while attempt <= 3:
-        try:
-            fetch_handle = Entrez.efetch(db="pubmed",rettype="medline",
-                                         retmode="text",retstart=start,
-                                         retmax=batch_size,
-                                         webenv=search_results["WebEnv"],
-                                         query_key=search_results["QueryKey"])
-        except HTTPError as err:
-            if 500 <= err.code <= 599:
-                print("Received error from server %s" % err)
-                print("Attempt %i of 3" % attempt)
-                attempt += 1
-                time.sleep(15)
-            else:
-                raise
-    data = fetch_handle.read()
-    fetch_handle.close()
-    out_handle.write(data)
-out_handle.close()
-
-
-At the time of writing, this gave 28 matches - but because this is a date dependent search, this will of course vary.
-As described in Section 9.12.1 above, you can then use Bio.Medline to parse the saved records.
-
-
-# Previously in ncbi_fetch(), before the "except HTTPError":
-    #abstract_search_count = abstract.count(search_term)
-    #title_search_count = title.count(search_term)
-    #score_maybe = title_search_count+abstract_search_count
-
-    # {"bitter gourd": [["bitter gourd", "bitter", "momordica charantia"], {27190792 : 30, 27190756 : 90}, categorie]
-
-
-    print("-"*40)
-    print(pmid)
-    print(title)
-    #print(abstract)
-    print("-"*40)
-    print(title_search_count)
-    print(abstract_search_count)
-    print(score_maybe)
-
-
-
-
-    #print("-"*40)
-    #print("PMID: "+str(pmid)+"\nTitle: "+str(title)+"\nAuthors: "+str(authors)+"\nDate: "+str(publish_data))
-    #print("-"*40)
-
-
-    data = fetch_handle.read()
-    fetch_handle.close()
-    out_handle.write(data)
-
-
->>> REMOVE LINES 250-253 AT FINAL RELEASE <<<
-
-
-
-
-
-"""
+#if __name__ == "__main__":
+ #   main()
