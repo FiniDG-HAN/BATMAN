@@ -5,12 +5,15 @@
 {% block content %}
 <h2>Network</h2>
 <p>Missing some keywords? <a href="{{ url_for('contact') }}">Ask the staff</a> to add them to the network.</p>
+<!-- Network, release button and download PNG link -->
 <article class="main-col">
   <svg id="network"></svg>
   <input id="release" type="submit" value="Release all nodes">
   <a id="download" download="network.png" href="#">Download as PNG</a>
 </article>
+<!-- Right column -->
 <aside class="sidebar">
+  <!-- Search widget -->
   <div class="widget">
     <h1><i class="fas fa-search"></i> &nbsp;Search</h1>
     <div id="search-widget" class="widget-content">
@@ -18,6 +21,7 @@
         <input id="search" type="text" placeholder="Bitter gourd, diabetes, etc...">
       </label>
       <p id="alert">Keyword not found.</p>
+      <!-- Advanced options -->
       <div id="advanced">
         <h1 id="toggle-advanced" onclick="toggleAdvanced();">+ More options</h1>
         <div id="collapsible">
@@ -26,6 +30,14 @@
           <label>Maximal relation score: <span id="maxrelval"></span><input id="maxrelfilter" type="range"></label>
           <label>Minimal node score: <span id="minnodeval"></span><input id="minnodefilter" type="range"></label>
           <label>Maximal node score: <span id="maxnodeval"></span><input id="maxnodefilter" type="range"></label>
+          <!-- Remove link buttons -->
+          <div id="filterlinks">
+            <h1>Remove links between:</h1>
+            <input id="filtercomp" type="submit" value="Compounds">
+            <input id="filterhealth" type="submit" value="Health effects">
+            <input id="filterorg" type="submit" value="Organisms">
+          </div>
+          <!-- Keyword filters -->
           <h1 onclick="addKeywordFilter();">+ Filter by keywords</h1>
           <div id="keyword-filter">
           </div>
@@ -33,6 +45,7 @@
       </div>
     </div>
   </div>
+  <!-- Info widget -->
   <div class="widget" style="margin-top: 10px;">
     <h1><i class="fas fa-info-circle"></i> &nbsp;Info</h1>
     <div id="info-content" class="widget-content">

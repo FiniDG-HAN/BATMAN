@@ -149,6 +149,7 @@ d3.json("../static/json/network.json", function (error, graph) {
     groupTypeMap.set(2, "Unknown");
     groupTypeMap.set(3, "Organism");
 
+    // Check if elements are directly connected
     function neighboring(a, b) {
         return directConnections[a + "," + b] || directConnections[a.id + "," + b.id] || a.id === b.id;
     }
@@ -602,6 +603,35 @@ d3.json("../static/json/network.json", function (error, graph) {
       });
       updateNetwork();
     }
+
+    // Filter links by type
+    function filterLinksByType(group) {
+      if (selectedItem) {
+        unselectItem();
+      }
+      if (d3.event) {
+          d3.event.stopPropagation();
+      }
+      graph.links = graph.links.filter(function (l) {
+          return !(l.source.group === group && l.target.group === group);
+      });
+      directConnections = {};
+      graph.links.forEach(function (d) {
+          directConnections[d.source.id + "," + d.target.id] = 1;
+      });
+      link = link.data(graph.links, function (d) {
+          return d.source.id + "-" + d.target.id;
+      });
+      link.exit().remove();
+      link = link.enter().append("line").merge(link);
+      simulation.force("link").links(graph.links);
+      simulation.alpha(1).restart();
+    }
+
+    // Add event listeners to filterbuttons
+    document.getElementById("filtercomp").onclick = function() { filterLinksByType(0) };
+    document.getElementById("filterhealth").onclick = function() { filterLinksByType(1) };
+    document.getElementById("filterorg").onclick = function() { filterLinksByType(3) };
 
     // Update the network for removed nodes and Links
     function updateNetwork() {

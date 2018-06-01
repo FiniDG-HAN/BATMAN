@@ -474,6 +474,15 @@ ul {
 	background-color: darkorange;
 }
 
+#search-widget #filterlinks h1:hover {
+	cursor: url(../cursor/default.cur), auto;
+	text-decoration: none;
+}
+
+#search-widget #filterlinks input {
+	margin: 2px 0;
+}
+
 #search {
 	width: 80%;
 	float: right;
