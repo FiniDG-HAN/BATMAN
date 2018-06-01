@@ -1,10 +1,18 @@
+<!--
+BATMAN Network page
+
+Copyright (c) 2017-2018 Jonathan Feenstra
+MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
+
+This page contains the network visualisation of the text mining results and all
+of its functionality. For details, see the instructions on the help page.-->
 {% extends 'layout.html' %}
 {% set active_page = 'network' %}
 {% block title %}BATMAN - Network{% endblock %}
 
 {% block content %}
-<h2>Network</h2>
-<p>Missing some keywords? <a href="{{ url_for('contact') }}">Ask the staff</a> to add them to the network.</p>
+<h2><i class="fa fa-share-alt" aria-hidden="true"></i> &nbsp;Network</h2>
+<p>Missing some keywords? <a href="{{ url_for('contact') }}#message">Ask the staff</a> to add them to the network.</p>
 <!-- Network, release button and download PNG link -->
 <article class="main-col">
   <svg id="network"></svg>

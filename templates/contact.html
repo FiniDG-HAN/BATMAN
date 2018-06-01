@@ -1,3 +1,11 @@
+<!--
+BATMAN Contact page
+
+Copyright (c) 2017-2018 Jonathan Feenstra
+MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
+
+This page contains the contact info of the BATMAN staff and provides the option
+to leave a message.-->
 {% extends 'layout.html' %}
 {% set active_page = 'contact' %}
 {% block title %}BATMAN - Contact{% endblock %}
@@ -6,7 +14,7 @@
 <!-- Top -->
 <div>
 	<p><b>Important:</b> Please make sure to consult the <a href="{{ url_for('help') }}">help page</a> before contacting the staff.</p>
-	<h2>BATMAN Staff</h2>
+	<h2><i class="fa fa-users" aria-hidden="true"></i> &nbsp;BATMAN Staff</h2>
 </div>
 <!-- Left column -->
 <article class="main-col">
@@ -14,59 +22,67 @@
 	<ul id="staff">
 		<li>
 			<h3>
-				Jonathan Feenstra
-				<a class="linkedin" href="https://www.linkedin.com/in/jonathanfeenstra">
-					<i class="fab fa-linkedin" aria-hidden="true"></i>
-				</a>
-				<a class="github" href="https://github.com/JonathanFeenstra">
-					<i class="fab fa-github-square" aria-hidden="true"></i>
-				</a>
+				<i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;Jonathan Feenstra
+				<span style="float: right;">
+					<a class="linkedin" href="https://www.linkedin.com/in/jonathanfeenstra">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a class="github" href="https://github.com/JonathanFeenstra">
+						<i class="fab fa-github-square" aria-hidden="true"></i>
+					</a>
+				</span>
 			</h3>
 			<p>Project leader, software engineer, database designer &amp; web developer</p>
 			<p>&#x2709; <a href="mailto:JCD.Feenstra@student.han.nl?subject=BATMAN">JCD.Feenstra@student.han.nl</a></p>
 		</li>
 		<li>
 			<h3>
-				Fini De Gruyter, MSc
-				<a class="linkedin" href="https://www.linkedin.com/in/finigruyter">
-					<i class="fab fa-linkedin" aria-hidden="true"></i>
-				</a>
-				<a class="github" href="https://github.com/FiniDG-HAN">
-					<i class="fab fa-github-square" aria-hidden="true"></i>
-				</a>
+				<i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;Fini De Gruyter, MSc
+				<span style="float: right;">
+					<a class="linkedin" href="https://www.linkedin.com/in/finigruyter">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a class="github" href="https://github.com/FiniDG-HAN">
+						<i class="fab fa-github-square" aria-hidden="true"></i>
+					</a>
+			</span>
 			</h3>
 			<p>Biologist &amp; text mining specialist</p>
 			<p>&#x2709; <a href="mailto:FE.DeGruyter@student.han.nl?subject=BATMAN">FE.DeGruyter@student.han.nl</a></p>
 		</li>
 		<li>
 			<h3>
-				Alex Janse
-				<a class="linkedin" href="https://linkedin.com/in/alex-janse-408a8495">
-					<i class="fab fa-linkedin" aria-hidden="true"></i>
-				</a>
-				<a class="github" href="https://github.com/grimcode">
-					<i class="fab fa-github-square" aria-hidden="true"></i>
-				</a>
+				<i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;Alex Janse
+				<span style="float: right;">
+					<a class="linkedin" href="https://linkedin.com/in/alex-janse-408a8495">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a class="github" href="https://github.com/grimcode">
+						<i class="fab fa-github-square" aria-hidden="true"></i>
+					</a>
+				</span>
 			</h3>
 			<p>Software designer &amp; database administrator</p>
 			<p>&#x2709; <a href="mailto:A.Janse@student.han.nl?subject=BATMAN">A.Janse@student.han.nl</a></p>
 		</li>
 		<li>
 			<h3>
-				Thijs Weenink
-				<a class="linkedin" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-					<i class="fab fa-linkedin" aria-hidden="true"></i>
-				</a>
-				<a class="github" href="https://github.com/youixentoo">
-					<i class="fab fa-github-square" aria-hidden="true"></i>
-				</a>
+				<i class="fa fa-address-card" aria-hidden="true"></i> &nbsp;Thijs Weenink
+				<span style="float: right;">
+					<a class="linkedin" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+						<i class="fab fa-linkedin" aria-hidden="true"></i>
+					</a>
+					<a class="github" href="https://github.com/youixentoo">
+						<i class="fab fa-github-square" aria-hidden="true"></i>
+					</a>
+				</span>
 			</h3>
 			<p>Text mining software developer &amp; tester</p>
 			<p>&#x2709; <a href="mailto:MV.Weenink@student.han.nl?subject=BATMAN">MV.Weenink@student.han.nl</a></p>
 		</li>
 	</ul>
 	<!-- Message form -->
-	<h2>Send us a message</h2>
+	<h2><a href="#message"></a><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;Send us a message</h2>
 		<form id="message" action="https://formspree.io/JCD.Feenstra@student.han.nl" method="POST">
 			<label><span>Name</span><input type="text" name="name" placeholder="John Doe"></label>
 			<label><span>Email</span><input type="email" name="_replyto" placeholder="&#x2709; john.doe@example.org"></label>

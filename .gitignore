@@ -1,2 +1,5 @@
-/instance
+/.idea
 /__pycache__
+/instance
+/textmining/__pycache__
+/textmining/cache

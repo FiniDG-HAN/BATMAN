@@ -731,7 +731,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             document.getElementById("info-content").innerHTML = "<p>"
             + "Oops! Keyword not found.</p><img src=\""
             + "../static/img/sadbatman.gif\">"
-            + "<p><a href=\"../contact\">Ask the staff to add \""
+            + "<p><a href=\"../contact#message\">Ask the staff to add \""
             + query.toLowerCase() + "\" to the network</a></p>";
         }
     }

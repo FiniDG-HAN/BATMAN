@@ -1,13 +1,20 @@
+<!--
+BATMAN About page
+
+Copyright (c) 2017-2018 Jonathan Feenstra
+MIT License (https://github.com/JonathanFeenstra/BATMAN/blob/master/LICENSE)
+
+This page introduces the BATMAN staff and explains the project.-->
 {% extends 'layout.html' %}
 {% set active_page = 'about' %}
 {% block title %}BATMAN - About{% endblock %}
 
 {% block content %}
-<h1>About us</h1>
+<h1><i class="fa fa-info" aria-hidden="true"></i> &nbsp;About us</h1>
 <!-- Left column -->
 <article class="main-col">
 	<p>We are a group of <a href="{{ url_for('contact') }}">four second year Bioinformatics students</a> at the <a href="https://www.han.nl/">HAN University of Applied Sciences</a>, working on a project with the aim of investigating the health benefits of yam and bitter gourd compounds.</p>
-	<h2>The project</h2>
+	<h2><i class="fas fa-clipboard-list"></i> &nbsp;The project</h2>
 	<p>Yam (<i>Dioscorea</i>) and bitter gourd (<i>Momordica charantia</i>) are claimed to have positive effects on i.a. sugar levels, skin, night vision, the immune system and menopause. In order to find out if these claims are true, scientific research is necessary. Therefore, it is important to first consider whether a link can be found between the characteristics of the plant and the possible consequences for the health of the consumer in the existing literature.</p>
 	<br>
 	<p>To manually read all the online articles and to find all of the connections by yourself would be a very repetetive and time-consuming task. Hence, we came up with the plan to develop an application that will visualize the links between the compounds and health effects from the articles after an automated text mining process. That is how this web application came into being.</p>
