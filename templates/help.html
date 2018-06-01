@@ -1,3 +1,9 @@
+<!--Copyright (c) 2018 Fini De Gruyter-->
+<!--Tussen "block scripts" staat een JavaScript die nodig is voor de werking van de accordion (drop down
+van de tekst als je er op klikt). Bron accordion code: https://www.w3schools.com/howto/howto_js_accordion.asp-->
+<!--De help pagina. Hier staat de applicatie uitgelegd en worden de meest voorkomende vragen beantwoord
+Alle HTML paginas maken gebruik van Flask vanuit de app.py script-->
+
 {% extends 'layout.html' %}
 {% set active_page = 'help' %}
 {% block title %}BATMAN - Help{% endblock %}
@@ -7,29 +13,36 @@
 <h2>Instructions webapplication</h2>
 <button class="accordion">+ Basic navigation</button>
 <div class="panel">
-  <p>The most basic navigation functions of the displayed network are explained in the Info box. In the search box the “Search” option is available from the start. Here you can fill in a keyword to search in the network. By clicking on "+ More options", other options become available to get the most out of the results. Here you can choose a keyword from a list of all the available nodes, to highlight and zoom in the chosen keyword. By clicking once or multiple times on “+ Filter by keywords” you can select one or more nodes to remove from the network by clicking on "Remove". By clicking on "Filter" the selected nodes will be visualised, while the other nodes and links will be grayed out.
+  <p>
+<b>All changes made withing the network are only temporarily! By refreshing the page, the original network will be back. No data will be deleted from the database</b><BR>
+The most basic navigation functions of the displayed network are explained in the Info box. In the search box the “Search” option is available from the start. Here you can fill in a keyword to search in the network. By clicking on "+ More options", other options become available to get the most out of the results. <BR>
+<b>Nodes:</b> Here you can choose a keyword in the network with all available options. Selecting a keyword will result in a zoom in and highlight of the selected keyword in the network.<BR>
+<b>Minimal relation/node score:</b> Here you can choose with a slider what the minimal score of a link or node is. All links/nodes with a score lower than the selected number will disappear.<BR>
+<b>Maximal relation/node score:</b> Here you can choose with a slider what the maximal score of a link or node is. All links/nodes with a score higher than the selected number will disappear.<BR>
+<b>Remove links between:</b> Here you can choose to remove links within a same category. For example by clicking on "Health effect" all links between health effects will disappear.
+<b>Filter by keywords:</b> Here you can select one or more nodes to remove from the network by clicking on "Remove". By clicking on "Filter" the selected nodes will be visualized, while the other nodes and links will be grayed out.
   </p>
 </div>
 <button class="accordion">+ Gathering information</button>
 <div class="panel">
-  <p>By clicking on either a node or link, the Info box will show new information about the specific item you clicked on. This includes but is not limited to: type (health_effect, compound, organism), information about the associated articles and the total hitcount in all the found articles. In this box, there are several buttons at the bottom. "Release node" sets the node free, if the user has dragged the node (which sets the location of the node). "Zoom in on node" or "Zoom in on link" highlights the node/link and zooms in to that region on the network. "Remove node" or "Remove link" removes the node/link from the network. In case of removing nodes, the associates links with that node will disappear as well. The "Download CSV" button saves the results from either the node or link (see below).
+  <p>By clicking on either a node or link, the Info box will show new information about the specific item you clicked on. This includes but is not limited to: type (health_effect, compound, organism), information about the associated articles and the total hitcount in all the found articles. In this box, there are several buttons at the bottom. "Release node" sets the node free, if the user has dragged the node (which sets the location of the node). "Zoom in on node" or "Zoom in on link" highlights the node/link and zooms in to that region on the network. "Remove node" or "Remove link" removes the node/link from the network. In case of removing nodes, the associates links with that node will disappear as well. The "Download table" button saves the results from either the node or link (see below).
   </p>
 </div>
 <button class="accordion">+ Saving results</button>
 <div class="panel">
-  <p>Results can be saved in several ways. One is by clicking on "Download as PNG". The network as shown will be saved in a .png format (image). Another way is by clicking on either a link or node and clicking on the "Download CSV" button. Here an comma delimited CSV file is generated. This is a file format that is recognized by Excel and LibreOffice Calc. It contains all the PubMedIDs, article titles and other information about all the scientific articles that are linked to that specific node or link.
+  <p>Results can be saved in several ways. One is by clicking on "Download as PNG". The network as shown will be saved in a .png format (image). Another way is by clicking on either a link or node and clicking on the "Download table" button. Here an tab delimited TSV file is generated. This is a file format that is recognized by Excel and LibreOffice Calc. It contains all the PubMedIDs, article titles and other information about all the scientific articles that are linked to that specific node or link.
   </p>
 </div>
 <button class="accordion">+ Adding new keywords</button>
 <div class="panel">
-  <p>If you want to add keywords that are not available in the exisiting network, you can use the contact page for a request. Please specifify the keywords and the category of the keywords (organism, compound, health effect or other).
+  <p>If you want to add keywords that are not available in the existing network, you can use the contact page for a request. Please specificity the keywords and the category of the keywords (organism, compound, health effect or other).
   </p>
 </div>
 <!-- FAQ -->
 <h2>Frequently Asked Questions</h2>
 <button class="accordion">+ What is text mining?</button>
 <div class="panel">
-  <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker links (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
+  <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers, to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker links (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
   </p>
 </div>
 <button class="accordion">+ What sort of questions can this application answer?</button>
@@ -41,7 +54,7 @@ At a much higher level, the network that is generated with our application can s
 <button class="accordion">+ How do I use this application to get the most interesting results?</button>
 <div class="panel">
   <p>The most interesting results can be found by tweaking and zooming the generated network. To help with this, there are additional functions that can be used find specific relationships. One of them is the "Filter by keywords" option that can be found in the "Search" box by clicking "More options". Here it is possible to select more than one keyword, and show only those keywords and the relations between them. By selecting more than two keywords, indirect relationships are possible to arise.
-Another option that can help is temporary removing nodes from the network. This makes the network easier to read and interpret.
+Another option that can help is temporary removing nodes from the network. You can use the buttons to remove specific nodes or you can use the option to remove more than one node at once (see "Basic navigation". This makes the network easier to read and interpret. Some examples are shown below.
 <h3><img src="{{ url_for('static', filename='img/helpfigure1.png')}}" alt="Finding indirect results in application"></h3>
 <h5>Figure 1:
 Apple has no direct relation with health effect 2, but tomato has a clear direct relationship. However, compound X related to the health effect is also present in apple and therefore could have a relation with this health effect. More researched organisms like <i>C. sativus</i> could create a indirect link to a compound or health effect for a less researched organism like <i>M. charanti</i>.</h5>
