@@ -60,13 +60,30 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Adjust filter values
     var minNodeScoreFilter = document.getElementById("minnodefilter"),
-        minRelScoreFilter = document.getElementById("minrelfilter");
+        maxNodeScoreFilter = document.getElementById("maxnodefilter"),
+        minRelScoreFilter = document.getElementById("minrelfilter"),
+        maxRelScoreFilter = document.getElementById("maxrelfilter");
     minNodeScoreFilter.setAttribute("max", maxNodeScore);
     minNodeScoreFilter.value = 0;
     minNodeScoreFilter.onchange = function() { filterScores(); };
+    maxNodeScoreFilter.setAttribute("max", maxNodeScore);
+    maxNodeScoreFilter.value = maxNodeScore;
+    maxNodeScoreFilter.onchange = function() { filterScores(); };
     minRelScoreFilter.setAttribute("max", maxRelScore);
     minRelScoreFilter.value = 0;
     minRelScoreFilter.onchange = function() { filterScores(); };
+    maxRelScoreFilter.setAttribute("max", maxRelScore);
+    maxRelScoreFilter.value = maxRelScore;
+    maxRelScoreFilter.onchange = function() { filterScores(); };
+    displayFilterValues();
+
+    // Display filter values
+    function displayFilterValues() {
+      document.getElementById("minnodeval").innerHTML = minNodeScoreFilter.value;
+      document.getElementById("maxnodeval").innerHTML = maxNodeScoreFilter.value;
+      document.getElementById("minrelval").innerHTML = minRelScoreFilter.value;
+      document.getElementById("maxrelval").innerHTML = maxRelScoreFilter.value;
+    }
 
     // Select links
     var link = g.append("g")
@@ -552,10 +569,12 @@ d3.json("../static/json/network.json", function (error, graph) {
           unhighlightNode(highlightedNode);
           highlightedNode = false;
       }
+      displayFilterValues();
       keywords = [];
       mainterms = [];
       graph.nodes = graph.nodes.filter(function (d) {
-          if (d.hitcount >= minNodeScoreFilter.value) {
+          if (maxNodeScoreFilter.value >= d.hitcount
+              && d.hitcount >= minNodeScoreFilter.value) {
             mainterms.push(d.id);
             keywords.push(d.id);
             d.synonyms.forEach(function(s) {
@@ -563,7 +582,8 @@ d3.json("../static/json/network.json", function (error, graph) {
                 keywords.push(s + " (" + d.id + ")");
               }
           });
-          return d.hitcount >= minNodeScoreFilter.value;
+          return maxNodeScoreFilter.value >= d.hitcount
+                 && d.hitcount >= minNodeScoreFilter.value;
         }
       });
       $("#search").autocomplete({

@@ -22,8 +22,10 @@
         <h1 id="toggle-advanced" onclick="toggleAdvanced();">+ More options</h1>
         <div id="collapsible">
           <label>Nodes:<select id="options" onchange="updateSearch();"></select></label>
-          <label>Minimal relation score:<input id="minrelfilter" type="range"></label>
-          <label>Minimal node score:<input id="minnodefilter" type="range"></label>
+          <label>Minimal relation score: <span id="minrelval"></span><input id="minrelfilter" type="range"></label>
+          <label>Maximal relation score: <span id="maxrelval"></span><input id="maxrelfilter" type="range"></label>
+          <label>Minimal node score: <span id="minnodeval"></span><input id="minnodefilter" type="range"></label>
+          <label>Maximal node score: <span id="maxnodeval"></span><input id="maxnodefilter" type="range"></label>
           <h1 onclick="addKeywordFilter();">+ Filter by keywords</h1>
           <div id="keyword-filter">
           </div>
