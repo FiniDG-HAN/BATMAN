@@ -20,6 +20,11 @@
   <p>Results can be saved in several ways. One is by clicking on "Download as PNG". The network as shown will be saved in a .png format (image). Another way is by clicking on either a link or node and clicking on the "Download CSV" button. Here an comma delimited CSV file is generated. This is a file format that is recognized by Excel and LibreOffice Calc. It contains all the PubMedIDs, article titles and other information about all the scientific articles that are linked to that specific node or link.
   </p>
 </div>
+<button class="accordion">+ Adding new keywords</button>
+<div class="panel">
+  <p>If you want to add keywords that are not available in the exisiting network, you can use the contact page for a request. Please specifify the keywords and the category of the keywords (organism, compound, health effect or other).
+  </p>
+</div>
 <!-- FAQ -->
 <h2>Frequently Asked Questions</h2>
 <button class="accordion">+ What is text mining?</button>
@@ -70,7 +75,6 @@ Compound Z has a relation with health effect 1, which is present in cucumber. Ho
 <BR>- Some results with a test dataset resulted in incomplete abstracts. Further investigation about this showed, that the articles were not filled in correctly by the publishers of that articles. Simply said, this means that the file that our program gets back (a XML file) is incomplete and can therefore not be used to its full potential. According to PubMed, this is the responsibility of the publishers. In the test dataset, there was only two articles that had this problem, but these kinds of articles could be missed by this application.<BR>
 <BR>- PubMed makes use of synonyms for their search results. Possible wrong synonyms could therefore be added in the found articles. To help you determine if this is the case, clicking on a nodes shows the list of synonyms that PubMed used. Additionally, certain keywords could possibly be a synonym of another keyword in the network, which will cause overlapping results. Therefore it is always necessary to check the used synonyms of interesting parts of the network.<BR>
 <BR>- This application only searches in the titles, abstracts and keyword lists of all PubMed IDs. This means that articles outside of PubMed are not included. Additionally, not the whole article is used for the text mining search. The reasoning behind this is because most papers are in subscription journals. To see the full text a payment or subscription to that specific publisher/journal is needed. Using free articles only will naturally exclude many interesting papers and using the full text only for free articles will create a big bias towards those articles.<BR>
-<BR>- Links between keywords within the same category (compound, health effect or organism) is avoided as much as possible. This is because of two reasons. One is that these are results that are most of the time uninformative for the research question. Secondly, by not including these relations the network will be less clustered and more readable. It will create big clusters of the same category, for example all health effects will be clustered together and linked to almost every other health effect. The more interesting relations for the research question (between compounds and health effects) will become unreadable and because of the bias be found less important by the application in the form of small nodes and thin links.
   </p>
 </div>
 <button class="accordion">+ Is there a way to ask questions to the developers?</button>
