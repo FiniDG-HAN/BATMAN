@@ -3,14 +3,14 @@
 # textmining op te slaan in                 #
 # de databank.                              #
 #############################################
-# Opmerking1: "Vele methodes zullen private #
+# Opmerking: "Vele methodes zullen private  #
 # zijn door middel van __ voor de naam.     #
 # Hiervoor is gekozen aangezien de meeste   #
 # methodes niet bedoeld zijn om van         #
 # buiten af te gebruiken."                  #
 #############################################
 # Gemaakt door: Alex Janse                  #
-# Versie 2.0.0.                             #
+# Versie 1.0.0.                             #
 # Datum: 25-05-2018                         #
 #############################################
 
@@ -22,10 +22,10 @@ import traceback                                        # Wordt gebruikt om de v
 def save(synonymDict, pmidDict, linkDict):
     try:
         cursor, connection = dbc.connect()              # De cursor en connection objecten worden op gehaald om queries te kunnen uitvoeren en de verbinding te verbreken
-        __savePMID(pmidDict, cursor)                       # De __savePMID wordt aangeroepen om de gegevens van de pmidDict op te slaan in de db
+        __savePMID(pmidDict, cursor)                    # De __savePMID wordt aangeroepen om de gegevens van de pmidDict op te slaan in de db
         __saveTerms(synonymDict, cursor)
         __saveLinks(linkDict, cursor)
-        __commit(cursor)                                  # De __commit methode wordt aangeroepen als er geen exceptions zijn geweest en de queries die zijn uitgevoerd bevestigd kunnen worden in de db
+        __commit(cursor)                                # De __commit methode wordt aangeroepen als er geen exceptions zijn geweest en de queries die zijn uitgevoerd bevestigd kunnen worden in de db
         connection.disconnect()                         # Verbreek de connectie met de db
         dbl.getData()                                   # maak van de db een JSON
     except Exception as e:
