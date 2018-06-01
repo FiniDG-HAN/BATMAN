@@ -16,17 +16,17 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
 
 {% block content %}
 <!-- Instructions -->
-<h2><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Instructions webapplication</h2>
+<h2>Instructions webapplication</h2>
 <button class="accordion">+ Basic navigation</button>
 <div class="panel">
   <p>
 <b>All changes made withing the network are only temporarily! By refreshing the page, the original network will be back. No data will be deleted from the database</b><br>
 The most basic navigation functions of the displayed network are explained in the Info box. In the search box the “Search” option is available from the start. Here you can fill in a keyword to search in the network. By clicking on "+ More options", other options become available to get the most out of the results. <br>
-<b>Nodes:</b> Here you can choose a keyword in the network with all available options. Selecting a keyword will result in a zoom in and highlight of the selected keyword in the network.<br>
-<b>Minimal relation/node score:</b> Here you can choose with a slider what the minimal score of a link or node is. All links/nodes with a score lower than the selected number will disappear.<br>
-<b>Maximal relation/node score:</b> Here you can choose with a slider what the maximal score of a link or node is. All links/nodes with a score higher than the selected number will disappear.<br>
-<b>Remove links between:</b> Here you can choose to remove links within a same category. For example by clicking on "Health effect" all links between health effects will disappear.<br>
-<b>Filter by keywords:</b> Here you can select one or more nodes to remove from the network by clicking on "Remove". By clicking on "Filter" the selected nodes will be visualized, while the other nodes and links will be grayed out.
+<b>Nodes:</b><br> Here you can choose a keyword in the network with all available options. Selecting a keyword will result in a zoom in and highlight of the selected keyword in the network.<br>
+<b>Minimal relation/node score:</b><br> Here you can choose with a slider what the minimal score of a link or node is. All links/nodes with a score lower than the selected number will disappear.<br>
+<b>Maximal relation/node score:</b><br> Here you can choose with a slider what the maximal score of a link or node is. All links/nodes with a score higher than the selected number will disappear.<br>
+<b>Remove links between:</b><br> Here you can choose to remove links within a same category. For example by clicking on "Health effect" all links between health effects will disappear.<br>
+<b>Filter by keywords:</b><br> Here you can select one or more nodes to remove from the network by clicking on "Remove". By clicking on "Filter" the selected nodes will be visualized, while the other nodes and links will be grayed out.
   </p>
 </div>
 <button class="accordion">+ Gathering information</button>
@@ -45,10 +45,17 @@ The most basic navigation functions of the displayed network are explained in th
   </p>
 </div>
 <!-- FAQ -->
-<h2><i class="fa fa-question-circle" aria-hidden="true"></i> &nbsp;Frequently Asked Questions</h2>
+<h2>Frequently Asked Questions</h2>
 <button class="accordion">+ What is text mining?</button>
 <div class="panel">
-  <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers, to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the amount of occurrence of the keyword) and thicker links (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title).
+  <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers, to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the occurrence of the keyword in total and the placement of the keywords in the abstract or title) and thicker links (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title). See "How is the node score and link score calculated?"
+  </p>
+</div>
+<button class="accordion">+ How is the node score and link score calculated?</button>
+<div class="panel">
+  <p>For each PubMed article that is linked to a keyword, a score is calculated: (occurrence of keyword in title * 2) + (occurrence of keyword in abstract).<br>
+For each node, the score is calculated by getting the sum of all the scores for that keyword.<br>
+For each link, the score is calculated by getting the sum of the scores of all overlapping PubMed articles.
   </p>
 </div>
 <button class="accordion">+ What sort of questions can this application answer?</button>
