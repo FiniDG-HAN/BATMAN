@@ -37,18 +37,29 @@ d3.json("../static/json/network.json", function (error, graph) {
     if (error)
         throw error;
 
+    // Remove duplicate Links
+    var seen = new Set();
+    graph.links.forEach(function (d) {
+        if (!seen.has(d.target + "-" + d.source)) {
+            seen.add(d.source + "-" + d.target);
+        }
+    });
+    graph.links = graph.links.filter(function (d) {
+        return !seen.has(d.source + "-" + d.target);
+    });
+
     // Create sets of keywords and synonyms, determine maximum hitcount
     var keywords = [];
-        mainterms =[];
-    graph.nodes.forEach(function(d) {
-      maxNodeScore = d.hitcount > maxNodeScore ? d.hitcount : maxNodeScore;
-      keywords.push(d.id);
-      mainterms.push(d.id);
-      d.synonyms.forEach(function(s) {
-        if (s !== d.id) {
-          keywords.push(s + " (" + d.id + ")");
-        }
-      });
+    mainterms = [];
+    graph.nodes.forEach(function (d) {
+        maxNodeScore = d.hitcount > maxNodeScore ? d.hitcount : maxNodeScore;
+        keywords.push(d.id);
+        mainterms.push(d.id);
+        d.synonyms.forEach(function (s) {
+            if (s !== d.id) {
+                keywords.push(s + " (" + d.id + ")");
+            }
+        });
     });
 
     // Find directly connected nodes and links, determine maximum link score
@@ -60,29 +71,41 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Adjust filter values
     var minNodeScoreFilter = document.getElementById("minnodefilter"),
-        maxNodeScoreFilter = document.getElementById("maxnodefilter"),
-        minRelScoreFilter = document.getElementById("minrelfilter"),
-        maxRelScoreFilter = document.getElementById("maxrelfilter");
+            maxNodeScoreFilter = document.getElementById("maxnodefilter"),
+            minRelScoreFilter = document.getElementById("minrelfilter"),
+            maxRelScoreFilter = document.getElementById("maxrelfilter");
     minNodeScoreFilter.setAttribute("max", maxNodeScore);
     minNodeScoreFilter.value = 0;
-    minNodeScoreFilter.onchange = function() { filterScores(); };
+    minNodeScoreFilter.onchange = function () {
+        filterScores();
+    };
     maxNodeScoreFilter.setAttribute("max", maxNodeScore);
     maxNodeScoreFilter.value = maxNodeScore;
-    maxNodeScoreFilter.onchange = function() { filterScores(); };
+    maxNodeScoreFilter.onchange = function () {
+        filterScores();
+    };
     minRelScoreFilter.setAttribute("max", maxRelScore);
     minRelScoreFilter.value = 0;
-    minRelScoreFilter.onchange = function() { filterScores(); };
+    minRelScoreFilter.onchange = function () {
+        filterScores();
+    };
     maxRelScoreFilter.setAttribute("max", maxRelScore);
     maxRelScoreFilter.value = maxRelScore;
-    maxRelScoreFilter.onchange = function() { filterScores(); };
+    maxRelScoreFilter.onchange = function () {
+        filterScores();
+    };
     displayFilterValues();
 
     // Display filter values
     function displayFilterValues() {
-      document.getElementById("minnodeval").innerHTML = minNodeScoreFilter.value;
-      document.getElementById("maxnodeval").innerHTML = maxNodeScoreFilter.value;
-      document.getElementById("minrelval").innerHTML = minRelScoreFilter.value;
-      document.getElementById("maxrelval").innerHTML = maxRelScoreFilter.value;
+        document.getElementById("minnodeval").innerHTML = minNodeScoreFilter.value
+                .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        document.getElementById("maxnodeval").innerHTML = maxNodeScoreFilter.value
+                .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        document.getElementById("minrelval").innerHTML = minRelScoreFilter.value
+                .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        document.getElementById("maxrelval").innerHTML = maxRelScoreFilter.value
+                .toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
 
     // Select links
@@ -98,7 +121,7 @@ d3.json("../static/json/network.json", function (error, graph) {
                 return 2 + (d.value / maxRelScore) * 6;
             })
             .style("stroke", function (d) {
-                return "rgba(0,0,0,0.05)";
+                return "rgba(0,0,0,0.1)";
             })
             .on("click", selectLink)
             .on("mouseover", highlightLink)
@@ -177,53 +200,46 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Download TSV file for a node
     function generateTSV(d) {
-      if (typeof(d.articles) === "undefined") {
-        window.alert("No articles for this node are available");
-      }
-      var str = "Authors\tDate\tPubMedID\tScore\tTitle" + "\r\n";
-
-      for (var i = 0; i < d.articles.length; i++) {
-          var line = "";
-          for (var index in d.articles[i]) {
-              line += d.articles[i][index] + "\t";
-          }
-          line.slice(0, line.Length -1);
-          str += line + "\r\n";
-      }
-      var uri = "data:text/tsv;charset=utf-8," + escape(str)
-
-
-      var downloadLink = document.createElement("a");
-      downloadLink.href = uri;
-      downloadLink.download = d.id.replace(" ", "_") + ".tsv";
-
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+        if (typeof (d.articles) === "undefined") {
+            window.alert("No articles for this node are available");
+        }
+        var str = "Authors\tDate\tPubMedID\tScore\tTitle" + "\r\n";
+        for (var i = 0; i < d.articles.length; i++) {
+            var line = "";
+            for (var index in d.articles[i]) {
+                line += d.articles[i][index] + "\t";
+            }
+            line.slice(0, line.Length - 1);
+            str += line + "\r\n";
+        }
+        var uri = "data:text/tsv;charset=utf-8," + escape(str),
+                downloadLink = document.createElement("a");
+        downloadLink.href = uri;
+        downloadLink.download = d.id.replace(" ", "_") + ".tsv";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
     }
 
     // Download TSV file for a link
     function generateTSVLink(linkId, mutualArticles) {
-      var str = "Authors\tDate\tPubMedID\tScore\tTitle" + "\r\n";
+        var str = "Authors\tDate\tPubMedID\tScore\tTitle" + "\r\n";
 
-      for (var i = 0; i < mutualArticles.length; i++) {
-          var line = '';
+        for (var i = 0; i < mutualArticles.length; i++) {
+            var line = '';
 
-          for (var index in mutualArticles[i]) {
+            for (var index in mutualArticles[i]) {
                 line += mutualArticles[i][index] + '\t';
-          }
+            }
 
-          line.slice(0, line.Length - 1);
+            line.slice(0, line.Length - 1);
 
-          str += line + '\r\n';
+            str += line + '\r\n';
         }
-        var uri = "data:text/tsv;charset=utf-8," + escape(str)
-
-
-        var downloadLink = document.createElement("a");
+        var uri = "data:text/tsv;charset=utf-8," + escape(str),
+                downloadLink = document.createElement("a");
         downloadLink.href = uri;
         downloadLink.download = linkId.replace(" ", "_") + ".tsv";
-
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
@@ -244,25 +260,24 @@ d3.json("../static/json/network.json", function (error, graph) {
             toggleFocus(d);
         }
         keywords = keywords.filter(function (keyword) {
-          if (d.id === keyword) {
-            return false;
-          } else {
-            for (var i = 0; i < keyword.split("(").length; i++) {
-              if (d.id === keyword.split("(")[i].split(')')[0]) {
+            if (d.id === keyword) {
                 return false;
-              }
             }
-          }
-          return true;
+            for (var i = 0; i < keyword.split("(").length; i++) {
+                if (d.id === keyword.split("(")[i].split(')')[0]) {
+                    return false;
+                }
+            }
+            return true;
         });
         $("#search").autocomplete({
-          source: keywords,
-          messages: {
-              noResults: "",
-              results: function(count) {}
-          },
-          autoFocus: true,
-          classes: {"ui-autocomplete": "autocomplete"}
+            source: keywords,
+            messages: {
+                noResults: "",
+                results: function (count) {}
+            },
+            autoFocus: true,
+            classes: {"ui-autocomplete": "autocomplete"}
         });
         document.getElementById(d.id + "-option").outerHTML = "";
         graph.nodes.splice(d.index, 1);
@@ -340,7 +355,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         downloadButton.value = "Download table";
         downloadButton.onclick = function () {
             generateTSV(d);
-        }
+        };
         var infoContent = "<h3 style=\"color:"
                 + color(d.group) + ";\">" + d.id + "</h3><p>Score: "
                 + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
@@ -349,16 +364,16 @@ d3.json("../static/json/network.json", function (error, graph) {
                 + "<p>Also known as: " + d.synonyms.join(", ") + "</p>"
                 + "<p>PubMed articles: "
                 + d.articles.length.toString()
-                                   .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + "</p><div id=\"scrollpane\"><table><tr><th>Title</th>"
                 + "<th>Authors</th><th>Date</th></tr>";
         for (var i = 0; i < d.articles.length; i++) {
-          infoContent += "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
-                         + d.articles[i].pmid + "\">" + d.articles[i].title
-                         + "</a></td><td>"
-                         + d.articles[i].authors + "</td><td>"
-                         + d.articles[i].date
-                         + "</td></tr>"
+            infoContent += "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
+                    + d.articles[i].pmid + "\">" + d.articles[i].title
+                    + "</a></td><td>"
+                    + d.articles[i].authors + "</td><td>"
+                    + d.articles[i].date
+                    + "</td></tr>";
         }
         infoContent += "</table></div><p><a href=\"http://www.uniprot.org/uniprot/?query="
                 + d.id + "&sort=score\">Search UniProt for \"" + d.id + "\"</a></p>";
@@ -383,13 +398,13 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton = document.createElement("input");
         downloadButton = document.createElement("input");
         selectedItem = document.getElementById(linkId);
-        selectedStroke = "rgba(0,0,0,0.05)";
+        selectedStroke = "rgba(0,0,0,0.1)";
         selectedItem.style["stroke"] = "rgba(0,0,255,0.5)";
         zoomButton.type = "submit";
         zoomButton.value = "Zoom in on link";
         zoomButton.onclick = function () {
             zoomhandler.translateTo(svg, (d.source.x + d.target.x) / 2,
-                                   (d.source.y + d.target.y) / 2);
+                    (d.source.y + d.target.y) / 2);
             zoomhandler.scaleTo(svg.transition(), 2);
         };
         removeButton.type = "submit";
@@ -397,16 +412,16 @@ d3.json("../static/json/network.json", function (error, graph) {
         removeButton.onclick = function () {
             removeLink(d);
         };
-        var mutualArticles = d.source.articles.filter(function(a) {
-          return d.target.articles.some(function(b) {
-            return a.pmid === b.pmid;
-          });
+        var mutualArticles = d.source.articles.filter(function (a) {
+            return d.target.articles.some(function (b) {
+                return a.pmid === b.pmid;
+            });
         });
         downloadButton.type = "submit";
-        downloadButton.value = "Download table"
+        downloadButton.value = "Download table";
         downloadButton.onclick = function () {
             generateTSVLink(linkId, mutualArticles);
-        }
+        };
 
         var infoContent = "<h3><span style=\"color:" + color(d.source.group)
                 + ";\">" + d.source.id + "</span> - <span style=\"color:"
@@ -415,16 +430,16 @@ d3.json("../static/json/network.json", function (error, graph) {
                 + d.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + "</p><p>Mutual PubMed articles: "
                 + mutualArticles.length.toString()
-                                       .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + "</p><div id=\"scrollpane\"><table>"
                 + "<tr><th>Title</th><th>Authors</th><th>Date</th></tr>";
         for (var i = 0; i < mutualArticles.length; i++) {
-          infoContent += "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
-                         + mutualArticles[i].pmid + "\">" + mutualArticles[i].title
-                         + "</a></td><td>"
-                         + mutualArticles[i].authors + "</td><td>"
-                         + mutualArticles[i].date
-                         + "</td></tr>"
+            infoContent += "<tr><td><a href=\"https://www.ncbi.nlm.nih.gov/pubmed/"
+                    + mutualArticles[i].pmid + "\">" + mutualArticles[i].title
+                    + "</a></td><td>"
+                    + mutualArticles[i].authors + "</td><td>"
+                    + mutualArticles[i].date
+                    + "</td></tr>";
         }
         infoContent += "</table></div>";
         info.innerHTML = infoContent;
@@ -478,6 +493,8 @@ d3.json("../static/json/network.json", function (error, graph) {
             .on("tick", ticked)
             .force("link")
             .links(graph.links);
+
+    updateNetwork();
 
     // Update on tick
     function ticked() {
@@ -533,24 +550,24 @@ d3.json("../static/json/network.json", function (error, graph) {
         mainterms = [];
         graph.nodes = graph.nodes.filter(function (d) {
             if (words.has(d.id)) {
-              mainterms.push(d.id);
-              keywords.push(d.id);
-              d.synonyms.forEach(function(s) {
-                if (s !== d.id) {
-                  keywords.push(s + " (" + d.id + ")");
-                }
-            });
-          }
-          return words.has(d.id);
+                mainterms.push(d.id);
+                keywords.push(d.id);
+                d.synonyms.forEach(function (s) {
+                    if (s !== d.id) {
+                        keywords.push(s + " (" + d.id + ")");
+                    }
+                });
+            }
+            return words.has(d.id);
         });
         $("#search").autocomplete({
-          source: keywords,
-          messages: {
-            noResults: "",
-            results: function(count) {}
-          },
-          autoFocus: true,
-          classes: {"ui-autocomplete": "autocomplete"}
+            source: keywords,
+            messages: {
+                noResults: "",
+                results: function (count) {}
+            },
+            autoFocus: true,
+            classes: {"ui-autocomplete": "autocomplete"}
         });
         graph.links = graph.links.filter(function (l) {
             return words.has(l.source.id) && words.has(l.target.id);
@@ -560,112 +577,118 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Filter the network on scores
     function filterScores() {
-      if (focus) {
-          toggleFocus(selectedItem);
-      }
-      if (selectedItem) {
-          unselectItem();
-      }
-      if (highlightedNode) {
-          unhighlightNode(highlightedNode);
-          highlightedNode = false;
-      }
-      displayFilterValues();
-      keywords = [];
-      mainterms = [];
-      graph.nodes = graph.nodes.filter(function (d) {
-          if (maxNodeScoreFilter.value >= d.hitcount
-              && d.hitcount >= minNodeScoreFilter.value) {
-            mainterms.push(d.id);
-            keywords.push(d.id);
-            d.synonyms.forEach(function(s) {
-              if (s !== d.id) {
-                keywords.push(s + " (" + d.id + ")");
-              }
-          });
-          return maxNodeScoreFilter.value >= d.hitcount
-                 && d.hitcount >= minNodeScoreFilter.value;
+        if (focus) {
+            toggleFocus(selectedItem);
         }
-      });
-      $("#search").autocomplete({
-        source: keywords,
-        messages: {
-          noResults: "",
-          results: function(count) {}
-        },
-        autoFocus: true,
-        classes: {"ui-autocomplete": "autocomplete"}
-      });
-      graph.links = graph.links.filter(function (l) {
-          return l.value >= minRelScoreFilter.value
-                 && graph.nodes.includes(l.source)
-                 && graph.nodes.includes(l.target);
-      });
-      updateNetwork();
+        if (selectedItem) {
+            unselectItem();
+        }
+        if (highlightedNode) {
+            unhighlightNode(highlightedNode);
+            highlightedNode = false;
+        }
+        displayFilterValues();
+        keywords = [];
+        mainterms = [];
+        graph.nodes = graph.nodes.filter(function (d) {
+            if (maxNodeScoreFilter.value >= d.hitcount
+                    && d.hitcount >= minNodeScoreFilter.value) {
+                mainterms.push(d.id);
+                keywords.push(d.id);
+                d.synonyms.forEach(function (s) {
+                    if (s !== d.id) {
+                        keywords.push(s + " (" + d.id + ")");
+                    }
+                });
+                return maxNodeScoreFilter.value >= d.hitcount
+                        && d.hitcount >= minNodeScoreFilter.value;
+            }
+        });
+        $("#search").autocomplete({
+            source: keywords,
+            messages: {
+                noResults: "",
+                results: function (count) {}
+            },
+            autoFocus: true,
+            classes: {"ui-autocomplete": "autocomplete"}
+        });
+        graph.links = graph.links.filter(function (l) {
+            return l.value >= minRelScoreFilter.value
+                    && graph.nodes.includes(l.source)
+                    && graph.nodes.includes(l.target);
+        });
+        updateNetwork();
     }
 
     // Filter links by type
     function filterLinksByType(group) {
-      if (selectedItem) {
-        unselectItem();
-      }
-      if (d3.event) {
-          d3.event.stopPropagation();
-      }
-      graph.links = graph.links.filter(function (l) {
-          return !(l.source.group === group && l.target.group === group);
-      });
-      directConnections = {};
-      graph.links.forEach(function (d) {
-          directConnections[d.source.id + "," + d.target.id] = 1;
-      });
-      link = link.data(graph.links, function (d) {
-          return d.source.id + "-" + d.target.id;
-      });
-      link.exit().remove();
-      link = link.enter().append("line").merge(link);
-      simulation.force("link").links(graph.links);
-      simulation.alpha(1).restart();
+        if (selectedItem) {
+            unselectItem();
+        }
+        if (d3.event) {
+            d3.event.stopPropagation();
+        }
+        graph.links = graph.links.filter(function (l) {
+            return !(l.source.group === group && l.target.group === group);
+        });
+        directConnections = {};
+        graph.links.forEach(function (d) {
+            directConnections[d.source.id + "," + d.target.id] = 1;
+        });
+        link = link.data(graph.links, function (d) {
+            return d.source.id + "-" + d.target.id;
+        });
+        link.exit().remove();
+        link = link.enter().append("line").merge(link);
+        simulation.force("link").links(graph.links);
+        simulation.alpha(1).restart();
     }
 
     // Add event listeners to filterbuttons
-    document.getElementById("filtercomp").onclick = function() { filterLinksByType(0) };
-    document.getElementById("filterhealth").onclick = function() { filterLinksByType(1) };
-    document.getElementById("filterorg").onclick = function() { filterLinksByType(3) };
+    document.getElementById("filtercomp").onclick = function () {
+        filterLinksByType(0);
+    };
+    document.getElementById("filterhealth").onclick = function () {
+        filterLinksByType(1);
+    };
+    document.getElementById("filterorg").onclick = function () {
+        filterLinksByType(3);
+    };
 
     // Update the network for removed nodes and Links
     function updateNetwork() {
-      if (d3.event) {
-          d3.event.stopPropagation();
-      }
-      node = node.data(graph.nodes, function (d) {
-          return d.id;
-      });
-      node.exit().remove();
-      node = node.enter().append("circle").attr("fill", function (d) {
-          return color(d.group);
-      })
-              .attr("r", function (d) {
-                  return 3 + (d.hitcount / maxNodeScore) * 4.5;
-              })
-              .merge(node);
-      node.select("text").remove();
-      node.append("text")
-              .attr("dx", 6)
-              .attr("id", function (d) {
-                  return d.id + "-label";
-              })
-              .text(function (d) {
-                  return d.id;
-              });
-      link = link.data(graph.links, function (d) {
-          return d.source.id + "-" + d.target.id;
-      });
-      link.exit().remove();
-      link = link.enter().append("line").merge(link);
-      simulation.nodes(graph.nodes)
-              .force("link").links(graph.links);
-      simulation.alpha(0.3).restart();
+        if (d3.event) {
+            d3.event.stopPropagation();
+        }
+        node = node.data(graph.nodes, function (d) {
+            return d.id;
+        });
+        node.exit().remove();
+        node = node.enter().append("circle").attr("fill", function (d) {
+            return color(d.group);
+        })
+                .attr("r", function (d) {
+                    return 3 + (d.hitcount / maxNodeScore) * 4.5;
+                })
+                .merge(node);
+        node.select("text").remove();
+        node.append("text")
+                .attr("dx", 6)
+                .attr("id", function (d) {
+                    return d.id + "-label";
+                })
+                .text(function (d) {
+                    return d.id;
+                });
+        link = link.data(graph.links, function (d) {
+            return d.source.id + "-" + d.target.id;
+        });
+        link.exit().remove();
+        link = link.enter().append("line").merge(link);
+        simulation.nodes(graph.nodes)
+                .force("link").links(graph.links);
+        simulation.alpha(0.3).restart();
     }
 
     // Create search button
@@ -702,12 +725,12 @@ d3.json("../static/json/network.json", function (error, graph) {
                 foundNode = d;
                 return false;
             } else {
-              for (var i = 0; i < query.split("(").length; i++) {
-                if (d.id.toUpperCase() === query.split("(")[i].split(')')[0]) {
-                  foundNode = d;
-                  return false;
+                for (var i = 0; i < query.split("(").length; i++) {
+                    if (d.id.toUpperCase() === query.split("(")[i].split(')')[0]) {
+                        foundNode = d;
+                        return false;
+                    }
                 }
-              }
             }
             return true;
         });
@@ -729,10 +752,10 @@ d3.json("../static/json/network.json", function (error, graph) {
         } else {
             document.getElementById("alert").style["display"] = "block";
             document.getElementById("info-content").innerHTML = "<p>"
-            + "Oops! Keyword not found.</p><img src=\""
-            + "../static/img/sadbatman.gif\">"
-            + "<p><a href=\"../contact#message\">Ask the staff to add \""
-            + query.toLowerCase() + "\" to the network</a></p>";
+                    + "Oops! Keyword not found.</p><img src=\""
+                    + "../static/img/sadbatman.gif\">"
+                    + "<p><a href=\"../contact#message\">Ask the staff to add \""
+                    + query.toLowerCase() + "\" to the network</a></p>";
         }
     }
 
@@ -748,7 +771,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             source: keywords,
             messages: {
                 noResults: "",
-                results: function(count) {}
+                results: function (count) {}
             },
             autoFocus: true,
             classes: {"ui-autocomplete": "autocomplete"}
@@ -824,7 +847,7 @@ function highlightLink(d) {
 // Unhighlight link
 function unhighlightLink(d) {
     if (highlightedLink !== selectedItem) {
-        highlightedLink.style["stroke"] = "rgba(0,0,0,0.05)";
+        highlightedLink.style["stroke"] = "rgba(0,0,0,0.1)";
     } else {
         highlightedLink.style["stroke"] = "rgba(0,0,255,0.3)";
     }
