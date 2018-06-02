@@ -75,6 +75,11 @@ header {
   overflow: hidden;
 }
 
+video.responsive-video {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
 	color: #0c79b1;
 	text-decoration: none;
