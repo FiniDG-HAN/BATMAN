@@ -22,35 +22,32 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
   <button class="accordion">+ Basic navigation</button>
   <div class="panel">
     <p>
-  <b>All changes made withing the network are only temporarily! By refreshing the page, the original network will be back. No data will be deleted from the database</b><br>
-  The most basic navigation functions of the displayed network are explained in the Info box. In the search box the “Search” option is available from the start. Here you can fill in a keyword to search in the network. By clicking on "+ More options", other options become available to get the most out of the results. <br>
-  <b>Nodes:</b><br> Here you can choose a keyword in the network with all available options. Selecting a keyword will result in a zoom in and highlight of the selected keyword in the network.<br>
-  <b>Minimal relation/node score:</b><br> Here you can choose with a slider what the minimal score of a link or node is. All links/nodes with a score lower than the selected number will disappear.<br>
-  <b>Maximal relation/node score:</b><br> Here you can choose with a slider what the maximal score of a link or node is. All links/nodes with a score higher than the selected number will disappear.<br>
-  <b>Remove links between:</b><br> Here you can choose to remove links within a same category. For example by clicking on "Health effect" all links between health effects will disappear.<br>
-  <b>Filter by keywords:</b><br> Here you can select one or more nodes to remove from the network by clicking on "Remove". By clicking on "Filter" the selected nodes will be visualized, while the other nodes and links will be grayed out.
-    </p>
+  <b>All changes made in the visualisation of the network are temporary! By reloading the page, the original network will show again. No data will be lost.</b><br>
+  All of the basic navigation functions are explained in the info box. In the search box, the “Search” option will be available when the network is rendered. Here you can enter a keyword to look for in the network. By clicking on "+ More options", all other options will be displayed.<br>
+  <b>Nodes:</b><br> Here you can select one of the main keywords in the network. Note that this does not contain any synonyms. Selecting a keyword will activate the search function for the selected keyword.<br>
+  <b>Minimal relation/node score:</b><br> Here you can use a slider to set a threshold for the minimal score of a link or node. All links/nodes with a score lower than the selected value will disappear.<br>
+  <b>Maximal relation/node score:</b><br> Here you can use a slider to set a threshold for the maximal score of a link or node. All links/nodes with a score higher than the selected value will disappear.<br>
+  <b>Remove links between:</b><br> Here you can choose to remove all links between nodes of a particular type. By clicking one of the buttons, all links between two nodes of the selected type will disappear.<br>
+  <b>Filter by keywords:</b><br> Here you can select one or more keywords of interest to leave in the network and remove all other nodes. By clicking "Filter", all the other nodes and the links connected to them will dissappear.</p>
   </div>
   <button class="accordion">+ Gathering information</button>
   <div class="panel">
-    <p>By clicking on either a node or link, the Info box will show new information about the specific item you clicked on. This includes but is not limited to: type (health_effect, compound, organism), information about the associated articles and the total hitcount in all the found articles. In this box, there are several buttons at the bottom. "Release node" sets the node free, if the user has dragged the node (which sets the location of the node). "Zoom in on node" or "Zoom in on link" highlights the node/link and zooms in to that region on the network. "Remove node" or "Remove link" removes the node/link from the network. In case of removing nodes, the associates links with that node will disappear as well. The "Download table" button saves the results from either the node or link (see below).
-    </p>
+    <p>By clicking on either a node or link, the info box will show the properties of the item you selected. This includes: type (health effect, compound, organism), information about the associated articles and the total score of based on the found articles. In addition, there will be several buttons at the bottom. "Release node" will set the node free after it was dragged (which will fix the position of the node). "Zoom in on node" or "Zoom in on link" will center the screen on the selected item and zoom in on it, unless the user already zoomed in a certain extent. "Remove node" or "Remove link" removes the slected node/link from the network. In case of removing nodes, the directly connected links will disappear as well. The "Download table" button allows the user to save the table of PubMed articles (<a onclick="toggleAccordion(acc[1]);toggleAccordion(acc[2]);" href="#">see "Saving results"</a>).</p>
   </div>
   <button class="accordion">+ Saving results</button>
   <div class="panel">
-    <p>Results can be saved in several ways. One is by clicking on "Download as PNG". The network as shown will be saved in a .png format (image). Another way is by clicking on either a link or node and clicking on the "Download table" button. Here an tab delimited TSV file is generated. This is a file format that is recognized by Excel and LibreOffice Calc. It contains all the PubMedIDs, article titles and other information about all the scientific articles that are linked to that specific node or link.
-    </p>
+    <p>There are two ways to save results. One is by clicking on "Download as PNG". The network as shown will be saved in a Portable Network Graphics format (image). The other way is by selecting a link or node and clicking on the "Download table" button. Here a Tab Separated Values file is generated containing the table of PubMed articles. This file format can for example be opened in Microsoft Excel. It contains all the PubMedIDs, article titles and other information about all the scientific articles that are linked to the selected node or link.</p>
   </div>
   <button class="accordion">+ Adding new keywords</button>
   <div class="panel">
-    <p>If you want to add keywords that are not available in the existing network, you can use the contact page for a request. Please specificity the keywords and the category of the keywords (organism, compound, health effect or other).
-    </p>
+    <p>If you wish to add keywords that are not available in the existing network, you can use the contact page for a request. Please specify the desired keywords and the keyword types (organism, compound, health effect or other).</p>
   </div>
   <!-- FAQ -->
   <h2><i class="fas fa-question-circle"></i> &nbsp;Frequently Asked Questions</h2>
   <button class="accordion">+ What is text mining?</button>
   <div class="panel">
-    <p>The basis of text mining is deriving information from text. With our application it means deriving interesting relationships between biochemical keywords to answer biological research questions. In short, this application finds specific keywords using the PubMed database of biochemical research papers, to find possible interesting articles. It does this by finding articles which has a combination of two keywords in either the articles abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. The network will visualize the strength of the relationships with thicker nodes (relative to the occurrence of the keyword in total and the placement of the keywords in the abstract or title) and thicker links (relative to the amount of overlapping PubMed articles and the placement of the keywords in the abstract or title). See "How is the node score and link score calculated?"
+    <p>The basis of text mining is deriving information from text. In case of the BATMAN web application, it means deriving interesting relationships between keywords to help answering biological research questions. In short, this application finds specific keywords using the PubMed database of biomedical research paper abstracts, to find interesting articles. This is done by looking for articles which contain a combination of keywords in either the abstract, title or both. The number of articles found with this specific combination of keywords, the frequency of occurrence of the keywords and the origin of the found keywords (title or abstract) determines a relationship score between the keywords. By doing this for multiple keywords, a network of keywords (nodes) and the relationships between them (links) will be generated. In the network the strength of the relationships is visualized in the width of the links (<a onclick="toggleAccordion(acc[4]);toggleAccordion(acc[5]);" href="#">see "How is the node score and link score calculated?"
+  </a>).
     </p>
   </div>
   <button class="accordion">+ How is the node score and link score calculated?</button>
@@ -69,7 +66,7 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
   <button class="accordion">+ How do I use this application to get the most interesting results?</button>
   <div class="panel">
     <p>The most interesting results can be found by tweaking and zooming the generated network. To help with this, there are additional functions that can be used find specific relationships. One of them is the "Filter by keywords" option that can be found in the "Search" box by clicking "More options". Here it is possible to select more than one keyword, and show only those keywords and the relations between them. By selecting more than two keywords, indirect relationships are possible to arise.
-  Another option that can help is temporary removing nodes from the network. You can use the buttons to remove specific nodes or you can use the option to remove more than one node at once (see "Basic navigation". This makes the network easier to read and interpret. Some examples are shown below.
+  Another option that can help is temporary removing nodes from the network. You can use the buttons to remove specific nodes or you can use the option to remove more than one node at once (<a onclick="toggleAccordion(acc[7]);toggleAccordion(acc[0]);" href="#">see "Basic navigation".</a>) This makes the network easier to read and interpret. Some examples are shown below.
   <h3><img src="{{ url_for('static', filename='img/helpfigure1.png')}}" alt="Finding indirect results in application"></h3>
   <h5>Figure 1:
   Apple has no direct relation with health effect 2, but tomato has a clear direct relationship. However, compound X related to the health effect is also present in apple and therefore could have a relation with this health effect. More researched organisms like <i>C. sativus</i> could create a indirect link to a compound or health effect for a less researched organism like <i>M. charanti</i>.</h5>
@@ -99,7 +96,7 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
   </div>
   <button class="accordion">+ What are the assumptions and shortcomings of this application? </button>
   <div class="panel">
-    <p>- This application uses the thickness of the nodes and links to visualize the strength of the relationships. A thicker node represents the occurrence of the keyword in all found articles and a thicker link tells you about the amount of overlapping articles and where the keyword is found (abstract or title). However, the more articles or the amount keywords within the articles that are found does not necessarily mean that these keywords or links are more important than others. Some keywords are simply more available in the PubMed database, like cancer vs. osteoporosis or <i>A. thaliana</i> vs. <i>M. charantia</i>. This creates a bias towards these keywords. This also happens with links between keywords, where diabetes+insulin have more overlapping articles and number of found keywords, because these search terms are found in more PubMed articles than for a less known disease and the corresponding acting substance. A possible solution for this problem is to show the results of only a few keywords with the “+ Filter by keywords” option (explained in "Basic navigation"). Here the thin links and/or small nodes can show a indirect relationship. See example at "FAQ - How do I use this application to get the most interesting results?".<br>
+    <p>- This application uses the size of the nodes and links to visualize the strength of the relationships. A larger node represents the occurrence of the keyword in all found articles and a wider link tells you about the amount of overlapping articles and where the keyword is found (abstract or title). However, the more articles or the amount keywords within the articles that are found does not necessarily mean that these keywords or links are more important than others. Some keywords are simply more available in the PubMed database, like cancer vs. osteoporosis or <i>A. thaliana</i> vs. <i>M. charantia</i>. This creates a bias towards these keywords. This also happens with links between keywords, where diabetes+insulin have more overlapping articles and number of found keywords, because these search terms are found in more PubMed articles than for a less known disease and the corresponding acting substance. A possible solution for this problem is to show the results of only a few keywords with the “+ Filter by keywords” option (<a onclick="toggleAccordion(acc[11]);toggleAccordion(acc[0]);" href="#">see "Basic navigation"</a>). Here the thin links and/or small nodes can show a indirect relationship. (<a onclick="toggleAccordion(acc[11]);toggleAccordion(acc[7]);" href="#">see "How do I use this application to get the most interesting results?"</a>).<br>
   <br>- Some results with a test dataset resulted in incomplete abstracts. Further investigation about this showed, that the articles were not filled in correctly by the publishers of that articles. Simply said, this means that the file that our program gets back (a XML file) is incomplete and can therefore not be used to its full potential. According to PubMed, this is the responsibility of the publishers. In the test dataset, there was only two articles that had this problem, but these kinds of articles could be missed by this application.<br>
   <br>- PubMed makes use of synonyms for their search results. Possible wrong synonyms could therefore be added in the found articles. To help you determine if this is the case, clicking on a nodes shows the list of synonyms that PubMed used. Additionally, certain keywords could possibly be a synonym of another keyword in the network, which will cause overlapping results. Therefore it is always necessary to check the used synonyms of interesting parts of the network.<br>
   <br>- This application only searches in the titles, abstracts and keyword lists of all PubMed IDs. This means that articles outside of PubMed are not included. Additionally, not the whole article is used for the text mining search. The reasoning behind this is because most papers are in subscription journals. To see the full text a payment or subscription to that specific publisher/journal is needed. Using free articles only will naturally exclude many interesting papers and using the full text only for free articles will create a big bias towards those articles.<br>
@@ -128,20 +125,21 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
 <!-- Expand/collapse questions -->
 <script>
 var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-            this.innerHTML = this.innerHTML.replace("-", "+");
-        } else {
-            panel.style.display = "block";
-            this.innerHTML = this.innerHTML.replace("+", "-");
-        }
-    });
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() { toggleAccordion(this); });
+}
+
+function toggleAccordion(a) {
+    a.classList.toggle("active");
+    var panel = a.nextElementSibling;
+    if (panel.style.display === "block") {
+        panel.style.display = "none";
+        a.innerHTML = a.innerHTML.replace("-", "+");
+    } else {
+        panel.style.display = "block";
+        a.innerHTML = a.innerHTML.replace("+", "-");
+    }
 }
 </script>
 {% endblock %}

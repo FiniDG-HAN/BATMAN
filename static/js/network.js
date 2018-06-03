@@ -48,11 +48,11 @@ d3.json("../static/json/network.json", function (error, graph) {
         return !seen.has(d.source + "-" + d.target);
     });
 
-    // Create sets of keywords and synonyms, determine maximum hitcount
+    // Create sets of keywords and synonyms, determine maximum nodescore
     var keywords = [];
     mainterms = [];
     graph.nodes.forEach(function (d) {
-        maxNodeScore = d.hitcount > maxNodeScore ? d.hitcount : maxNodeScore;
+        maxNodeScore = d.nodescore > maxNodeScore ? d.nodescore : maxNodeScore;
         keywords.push(d.id);
         mainterms.push(d.id);
         d.synonyms.forEach(function (s) {
@@ -140,13 +140,13 @@ d3.json("../static/json/network.json", function (error, graph) {
 
     // Add node collision
     simulation.force("collide", d3.forceCollide(function (d) {
-        return 3 + (d.hitcount / maxNodeScore) * 4.5;
+        return 3 + (d.nodescore / maxNodeScore) * 4.5;
     }));
 
     // Draw nodes
     node.append("circle")
             .attr("r", function (d) {
-                return 3 + (d.hitcount / maxNodeScore) * 4.5;
+                return 3 + (d.nodescore / maxNodeScore) * 4.5;
             })
             .attr("fill", function (d) {
                 return color(d.group);
@@ -358,7 +358,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         };
         var infoContent = "<h3 style=\"color:"
                 + color(d.group) + ";\">" + d.id + "</h3><p>Score: "
-                + d.hitcount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                + d.nodescore.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                 + "</p><p>Type: <span style=\"color:" + color(d.group) + ";\">"
                 + groupTypeMap.get(d.group) + "</span></p>"
                 + "<p>Also known as: " + d.synonyms.join(", ") + "</p>"
@@ -591,8 +591,8 @@ d3.json("../static/json/network.json", function (error, graph) {
         keywords = [];
         mainterms = [];
         graph.nodes = graph.nodes.filter(function (d) {
-            if (maxNodeScoreFilter.value >= d.hitcount
-                    && d.hitcount >= minNodeScoreFilter.value) {
+            if (maxNodeScoreFilter.value >= d.nodescore
+                    && d.nodescore >= minNodeScoreFilter.value) {
                 mainterms.push(d.id);
                 keywords.push(d.id);
                 d.synonyms.forEach(function (s) {
@@ -600,8 +600,8 @@ d3.json("../static/json/network.json", function (error, graph) {
                         keywords.push(s + " (" + d.id + ")");
                     }
                 });
-                return maxNodeScoreFilter.value >= d.hitcount
-                        && d.hitcount >= minNodeScoreFilter.value;
+                return maxNodeScoreFilter.value >= d.nodescore
+                        && d.nodescore >= minNodeScoreFilter.value;
             }
         });
         $("#search").autocomplete({
@@ -669,7 +669,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             return color(d.group);
         })
                 .attr("r", function (d) {
-                    return 3 + (d.hitcount / maxNodeScore) * 4.5;
+                    return 3 + (d.nodescore / maxNodeScore) * 4.5;
                 })
                 .merge(node);
         node.select("text").remove();

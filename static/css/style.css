@@ -408,6 +408,10 @@ ul {
 	box-shadow: 8px 8px 6px -6px #999;
 }
 
+#network line, #network circle, #network text {
+	cursor: url(../cursor/pointer.cur), auto;
+}
+
 /* Search */
 #search-widget {
 	padding: 1%;

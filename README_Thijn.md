@@ -52,8 +52,13 @@ mainterm : [[synoniemen], {pmid : score}, categorie]}
 
 #### Attributen veranderingen
 <b><ins>In de entiteit 'type'</ins></b>
+
 - naam attribuut 'classificatie' veranderd naar 'classification'. Om alles consistent in het Engels te zetten.
-<br><b><ins>In de entiteit 'node'</ins></b><br>
--'node_id' is veranderd naar 'mainterm'. Dit zijn de namen van de nodes, die al uniek moeten zijn in onze applicatie.
-<br><b><ins>In de entiteit 'keyword'</ins></b><br>
+
+<b><ins>In de entiteit 'node'</ins></b>
+
+- 'node_id' is veranderd naar 'mainterm'. Dit zijn de namen van de nodes, die al uniek moeten zijn in onze applicatie.
+
+<b><ins>In de entiteit 'keyword'</ins></b>
+
 - Er is een attribuut verwijderd, namelijk 'hitcount'. Dit omdat de score op een andere plek opgeslagen wordt, namelijk in de tussentabel 'nodeXarticle'. de totale score van een node wordt nu berekend door alle scores bij elkaar op te tellen. De score opgeslagen in 'nodeXarticle' is nu de score per artikel, zodat ze ook makkelijker op volgorde opgeslagen kunnen worden.
