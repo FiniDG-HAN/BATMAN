@@ -270,15 +270,7 @@ d3.json("../static/json/network.json", function (error, graph) {
             }
             return true;
         });
-        $("#search").autocomplete({
-            source: keywords,
-            messages: {
-                noResults: "",
-                results: function (count) {}
-            },
-            autoFocus: true,
-            classes: {"ui-autocomplete": "autocomplete"}
-        });
+        fillAutocomplete();
         document.getElementById(d.id + "-option").outerHTML = "";
         graph.nodes.splice(d.index, 1);
         graph.links = graph.links.filter(function (l) {
@@ -560,15 +552,8 @@ d3.json("../static/json/network.json", function (error, graph) {
             }
             return words.has(d.id);
         });
-        $("#search").autocomplete({
-            source: keywords,
-            messages: {
-                noResults: "",
-                results: function (count) {}
-            },
-            autoFocus: true,
-            classes: {"ui-autocomplete": "autocomplete"}
-        });
+        fillAutocomplete();
+        fillDropdown();
         graph.links = graph.links.filter(function (l) {
             return words.has(l.source.id) && words.has(l.target.id);
         });
@@ -604,15 +589,8 @@ d3.json("../static/json/network.json", function (error, graph) {
                         && d.nodescore >= minNodeScoreFilter.value;
             }
         });
-        $("#search").autocomplete({
-            source: keywords,
-            messages: {
-                noResults: "",
-                results: function (count) {}
-            },
-            autoFocus: true,
-            classes: {"ui-autocomplete": "autocomplete"}
-        });
+        fillAutocomplete();
+        fillDropdown();
         graph.links = graph.links.filter(function (l) {
             return l.value >= minRelScoreFilter.value
                     && graph.nodes.includes(l.source)
@@ -765,27 +743,37 @@ d3.json("../static/json/network.json", function (error, graph) {
         search();
     }
 
-    // Search autocomplete
-    $(function () {
-        $("#search").autocomplete({
-            source: keywords,
-            messages: {
-                noResults: "",
-                results: function (count) {}
-            },
-            autoFocus: true,
-            classes: {"ui-autocomplete": "autocomplete"}
-        });
-    });
+    // Fill/update search autocomplete
+    function fillAutocomplete() {
+      $(function () {
+          $("#search").autocomplete({
+              source: keywords,
+              messages: {
+                  noResults: "",
+                  results: function (count) {}
+              },
+              autoFocus: true,
+              classes: {"ui-autocomplete": "autocomplete"}
+          });
+      });
+    }
 
-    // Fill drop-down menu
-    $(function () {
-        var $dropdown = $("#options");
-        $.each(mainterms, function (key, value) {
-            $dropdown.append("<option id=\""
-                    + value + "-option\" value=\"" + value + "\">" + value + "</option>");
-        });
-    });
+    // Fill/update drop-down menu
+    function fillDropdown() {
+      $(function () {
+          var $dropdown = $("#options");
+          $dropdown.html("");
+          $.each(mainterms, function (key, value) {
+              $dropdown.append("<option id=\""
+                      + value + "-option\" value=\"" + value + "\">" + value
+                      + "</option>");
+          });
+      });
+    }
+
+    // Fill search autocomplete and drop-down menu when JSON is loaded
+    fillAutocomplete();
+    fillDropdown();
 });
 
 // Handle zoom events

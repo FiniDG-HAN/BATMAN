@@ -14,7 +14,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-__version__ = '0.5'
+__version__ = '1.0'
 
 from flask import (Flask, redirect, render_template, request, url_for)
 

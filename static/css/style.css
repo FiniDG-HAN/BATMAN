@@ -562,6 +562,7 @@ ul {
 
 }
 
+/* Search autocomplete */
 .autocomplete {
 	width: 20%;
 	list-style-type: none;
@@ -571,6 +572,10 @@ ul {
 
 .autocomplete li:hover {
 	background-color: #CCC;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
 }
 
 /* Message form */
