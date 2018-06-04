@@ -27,7 +27,7 @@ Jonathan Feenstra, Fini De Gruyter, Alex Janse & Thijs Weenink
 mainterm : [[synoniemen], {pmid : score}, categorie]}
 {PMID : [title, authors, date]}
 {relationterm : {linkterm : [PMID]}.
-- In 'textmining' zijn er andere bestanden gemaakt. Er is een 'textmining.py' en een 'afterprocessing.py'. Zie de betreffende files voor commentaar.
+- In 'textmining' zijn er andere bestanden gemaakt. Er is een 'textmining.py', 'afterprocessing.py', 'search_lists.py' en 'USE_THIS_SCRIPT.py'. Zie de betreffende files voor commentaar. De 'USE_THIS_SCRIPT.py' is de file die je runt om de textmining te starten. Hier kan aangegeven worden welke lijst je gaat doorzoeken, die staan in 'search_lists.py'. Dit is gedaan om de text mining te verdelen over meerdere computers. Hierbij is rekening gehouden met het zoekbereik van het woord, zodat woorden als 'cancer' een aparte groep krijgen.
 - De 'logicaJS' is een stuk uitgebreider geworden. Er zijn 4 javascipts genaamd: 'modernizr-1.5.min.js', 'network.js', 'pacman.js', 'pubmed-chart.js'. 'network.js' is nog steeds het script dat verantwoordelijk is voor de visualisatie van de graaf. Het aantal methodes en variabelen is veel uitgebreider geworden dan in de class diagram te zien is (zie betreffende files voor commentaar).
 - Classes van 'textmining' maken geen gebruik meer van NLTK, zoals vermeld in de commentbox.
 
@@ -38,7 +38,7 @@ mainterm : [[synoniemen], {pmid : score}, categorie]}
 
 #### Datatypen veranderingen
 <b><ins>In de entiteit 'pubmed_article'</ins></b><br>
--Het datatype van publication_date is veranderd van DATE naar VARCHAR2 (xxx). De reden hiervoor is dat het javascript en de html de datum meenemen als string. het is dus niet nodig dit een apart datum datatype mee te geven. Bovendien zorgde dit voor problemen, omdat het niet goed doorkwam in de JSON, waar date steeds 'null' werd. Tenslotte slaat elk artikel de datum anders op (may-2018, 2018, 2-5-2018, 2-may-2018 etc.) Waardoor er ook weer problemen ontstaan. Een String/VARCHAR2 neemt gewoon over wat er geschreven staat. De gebruiker (de bioloog) kan dit altijd interpreteren.
+-Het datatype van publication_date is veranderd van DATE naar VARCHAR2 (10). De reden hiervoor is dat het JavaScript en de HTML de datum meenemen als string. het is dus niet nodig dit een apart datum datatype mee te geven. Bovendien zorgde dit voor problemen, omdat het niet goed doorkwam in de JSON, waar date steeds 'null' werd. Tenslotte slaat elk artikel de datum anders op (may-2018, 2018, 2-5-2018, 2-may-2018 etc.) Waardoor er ook weer problemen ontstaan. Een String/VARCHAR2 neemt gewoon over wat er geschreven staat. De gebruiker (de bioloog) kan dit altijd interpreteren.
 <br><b><ins>In de entiteit 'link'</ins></b><br>
 -'Relation_score' is veranderd van FLOAT(5) naar INTEGER. Dit omdat de score altijd gehele getallen zijn
 <br><b><ins>In de entiteit 'node'</ins></b><br>
