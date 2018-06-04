@@ -17,9 +17,9 @@ import search_lists
 
 def main():
     # Select a list of searchterms here
-    search_list = search_lists.__search_list_test
+    search_list = search_lists.list_search_2
     # Give your list a name so you can find it later
-    search_name = "search_list_test"
+    search_name = "list_search_2"
 
     # DONT TOUCH THIS
     textmining.main(search_list, search_name)
