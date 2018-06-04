@@ -48,7 +48,7 @@ def __create_JSON_data(cursor):
 
 # Methode om JSON bestand te maken
 def __create_JSON(data):
-    bestand = open(r'/home/owe8_pg8/public_html/BATMAN/static/json/test2.json','w')
+    bestand = open(r'/home/owe8_pg8/public_html/BATMAN/static/json/network.json','w')
     json.dump(data, bestand, indent=4, sort_keys=True, default=str)
     bestand.close()
 
