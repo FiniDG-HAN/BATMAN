@@ -7,6 +7,8 @@ Function for calling the text mining script, select a list of words from
 
 Author: Thijs Weenink
 
+Known bugs: None
+
 Version 1.0
 
 """
@@ -14,22 +16,27 @@ Version 1.0
 import textmining
 import search_lists
 
-
+"""
+#
+# Main function to select a list to search and perform the text mining over.
+#
+"""
 def main():
     # Select a list of searchterms here
     search_list = search_lists.__search_list_test2
-    # Give your list a name so you can find it later
+    # Give your list a name so you can find it later,
+    # preferably the same name as the list you choose.
     search_name = "search_list_temp2"
     print(search_list)
 
-    # DONT TOUCH THIS
+    # DONT TOUCH THIS, THIS CALLS THE TEXT MINING SCRIPT
     textmining.main(search_list, search_name)
 
 
-main()
-
-
-def test():
-    li = [1,2,3,4,5,6,""]
-    print(li[-2:][0])
-    print(str(li[-2:][0]).isnumeric())
+"""
+#
+# Calls the script
+#
+"""
+if __name__ == "__main__":
+    main()
