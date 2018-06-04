@@ -1,11 +1,12 @@
 """
 Search lists used for textmining
 
-Version: 1.0
+Version: 1.0.1
 
 Author: Thijs Weenink
 
 The hour indications are incorrect
+There aren't any bugs here as there is no code, only lists
 """
 ## TEST ##
 __search_list_test = ["christinin-a", "npaas", "roseoside"] # , "alkamides" "roseoside",

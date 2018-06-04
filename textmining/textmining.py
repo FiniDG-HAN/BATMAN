@@ -2,11 +2,11 @@
 """
 Created on Thu May 17 14:07:53 2018
 
-Version: 1.7
+Version: 1.7.1
 
 Authors: Thijs Weenink and Fini De Gruyter
 
-Known bugs: The indexing doesnt really work, it saves the index of the keyword in the lists,
+Known bugs: The indexing doesn't really work, it saves the index of the keyword in the lists,
             but it doesnt retrieve it within the script, this can be done manually if really
             needed.
 
@@ -69,10 +69,6 @@ def main(search_list, search_list_name):
 
     index_test = int(_get_previous_search_index())
 
-    #search_terms = list(cat_dict.keys())[int(index_test)::]
-    #print(search_terms)
-    #print(len(search_terms))
-
     for index_of_searches, search_term in enumerate(search_list):
         try:
             linkterm_dict, pmid_dict, synonym_dict = _get_previous_search_terms("relations", "pmid", "synonym")
@@ -113,6 +109,7 @@ def main(search_list, search_list_name):
     print("\n######################################")
     print("PMID file: %s.txt\nSynonym file: %s.txt\nLink file: %s.txt\n" % ((dir_path+os.sep+new_pmid_file_name), (dir_path+os.sep+final_file_synonym), (dir_path+os.sep+final_file_link)))
 
+
 """
 #
 # Makes the dirs in which the output gets stored
@@ -136,6 +133,7 @@ def _making_dirs(search_list_name):
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
+
 
 """
 #
@@ -318,7 +316,7 @@ def _add_to_search_indexes(index):
 """
 #
 # Searching NCBI
-# The main function for text mining, with configuration file
+# The main function for text mining, with configuration options
 #
 """
 def _text_mining(search_term, cat_dict):
@@ -377,8 +375,11 @@ def _ncbi_search(search_term):
     return terms, amount_of_hits, record
     #print(record)
 
-
+"""
+#
 # Fetches the data from the record gotten from ncbi_search(), returns all data needed
+#
+"""
 def _ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
     time_dict = {}
 
@@ -474,6 +475,7 @@ def _ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                         pass
 
             ### End of if statement ###
+        # For testing only:
         #if current_result > max_amount_downloaded:
          #   break
 

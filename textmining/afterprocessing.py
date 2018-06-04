@@ -8,7 +8,7 @@ Author: Thijs Weenink
 
 Knows bugs: None
 
-Version: 1.2
+Version: 1.2.1
 """
 
 __version__ = 1.2
@@ -16,7 +16,11 @@ __version__ = 1.2
 import json
 import os
 
-
+"""
+#
+# Main function for cleaning the relation dictionary
+#
+"""
 def clean_up_data_relation_dict(dictionary, file_name):
     processed_dict = _clean_up(dictionary)
     final_dict = _delete_carbohydrates_from_dict(processed_dict)
@@ -25,6 +29,11 @@ def clean_up_data_relation_dict(dictionary, file_name):
     return file_string
 
 
+"""
+#
+# Main function for cleaning the pmid or synonym dictionary
+#
+"""
 def clean_up_data_other_dicts(dictionary, file_name, search_list_name):
     final_dict = _delete_carbohydrates_from_dict(dictionary)
 

@@ -6,7 +6,7 @@ Makes the relations between keywords.
 
 Author: Thijs Weenink
 
-Version: 1.0
+Version: 1.0.1
 
 Known bugs: None
 """
@@ -77,15 +77,17 @@ def _clean_up(dictionary):
     relations_dict = {}
 
     for key, int_dict in dictionary.items():
-        new_dict = {k:v for k,v in int_dict.items() if v} #((not key.strip() in (k.split()) and not k.strip() in key.split()) and v)}
+        new_dict = {k:v for k,v in int_dict.items() if v}
         relations_dict[key] = new_dict
 
-
-    #for key, dict_itn in relations_dict.items():
-        #print(key+": "+str(dict_itn)+"\n")
     return relations_dict
 
 
+"""
+#
+# Combining dictionaries into 1
+#
+"""
 def _merge_dict(*dict_list):
     """
     Given any number of dicts, shallow copy and merge into a new dict,
@@ -97,7 +99,11 @@ def _merge_dict(*dict_list):
     return result
 
 
-
+"""
+#
+# Load a json file to dict
+#
+"""
 def _load_json(file_path):
     with open("%s" % (file_path)) as file:
         data = json.load(file)
@@ -105,7 +111,11 @@ def _load_json(file_path):
     return data
 
 
-
+"""
+#
+# Save a dict to json
+#
+"""
 def _save_json(dictionary, name):
     with open("%s" % (name), "w") as file:
         json.dump(dictionary, file)
