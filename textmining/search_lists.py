@@ -1,7 +1,14 @@
-# Search lists used for textmining, version 1.0
+"""
+Search lists used for textmining
 
+Version: 1.0
+
+Author: Thijs Weenink
+
+The hour indications are incorrect
+"""
 ## TEST ##
-__search_list_test = ["christinin-a", "npaas", "roseoside"] # , "alkamides" "roseoside", 
+__search_list_test = ["christinin-a", "npaas", "roseoside"] # , "alkamides" "roseoside",
 
 __search_list_test2 = ["lignans", "tannins", "momordica charantia"]
 ## TEST ##

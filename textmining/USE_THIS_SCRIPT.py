@@ -2,10 +2,10 @@
 """
 Created on Thu May 31 13:54:08 2018
 
-@author: Thijs Weenink
-
 Function for calling the text mining script, select a list of words from
 "search_lists.py". Dont edit other files unless needed.
+
+Author: Thijs Weenink
 
 Version 1.0
 
@@ -33,4 +33,3 @@ def test():
     li = [1,2,3,4,5,6,""]
     print(li[-2:][0])
     print(str(li[-2:][0]).isnumeric())
-
