@@ -4,9 +4,7 @@ Biomedical Article Text Mining ApplicatioN
 
 Web application for visualizing the health effects of bitter gourd and yam compounds, based on our results from text mining PubMed abstracts.
 
-## For Thijn van Kempen
-
-[Differences between design and final application](README_Thijn.md)
+[Info for our practice teacher, Thijn van Kempen](README_Thijn.md) @ThijnsGit
 
 ## Authors
 ### HAN BIN-2c project group 8 (course 8 2018)

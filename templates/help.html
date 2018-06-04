@@ -36,7 +36,7 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
   </div>
   <button class="accordion">+ Saving results</button>
   <div class="panel">
-    <p>There are two ways to save results. One is by clicking on "Download as PNG". The network as shown will be saved in a Portable Network Graphics format (image). The other way is by selecting a link or node and clicking on the "Download table" button. Here a Tab Separated Values file is generated containing the table of PubMed articles. This file format can for example be opened in Microsoft Excel. It contains all the PubMedIDs, article titles and other information about all the scientific articles that are linked to the selected node or link.</p>
+    <p>There are two ways to save results. One is by clicking on "Download as PNG". The network as shown will be saved in a Portable Network Graphics format (image). The other way is by selecting a link or node and clicking on the "Download table" button. Here a Tab Separated Values file is generated containing the table of PubMed articles. This file format can for example be opened in Microsoft Excel. It contains all the PubMed ID's, article titles and other information about all the scientific articles that are linked to the selected node or link.</p>
   </div>
   <button class="accordion">+ Adding new keywords</button>
   <div class="panel">
@@ -77,16 +77,17 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
   </div>
   <button class="accordion">+ In short: What are the benefits of this application?</button>
   <div class="panel">
-    <p>- The application shows at a glance what all the relations are between all the keywords, to which category they belong and how strong the relations are between the keywords. This gives already an overview how all the keywords are connected and possibly find interesting keyword clusters.<br>
-  <br>- The results are filtered to show research papers and reviews. It will not include categories without abstracts like quotes, books, Legal Cases etc.<br>
-  <br>- A scoring system in the application makes keywords that appear in the article title more important compared to keywords that appear only in the abstract of the article. This makes it possible to sort articles in the network results based on relevance.<br>
-  <br>- The network is very dynamic and can be changed by the user for optimal results. The results created by the user can be saved in both a image and Excel format.<br>
-  <br>- By selecting only a select group of keywords, small parts of the network can be shown and visualized. This makes more specific research within the network possible. These results can also be saved as both an image and Excel format for further investigation.
-    </p>
+    <ul class="bulleted-list">
+      <li>The application shows at a glance what all the relations are between all the keywords, to which category they belong and how strong the relations are between the keywords. This gives already an overview how all the keywords are connected and possibly find interesting keyword clusters.</li>
+      <li>The results are filtered to show research papers and reviews. It will not include categories without abstracts like quotes, books, Legal Cases etc.</li>
+      <li>A scoring system in the application makes keywords that appear in the article title more important compared to keywords that appear only in the abstract of the article. This makes it possible to sort articles in the network results based on relevance.</li>
+      <li>The network is very dynamic and can be changed by the user for optimal results. The results created by the user can be saved in both a image and Excel format.</li>
+      <li>By selecting only a select group of keywords, small parts of the network can be shown and visualized. This makes more specific research within the network possible. These results can also be saved as both an image and Excel format for further investigation.</li>
+    </ul>
   </div>
   <button class="accordion">+ Which data from PubMed is stored in the application?</button>
   <div class="panel">
-    <p>PubMedIDs, article titles, article abstracts, article date, article authors and synonyms of the searched keyword.
+    <p>PubMed ID's, article titles, article abstracts, article date, article authors and synonyms of the searched keyword.
     </p>
   </div>
   <button class="accordion">+ Where can I find the source code of the application?</button>
@@ -96,15 +97,16 @@ boxes). Source: https://www.w3schools.com/howto/howto_js_accordion.asp
   </div>
   <button class="accordion">+ What are the assumptions and shortcomings of this application? </button>
   <div class="panel">
-    <p>- This application uses the size of the nodes and links to visualize the strength of the relationships. A larger node represents the occurrence of the keyword in all found articles and a wider link tells you about the amount of overlapping articles and where the keyword is found (abstract or title). However, the more articles or the amount keywords within the articles that are found does not necessarily mean that these keywords or links are more important than others. Some keywords are simply more available in the PubMed database, like cancer vs. osteoporosis or <i>A. thaliana</i> vs. <i>M. charantia</i>. This creates a bias towards these keywords. This also happens with links between keywords, where diabetes+insulin have more overlapping articles and number of found keywords, because these search terms are found in more PubMed articles than for a less known disease and the corresponding acting substance. A possible solution for this problem is to show the results of only a few keywords with the “+ Filter by keywords” option (<a onclick="toggleAccordion(acc[11]);toggleAccordion(acc[0]);" href="#">see "Basic navigation"</a>). Here the thin links and/or small nodes can show a indirect relationship. (<a onclick="toggleAccordion(acc[11]);toggleAccordion(acc[7]);" href="#">see "How do I use this application to get the most interesting results?"</a>).<br>
-  <br>- Some results with a test dataset resulted in incomplete abstracts. Further investigation about this showed, that the articles were not filled in correctly by the publishers of that articles. Simply said, this means that the file that our program gets back (a XML file) is incomplete and can therefore not be used to its full potential. According to PubMed, this is the responsibility of the publishers. In the test dataset, there was only two articles that had this problem, but these kinds of articles could be missed by this application.<br>
-  <br>- PubMed makes use of synonyms for their search results. Possible wrong synonyms could therefore be added in the found articles. To help you determine if this is the case, clicking on a nodes shows the list of synonyms that PubMed used. Additionally, certain keywords could possibly be a synonym of another keyword in the network, which will cause overlapping results. Therefore it is always necessary to check the used synonyms of interesting parts of the network.<br>
-  <br>- This application only searches in the titles, abstracts and keyword lists of all PubMed IDs. This means that articles outside of PubMed are not included. Additionally, not the whole article is used for the text mining search. The reasoning behind this is because most papers are in subscription journals. To see the full text a payment or subscription to that specific publisher/journal is needed. Using free articles only will naturally exclude many interesting papers and using the full text only for free articles will create a big bias towards those articles.<br>
-    </p>
+      <ul class="bulleted-list">
+        <li>This application uses the size of the nodes and links to visualize the strength of the relationships. A larger node represents the occurrence of the keyword in all found articles and a wider link tells you about the amount of overlapping articles and where the keyword is found (abstract or title). However, the more articles or the amount keywords within the articles that are found does not necessarily mean that these keywords or links are more important than others. Some keywords are simply more available in the PubMed database, like cancer vs. osteoporosis or <i>A. thaliana</i> vs. <i>M. charantia</i>. This creates a bias towards these keywords. This also happens with links between keywords, where diabetes+insulin have more overlapping articles and number of found keywords, because these search terms are found in more PubMed articles than for a less known disease and the corresponding acting substance. A possible solution for this problem is to show the results of only a few keywords with the “+ Filter by keywords” option (<a onclick="toggleAccordion(acc[11]);toggleAccordion(acc[0]);" href="#">see "Basic navigation"</a>). Here the thin links and/or small nodes can show a indirect relationship. (<a onclick="toggleAccordion(acc[11]);toggleAccordion(acc[7]);" href="#">see "How do I use this application to get the most interesting results?"</a>).</li>
+        <li>Some results with a test dataset resulted in incomplete abstracts. Further investigation about this showed, that the articles were not filled in correctly by the publishers of that articles. Simply said, this means that the file that our program gets back (a XML file) is incomplete and can therefore not be used to its full potential. According to PubMed, this is the responsibility of the publishers. In the test dataset, there were only two articles that had this problem, but these kinds of articles could be missed by this application.</li>
+        <li>PubMed makes use of synonyms for their search results. Possible wrong synonyms could therefore be added in the found articles. To help you determine if this is the case, clicking on a node shows the list of synonyms that PubMed used. Additionally, certain keywords could possibly be a synonym of another keyword in the network, which will cause overlapping results. Therefore it is always necessary to check the used synonyms of interesting parts of the network.</li>
+        <li>This application only searches in the titles, abstracts and keyword lists of all PubMed ID's. This means that articles outside of PubMed are not included. Additionally, not the whole article is used for the text mining search. The reasoning behind this is because most papers are in subscription journals. To see the full text a payment or subscription to that specific publisher/journal is needed. Using only free articles will naturally exclude many interesting papers and using the full text only for free articles will create a big bias towards those articles.</li>
+      </ul>
   </div>
-  <button class="accordion">+ Is there a way to ask questions to the developers?</button>
+  <button class="accordion">+ Can I ask another question?</button>
   <div class="panel">
-    <p>Yes. You can use the contact page to contact one of the developers of this application. Please contact the person that is most suitable to answer your question.
+    <p>You can use the <a href="{{ url_for('contact') }}">contact page</a> to contact one of the developers of this application. Please contact the person that is most suitable to answer your question.
   </p>
   </div>
 </article>

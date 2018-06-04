@@ -593,6 +593,7 @@ d3.json("../static/json/network.json", function (error, graph) {
         fillDropdown();
         graph.links = graph.links.filter(function (l) {
             return l.value >= minRelScoreFilter.value
+                    && l.value <= maxRelScoreFilter.value
                     && graph.nodes.includes(l.source)
                     && graph.nodes.includes(l.target);
         });
