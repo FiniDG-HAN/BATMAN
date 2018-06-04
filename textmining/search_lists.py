@@ -1,7 +1,9 @@
 # Search lists used for textmining, version 1.0
 
 ## TEST ##
-__search_list_test = ["christinin-a", "npaas"] # , "alkamides" "roseoside",
+__search_list_test = ["christinin-a", "npaas", "roseoside"] # , "alkamides" "roseoside", 
+
+__search_list_test2 = ["lignans", "tannins", "momordica charantia"]
 ## TEST ##
 
 ##########################################################
@@ -17,13 +19,13 @@ list_search_1 = ["terpenes", "terpenoids", "waxes", "î² sitosterol",
  "polyacetylenes", "allantoin", "cucumis sativus", "cucurbita", "anthocyanins",
  "coumarins", "lamiaceae", "asteraceae", "glucosinolates", "spasmodic",
  "gossypol", "rosaceae", "lignans", "phenylpropanoids", "phytic acid",
- "phytoestrogens", "phytosterols", "polyketides", "prebiotics", "tannins", "momordica charantia"] # ~ 7 hours
+ "phytoestrogens", "phytosterols", "polyketides", "prebiotics", "tannins", "momordica charantia"] # ~ 6 hours
 ##########################################################
 
 
 ########################################################
 list_search_2 = ["carnitine", "homo sapiens", "carotenoids", "miscarriage", "quercetin",
-"lectins", "polyphenols", "taurine", "saponins", "polypeptide-p"] # ~ 7 hours
+"lectins", "polyphenols", "taurine", "saponins", "polypeptide-p"] # ~ 6 hours
 ########################################################
 
 

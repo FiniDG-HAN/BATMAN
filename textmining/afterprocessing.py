@@ -23,9 +23,9 @@ def clean_up_data_relation_dict(dictionary, file_name):
 
 def clean_up_data_other_dicts(dictionary, file_name, search_list_name):
     final_dict = _delete_carbohydrates_from_dict(dictionary)
-    print("final dict")
-    print(final_dict)
-    print("###")
+    #print("final dict")
+    #print(final_dict)
+    #print("###")
     if not file_name == "pmid":
         file_string = "cache%sprocessed_%s" % (os.sep, file_name)
     else:
@@ -143,9 +143,9 @@ def _load_json(file_name):
 #
 """    
 def _save_dict(file_name, dictionary):
-    print("save dict")
-    print(dictionary)
-    print("****")
+    #print("save dict")
+    #print(dictionary)
+    #print("****")
     with open("%s.txt" % (file_name), "w") as output_file:
         json.dump(dictionary, output_file)
     output_file.close()

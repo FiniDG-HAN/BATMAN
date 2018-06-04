@@ -17,12 +17,20 @@ import search_lists
 
 def main():
     # Select a list of searchterms here
-    search_list = search_lists.list_search_2
+    search_list = search_lists.__search_list_test2
     # Give your list a name so you can find it later
-    search_name = "list_search_2"
+    search_name = "search_list_temp2"
+    print(search_list)
 
     # DONT TOUCH THIS
     textmining.main(search_list, search_name)
 
 
 main()
+
+
+def test():
+    li = [1,2,3,4,5,6,""]
+    print(li[-2:][0])
+    print(str(li[-2:][0]).isnumeric())
+

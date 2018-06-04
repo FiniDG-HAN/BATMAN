@@ -119,7 +119,7 @@ def main(search_list, search_list_name):
 
     dir_path = os.path.dirname(os.path.realpath(__file__))
     print("\n######################################")
-    print("PMID file: %s.txt\nSynonym file: %s.txt\nLink file: %s.txt\n" % ((dir_path+os.sep+new_pmid_file_name), (dir_path+os.sep+new_synonym_file_name), (dir_path+os.sep+new_relation_file_name)))
+    print("PMID file: %s.txt\nSynonym file: %s.txt\nLink file: %s.txt\n" % ((dir_path+os.sep+new_pmid_file_name), (dir_path+os.sep+final_file_synonym), (dir_path+os.sep+final_file_link)))
 
     # Cleans up the dictionary as I dont want to mess with this script anymore
     #afterprocessing.clean_up_dictionary("relations.txt")
@@ -308,7 +308,7 @@ def add_to_search_indexes(index):
 def text_mining(search_term, cat_dict):
     ##### Config #####
     max_amount_downloaded = 15
-    max_return = 5
+    max_return = 100
     max_number_of_attempts = 3
     title_weigth = 2
     abstract_weigth = 1
@@ -351,7 +351,7 @@ def ncbi_search(search_term):
         amount_of_hits = 0
         record = None
 
-    aprox_time = float(((0.2282835*amount_of_hits)+(4.0993715))/60)
+    aprox_time = float(((0.032395*amount_of_hits)+(8.4848692))/60)
     aprox_hours = float(aprox_time/60)
     print("%i results found, this will take aprox. %.2f minutes (%.2f hours)\n" % (amount_of_hits, aprox_time, aprox_hours))
     return terms, amount_of_hits, record
@@ -378,10 +378,10 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
     start_time = time.time()
 
     for start in range(0,amount_of_hits,max_return): # amount_of_hits,max_return
-        if start % 60 == 0:
+        if start % 600 == 0:
             time.sleep(5)
-        if start % 750 == 0:
-            print("Downloading %i out of %i" % (current_result, amount_of_hits))
+        if start % 7500 == 0:
+            print("Downloading %i-ish out of %i" % ((current_result*max_return), amount_of_hits))
 
         #print("Downloading %i out of %i" % (current_result, amount_of_hits))
         end = min(amount_of_hits, start+max_return)
@@ -448,7 +448,7 @@ def ncbi_fetch(record, search_term, terms, amount_of_hits, config, cat_dict):
                     except KeyError as err:
                         pass
                     except Exception as err:
-                        raise
+                        pass
 
             ### End of if statement ###
         #if current_result > max_amount_downloaded:
@@ -508,13 +508,11 @@ def plot(time_dict):
     except Exception as err:
         print("zip")
 
-
     plt.plot(*zip(*sorted(time_dict.items())))
     plt.xlabel('Downloaded articles')
     plt.ylabel('time (s)')
     plt.title('Downloaded articles vs time')
     plt.show()
-
 
 """
 #
